@@ -1,0 +1,5 @@
+{
+  "name": "Fishing.Game",
+  "rootNamespace": "Fishing.Game",
+  "references": ["Fishing.Core", "Unity.ugui"]
+}

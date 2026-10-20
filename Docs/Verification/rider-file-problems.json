@@ -1,0 +1,210 @@
+[
+  {
+    "file": "Assets\\_Game\\Scripts\\Core\\ContactBatch.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Core/ContactBatch.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Core\\FishingFlowController.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Core/FishingFlowController.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Core\\FishingRules.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Core/FishingRules.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Core\\FlowStates.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Core/FlowStates.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Core\\RunModel.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Core/RunModel.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Game\\ContactDetector.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Game/ContactDetector.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Game\\DragInput.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Game/DragInput.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Game\\FishActor.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Game/FishActor.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Game\\FishDefinition.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Game/FishDefinition.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Game\\FishingConfig.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Game/FishingConfig.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Game\\FishSpawner.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Game/FishSpawner.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Scripts\\Game\\HookMotor.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Scripts/Game/HookMotor.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "file": "Assets\\_Game\\Tests\\EditMode\\CoreRulesTests.cs",
+    "response": {
+      "id": 1,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Assets/_Game/Tests/EditMode/CoreRulesTests.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  }
+]

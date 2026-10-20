@@ -1,0 +1,20 @@
+{
+  "path": "Builds\\Android\\CasualFishing-0.1.0-arm64.apk",
+  "bytes": 30872697,
+  "sha256": "73c231ddc11a0406fe9bafac29831b1496dc7e0a9bc61a1689c1720cbec58029",
+  "device_validation": "not_performed",
+  "badging": [
+    "package: name='com.huaziii.casualfishing' versionCode='1' versionName='0.1.0' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'",
+    "sdkVersion:'23'",
+    "targetSdkVersion:'34'",
+    "application-label:'Casual Fishing'",
+    "launchable-activity: name='com.unity3d.player.UnityPlayerActivity'  label='' icon=''",
+    "native-code: 'arm64-v8a'"
+  ],
+  "orientation": [
+    "A: android:screenOrientation(0x0101001e)=(type 0x10)0x1"
+  ],
+  "signatureExitCode": 0,
+  "signatureOutput": "Verifies\nVerified using v1 scheme (JAR signing): true\nVerified using v2 scheme (APK Signature Scheme v2): true\nVerified using v3 scheme (APK Signature Scheme v3): false\nVerified using v3.1 scheme (APK Signature Scheme v3.1): false\nVerified using v4 scheme (APK Signature Scheme v4): false\nVerified for SourceStamp: false\nNumber of signers: 1\nWARNING: META-INF/com/android/build/gradle/app-metadata.properties not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\nWARNING: META-INF/com.android.games.engine.build_fingerprint not protected by signature. Unauthorized modifications to this JAR entry will not be detected. Delete or move the entry outside of META-INF/.\n",
+  "signatureWarnings": ""
+}

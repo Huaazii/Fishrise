@@ -1,0 +1,12 @@
+[
+  "Assets\\_Game\\Scripts\\Editor\\FishingCoreArtImporter.cs",
+  "Assets\\_Game\\Scripts\\Game\\CameraRig.cs",
+  "Assets\\_Game\\Scripts\\Game\\GameBootstrap.cs",
+  "Assets\\_Game\\Scripts\\Game\\HookMotor.cs",
+  "Assets\\_Game\\Scenes\\Main.unity",
+  "Assets\\_Game\\Scenes\\Menu.unity",
+  "Assets\\_Game\\Prefabs\\Hook.prefab",
+  "Docs\\Architecture.md",
+  "Docs\\ArtSources.md",
+  "Docs\\STATUS.md"
+]

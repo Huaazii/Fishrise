@@ -1,0 +1,73 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "id": "CS0162",
+      "line": 12,
+      "message": "Unreachable code detected",
+      "severity": "warning"
+    }
+  ],
+  "exception": null,
+  "logs": [],
+  "requestId": "cli-162424-18e042bc91626b58-0",
+  "state": "completed",
+  "value": [
+    {
+      "head": [
+        0.52,
+        -0.025
+      ],
+      "id": "blue",
+      "mouth": [
+        0.61,
+        -0.025
+      ],
+      "radius": 0.14,
+      "sprite": "Assets/_Game/Art/Fish/A02_Fish_Striped.png",
+      "width": 1.25
+    },
+    {
+      "head": [
+        0.55,
+        0.015
+      ],
+      "id": "red",
+      "mouth": [
+        0.61,
+        0.015
+      ],
+      "radius": 0.102,
+      "sprite": "Assets/_Game/Art/Fish/A03_Fish_Red.png",
+      "width": 1.0625
+    },
+    {
+      "head": [
+        0.53,
+        -0.025
+      ],
+      "id": "small",
+      "mouth": [
+        0.61,
+        -0.025
+      ],
+      "radius": 0.07,
+      "sprite": "Assets/_Game/Art/Fish/A04_Fish_SmallSilver.png",
+      "width": 0.625
+    },
+    {
+      "head": [
+        0.5,
+        0.07
+      ],
+      "id": "puffer",
+      "mouth": [
+        0.61,
+        0.07
+      ],
+      "radius": 0.1875,
+      "sprite": "Assets/_Game/Art/Fish/A01_Fish_Puffer.png",
+      "width": 1.5625
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "path": "Assets\\_Game\\Art\\Fish\\A01_Fish_Puffer.png",
+    "dimensions": [
+      1095,
+      1004
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Fish\\A02_Fish_Striped.png",
+    "dimensions": [
+      1453,
+      715
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Fish\\A03_Fish_Red.png",
+    "dimensions": [
+      1667,
+      720
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Fish\\A04_Fish_SmallSilver.png",
+    "dimensions": [
+      1294,
+      481
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Hook\\B04_Hook_Main.png",
+    "dimensions": [
+      728,
+      1065
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Hook\\B05_Bubble_Shield.png",
+    "dimensions": [
+      1189,
+      1151
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Hook\\B06_Bubble_Small.png",
+    "dimensions": [
+      183,
+      184
+    ],
+    "mode": "RGBA"
+  }
+]

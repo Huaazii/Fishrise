@@ -1,0 +1,15 @@
+[
+  "Assets\\_Game\\Scripts\\Game\\FishActor.cs",
+  "Assets\\_Game\\Scripts\\Game\\FishDefinition.cs",
+  "Assets\\_Game\\Scripts\\Game\\GameBootstrap.cs",
+  "Assets\\_Game\\Scripts\\Game\\HookMotor.cs",
+  "Assets\\_Game\\Configs\\Fish_blue.asset",
+  "Assets\\_Game\\Configs\\Fish_puffer.asset",
+  "Assets\\_Game\\Configs\\Fish_red.asset",
+  "Assets\\_Game\\Configs\\Fish_small.asset",
+  "Assets\\_Game\\Prefabs\\Hook.prefab",
+  "Docs\\Architecture.md",
+  "Docs\\ArtSources.md",
+  "Docs\\STATUS.md",
+  "Assets\\_Game\\Tests\\PlayMode\\GameIntegrationTests.cs"
+]

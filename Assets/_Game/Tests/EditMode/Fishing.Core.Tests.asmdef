@@ -1,0 +1,8 @@
+{
+  "name": "Fishing.Core.Tests",
+  "rootNamespace": "Fishing.Tests",
+  "references": ["Fishing.Core"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "noEngineReferences": true
+}

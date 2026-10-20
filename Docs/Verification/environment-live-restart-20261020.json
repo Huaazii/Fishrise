@@ -1,0 +1,28 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "id": "CS0162",
+      "line": 12,
+      "message": "Unreachable code detected",
+      "severity": "warning"
+    }
+  ],
+  "exception": null,
+  "logs": [],
+  "requestId": "cli-175452-18e047a2eff7d370-0",
+  "state": "completed",
+  "value": {
+    "cameraY": -4.266667,
+    "captures": 0,
+    "depth": 0.0,
+    "environments": 1,
+    "fish": 54,
+    "hanging": 0,
+    "newRunId": "2f34c00c-10bc-47c2-bbca-72d7d2064636",
+    "oldRunId": "76391d49-ff7f-4a7b-b80b-923949419856",
+    "pose": "B01_Fisherman_Idle",
+    "protection": 2,
+    "state": "Countdown"
+  }
+}

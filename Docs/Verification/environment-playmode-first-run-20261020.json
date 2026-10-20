@@ -1,0 +1,160 @@
+{
+  "generatedAt": "2026-10-20T15:34:45.1114005Z",
+  "runStartedAt": "2026-10-20T15:34:36.3404388Z",
+  "durationSeconds": 8.6310827,
+  "testMode": "PlayMode",
+  "totalTests": 12,
+  "passed": 11,
+  "failed": 1,
+  "skipped": 0,
+  "inconclusive": 0,
+  "status": "failed",
+  "failures": [
+    {
+      "name": "SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole",
+      "fullName": "Fishing.Tests.EnvironmentIntegrationTests.SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole",
+      "message": "  Expected: 1\r\n  But was:  2\r\n",
+      "stackTrace": "at Fishing.Tests.EnvironmentIntegrationTests+<SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole>d__4.MoveNext () [0x00360] in G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Tests\\PlayMode\\EnvironmentIntegrationTests.cs:64\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46\r\n"
+    },
+    {
+      "name": "Casual Fishing",
+      "fullName": "Casual Fishing",
+      "message": "One or more child tests had errors",
+      "stackTrace": null
+    },
+    {
+      "name": "Fishing.Game.Tests.dll",
+      "fullName": "G:/Unity Project/Casual Game/Casual Fishing/FishingCasualGame/Library/ScriptAssemblies/Fishing.Game.Tests.dll",
+      "message": "One or more child tests had errors",
+      "stackTrace": null
+    },
+    {
+      "name": "Fishing",
+      "fullName": "Fishing",
+      "message": "One or more child tests had errors",
+      "stackTrace": null
+    },
+    {
+      "name": "Tests",
+      "fullName": "Fishing.Tests",
+      "message": "One or more child tests had errors",
+      "stackTrace": null
+    },
+    {
+      "name": "EnvironmentIntegrationTests",
+      "fullName": "Fishing.Tests.EnvironmentIntegrationTests",
+      "message": "One or more child tests had errors",
+      "stackTrace": null
+    }
+  ],
+  "tests": [
+    {
+      "name": "CameraMatchesThreePortraitWidthsBlendsDirectionAndReturnsWithoutASurfaceJump",
+      "fullName": "Fishing.Tests.EnvironmentIntegrationTests.CameraMatchesThreePortraitWidthsBlendsDirectionAndReturnsWithoutASurfaceJump",
+      "status": "Passed",
+      "duration": 0.9462191,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.EnvironmentIntegrationTests.CameraMatchesThreePortraitWidthsBlendsDirectionAndReturnsWithoutASurfaceJump\r\n"
+    },
+    {
+      "name": "SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole",
+      "fullName": "Fishing.Tests.EnvironmentIntegrationTests.SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole",
+      "status": "Failed",
+      "duration": 0.6140483,
+      "message": "  Expected: 1\r\n  But was:  2\r\n",
+      "stackTrace": "at Fishing.Tests.EnvironmentIntegrationTests+<SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole>d__4.MoveNext () [0x00360] in G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Tests\\PlayMode\\EnvironmentIntegrationTests.cs:64\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:46\r\n",
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.EnvironmentIntegrationTests.SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole\r\n"
+    },
+    {
+      "name": "ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent",
+      "fullName": "Fishing.Tests.GameIntegrationTests.ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent",
+      "status": "Passed",
+      "duration": 0.6142255,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent\r\n"
+    },
+    {
+      "name": "CoreArtMixedCatchHangsAtMouthReachesResultAndResetsPooledRotation",
+      "fullName": "Fishing.Tests.GameIntegrationTests.CoreArtMixedCatchHangsAtMouthReachesResultAndResetsPooledRotation",
+      "status": "Passed",
+      "duration": 0.5881024,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.CoreArtMixedCatchHangsAtMouthReachesResultAndResetsPooledRotation\r\n"
+    },
+    {
+      "name": "ImportedBubbleTrailMovesOnGameplayTimeAndFreezesDuringPause",
+      "fullName": "Fishing.Tests.GameIntegrationTests.ImportedBubbleTrailMovesOnGameplayTimeAndFreezesDuringPause",
+      "status": "Passed",
+      "duration": 0.5704754,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.ImportedBubbleTrailMovesOnGameplayTimeAndFreezesDuringPause\r\n"
+    },
+    {
+      "name": "ImportedFishOnlyContactAtTheirHeadsAndMirrorWithFacing",
+      "fullName": "Fishing.Tests.GameIntegrationTests.ImportedFishOnlyContactAtTheirHeadsAndMirrorWithFacing",
+      "status": "Passed",
+      "duration": 0.5773203,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.ImportedFishOnlyContactAtTheirHeadsAndMirrorWithFacing\r\n"
+    },
+    {
+      "name": "MenuStartAndResultExitButtonsLoadTheSavedScenes",
+      "fullName": "Fishing.Tests.GameIntegrationTests.MenuStartAndResultExitButtonsLoadTheSavedScenes",
+      "status": "Passed",
+      "duration": 1.4420654,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.MenuStartAndResultExitButtonsLoadTheSavedScenes\r\n"
+    },
+    {
+      "name": "NormalBottomPathReachesResultAndRestartCreatesFreshState",
+      "fullName": "Fishing.Tests.GameIntegrationTests.NormalBottomPathReachesResultAndRestartCreatesFreshState",
+      "status": "Passed",
+      "duration": 0.5797051,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.NormalBottomPathReachesResultAndRestartCreatesFreshState\r\n"
+    },
+    {
+      "name": "PauseFreezesActualFishAndHookInAllThreePlayableStates",
+      "fullName": "Fishing.Tests.GameIntegrationTests.PauseFreezesActualFishAndHookInAllThreePlayableStates",
+      "status": "Passed",
+      "duration": 0.5863427,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.PauseFreezesActualFishAndHookInAllThreePlayableStates\r\n"
+    },
+    {
+      "name": "RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes",
+      "fullName": "Fishing.Tests.GameIntegrationTests.RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes",
+      "status": "Passed",
+      "duration": 0.5404357,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes\r\n"
+    },
+    {
+      "name": "SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent",
+      "fullName": "Fishing.Tests.GameIntegrationTests.SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent",
+      "status": "Passed",
+      "duration": 0.5538887,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent\r\n"
+    },
+    {
+      "name": "TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions",
+      "fullName": "Fishing.Tests.GameIntegrationTests.TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions",
+      "status": "Passed",
+      "duration": 0.962951,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions\r\n"
+    }
+  ]
+}

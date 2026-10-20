@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "result": {
+    "content": [
+      {
+        "text": "{\"problems\":[{\"text\":\"NuGet 配置包含无效的回退文件夹\",\"description\":\"找到以下无效的回退文件夹<br/>G:\\\\Visual \\\\NuGetPackages\",\"severity\":\"Warning\",\"subsystemId\":\"NuGet\",\"subsystem\":\"NuGet\"},{\"text\":\"生成器 'MonoScriptInfoGenerator' 无法生成源\",\"description\":\"Only allowed to have one file passed in with extension '.AdditionalFile.txt'\",\"severity\":\"Warning\",\"subsystemId\":\"Roslyn\",\"subsystem\":\"Roslyn\"}],\"totalCount\":2}",
+        "type": "text"
+      }
+    ],
+    "isError": false
+  },
+  "jsonrpc": "2.0"
+}

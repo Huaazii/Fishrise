@@ -1,0 +1,38 @@
+[
+  {
+    "path": "Assets\\_Game\\Configs\\Fish_blue.asset.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Configs\\Fish_puffer.asset.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Configs\\Fish_red.asset.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Configs\\Fish_small.asset.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Configs\\FishingConfig.asset.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Prefabs\\Fish.prefab.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Prefabs\\Hook.prefab.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Scenes\\Main.unity.meta",
+    "unchanged": true
+  },
+  {
+    "path": "Assets\\_Game\\Scenes\\Menu.unity.meta",
+    "unchanged": true
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "image": "environment-rope-before-20261020.png",
+    "probe": [
+      222,
+      200,
+      227,
+      430
+    ],
+    "goldLineRows": 0,
+    "sampledRows": 231,
+    "coverage": 0.0
+  },
+  {
+    "image": "environment-ascent-20261020.png",
+    "probe": [
+      222,
+      200,
+      227,
+      430
+    ],
+    "goldLineRows": 231,
+    "sampledRows": 231,
+    "coverage": 1.0
+  }
+]

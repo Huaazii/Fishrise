@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-10-20T15:33:53.1445002Z",
+  "runStartedAt": "2026-10-20T15:33:53.0271185Z",
+  "durationSeconds": 0.0025152,
+  "testMode": "PlayMode",
+  "totalTests": 0,
+  "passed": 0,
+  "failed": 0,
+  "skipped": 0,
+  "inconclusive": 0,
+  "status": "passed",
+  "failures": [],
+  "tests": []
+}

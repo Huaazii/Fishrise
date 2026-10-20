@@ -1,0 +1,1 @@
+{"command":"tool call get_compilation_state","data":{"consoleErrorCount":0,"consoleWarningCount":0,"errorCount":0,"isCompiling":false,"isMonitoring":false,"isUpdating":false,"lastCompilationTime":"2026-10-20T07:23:47.8258089Z","messageCount":0,"messages":[],"success":true,"warningCount":0},"errors":[],"success":true,"warnings":[]}

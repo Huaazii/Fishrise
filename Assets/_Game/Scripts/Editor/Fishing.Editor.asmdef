@@ -1,0 +1,5 @@
+{
+  "name": "Fishing.Editor",
+  "references": ["Fishing.Game", "Fishing.Core"],
+  "includePlatforms": ["Editor"]
+}

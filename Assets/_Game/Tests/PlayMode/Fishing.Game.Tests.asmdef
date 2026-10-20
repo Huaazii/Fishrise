@@ -1,0 +1,5 @@
+{
+  "name": "Fishing.Game.Tests",
+  "references": ["Fishing.Core", "Fishing.Game", "Unity.ugui"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

@@ -1,0 +1,11 @@
+{
+    "state": "Failed",
+    "utc": "2026-10-20T07:12:12.4891859Z",
+    "unity": "2022.3.52f1",
+    "apk": "Builds/Android/CasualFishing-0.1.0-arm64.apk",
+    "error": "Read Editor.log for build errors.",
+    "bytes": 0,
+    "errors": 4,
+    "warnings": 0,
+    "seconds": 20.119807299999999
+}

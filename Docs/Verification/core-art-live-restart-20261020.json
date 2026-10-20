@@ -1,0 +1,25 @@
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "id": "CS0162",
+      "line": 11,
+      "message": "Unreachable code detected",
+      "severity": "warning"
+    }
+  ],
+  "exception": null,
+  "logs": [],
+  "requestId": "cli-163008-18e042f74586d9b8-0",
+  "state": "completed",
+  "value": {
+    "captures": 0,
+    "depth": 0.0,
+    "fish": 54,
+    "hanging": 0,
+    "newRunId": "f281ceb7-1dbc-43a0-8a23-0c18bc33b82c",
+    "oldRunId": "0d596cb7-efdd-40f1-a86a-953684c641c1",
+    "protection": 2,
+    "state": "Countdown"
+  }
+}

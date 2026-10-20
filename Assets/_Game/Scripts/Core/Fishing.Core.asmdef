@@ -1,0 +1,5 @@
+{
+  "name": "Fishing.Core",
+  "rootNamespace": "Fishing.Core",
+  "noEngineReferences": true
+}

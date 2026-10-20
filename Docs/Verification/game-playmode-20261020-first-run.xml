@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-run id="0" name="Unity" testcasecount="7" total="7" result="Failed" passed="5" failed="2" skipped="0" inconclusive="0"><test-suite id="0-suite" type="TestSuite" name="Unity" fullname="Unity" result="Failed" testcasecount="7" total="7" passed="5" failed="2" skipped="0" inconclusive="0"><test-case id="0-1" name="ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent" fullname="Fishing.Tests.GameIntegrationTests.ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent" result="Passed" duration="0.5909056"><output>[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent
+</output></test-case><test-case id="0-2" name="MenuStartAndResultExitButtonsLoadTheSavedScenes" fullname="Fishing.Tests.GameIntegrationTests.MenuStartAndResultExitButtonsLoadTheSavedScenes" result="Passed" duration="1.1232519"><output>[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.MenuStartAndResultExitButtonsLoadTheSavedScenes
+</output></test-case><test-case id="0-3" name="NormalBottomPathReachesResultAndRestartCreatesFreshState" fullname="Fishing.Tests.GameIntegrationTests.NormalBottomPathReachesResultAndRestartCreatesFreshState" result="Failed" duration="0.4793171"><failure><message>TearDown : Unhandled log message: &apos;[Exception] MissingReferenceException: The object of type &apos;CircleCollider2D&apos; has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.&apos;. Use UnityEngine.TestTools.LogAssert.Expect</message><stack-trace>Fishing.Game.FishActor.Despawn (UnityEngine.Transform pool) (at Assets/_Game/Scripts/Game/FishActor.cs:68)
+Fishing.Game.FishSpawner.Clear () (at Assets/_Game/Scripts/Game/FishSpawner.cs:58)
+Fishing.Game.GameBootstrap.OnDestroy () (at Assets/_Game/Scripts/Game/GameBootstrap.cs:141)
+
+</stack-trace></failure><output>[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.NormalBottomPathReachesResultAndRestartCreatesFreshState
+MissingReferenceException: The object of type &apos;CircleCollider2D&apos; has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+</output></test-case><test-case id="0-4" name="PauseFreezesActualFishAndHookInAllThreePlayableStates" fullname="Fishing.Tests.GameIntegrationTests.PauseFreezesActualFishAndHookInAllThreePlayableStates" result="Failed" duration="0.4919371"><failure><message>TearDown : Unhandled log message: &apos;[Exception] MissingReferenceException: The object of type &apos;CircleCollider2D&apos; has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.&apos;. Use UnityEngine.TestTools.LogAssert.Expect</message><stack-trace>Fishing.Game.FishActor.Despawn (UnityEngine.Transform pool) (at Assets/_Game/Scripts/Game/FishActor.cs:68)
+Fishing.Game.FishSpawner.Clear () (at Assets/_Game/Scripts/Game/FishSpawner.cs:58)
+Fishing.Game.GameBootstrap.OnDestroy () (at Assets/_Game/Scripts/Game/GameBootstrap.cs:141)
+
+</stack-trace></failure><output>[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.PauseFreezesActualFishAndHookInAllThreePlayableStates
+MissingReferenceException: The object of type &apos;CircleCollider2D&apos; has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+[unity-cli-bridge] Status changed to: Connected
+[unity-cli-bridge] Client connected from 127.0.0.1:9982
+[unity-cli-bridge][TestExecutionHandler] Persisted run state to G:\Unity Project\Casual Game\Casual Fishing\FishingCasualGame\.unity\tests\test-run-state.json (status=running)
+[unity-cli-bridge] Status changed to: Disconnected
+</output></test-case><test-case id="0-5" name="RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes" fullname="Fishing.Tests.GameIntegrationTests.RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes" result="Passed" duration="0.4426716"><output>[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes
+</output></test-case><test-case id="0-6" name="SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent" fullname="Fishing.Tests.GameIntegrationTests.SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent" result="Passed" duration="0.4550649"><output>[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent
+</output></test-case><test-case id="0-7" name="TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions" fullname="Fishing.Tests.GameIntegrationTests.TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions" result="Passed" duration="0.7924683"><output>[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions
+</output></test-case></test-suite></test-run>

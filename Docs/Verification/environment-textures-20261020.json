@@ -1,0 +1,116 @@
+[
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\A09_Background_LargeFish.png",
+    "width": 1633,
+    "height": 693,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\A10_Background_Shoal.png",
+    "width": 1180,
+    "height": 549,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B01_Fisherman_Idle.png",
+    "width": 1149,
+    "height": 1369,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B02_Fisherman_Pull.png",
+    "width": 1149,
+    "height": 1369,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B03_FishingRod.png",
+    "width": 1400,
+    "height": 1036,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B07_Ice_Surface_Left.png",
+    "width": 1746,
+    "height": 763,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B08_Ice_Surface_Right.png",
+    "width": 1769,
+    "height": 766,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B09_Ice_Wall_Left.png",
+    "width": 545,
+    "height": 1774,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B10_Ice_Wall_Right.png",
+    "width": 560,
+    "height": 1774,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B11_Mountains_Background.png",
+    "width": 2172,
+    "height": 552,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B12_Clouds_Overcast.png",
+    "width": 2093,
+    "height": 565,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B13_Weather_Pole.png",
+    "width": 105,
+    "height": 1524,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B14_Anemometer.png",
+    "width": 1403,
+    "height": 823,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B15_Windsock.png",
+    "width": 1700,
+    "height": 813,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B16_Lantern.png",
+    "width": 497,
+    "height": 1078,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B17_Barrel_Snow.png",
+    "width": 976,
+    "height": 1081,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\B18_Wooden_Stand.png",
+    "width": 1389,
+    "height": 841,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\SkyGradient.png",
+    "width": 4,
+    "height": 512,
+    "mode": "RGBA"
+  },
+  {
+    "path": "Assets\\_Game\\Art\\Environment\\WaterGradient.png",
+    "width": 4,
+    "height": 512,
+    "mode": "RGBA"
+  }
+]

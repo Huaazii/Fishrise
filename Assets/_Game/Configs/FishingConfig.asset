@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d64c70e1f534a46a261b9230fec161, type: 3}
+  m_Name: FishingConfig
+  m_EditorClassIdentifier: 
+  maxDepth: 100
+  bottomZoneOffset: 4
+  diveSpeed: 6
+  slowdownDistance: 5
+  ascentSpeed: 6.5
+  fullMultiplier: 5
+  bottomHoldSeconds: 1.2
+  countdownSeconds: 3
+  surfacingSeconds: 0.6
+  mainCapacity: 10
+  protectionCharges: 2
+  invulnerabilitySeconds: 1
+  unitsPerMetre: 1
+  halfWidth: 4.5
+  horizontalSpeed: 13.5
+  followTouchPoint: 0
+  randomSeed: 2718
+  fishCount: 54

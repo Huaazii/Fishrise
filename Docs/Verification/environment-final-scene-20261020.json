@@ -1,0 +1,13 @@
+{
+  "diagnostics": [],
+  "exception": null,
+  "logs": [],
+  "requestId": "cli-171320-18e047b2c1c17e74-0",
+  "state": "completed",
+  "value": {
+    "compiling": false,
+    "dirty": false,
+    "playing": false,
+    "scene": "Assets/_Game/Scenes/Main.unity"
+  }
+}

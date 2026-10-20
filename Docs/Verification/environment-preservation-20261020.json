@@ -1,0 +1,122 @@
+{
+  "existingIdentities": [
+    {
+      "path": "Assets\\_Game\\Scenes\\Main.unity.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Scenes\\Menu.unity.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Configs\\Fish_blue.asset.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Configs\\Fish_puffer.asset.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Configs\\Fish_red.asset.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Configs\\Fish_small.asset.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Configs\\FishingConfig.asset.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Prefabs\\Fish.prefab.meta",
+      "unchanged": true
+    },
+    {
+      "path": "Assets\\_Game\\Prefabs\\Hook.prefab.meta",
+      "unchanged": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B01_Fisherman_Idle.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B02_Fisherman_Pull.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B03_FishingRod.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B04_Hook_Main.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B05_Bubble_Shield.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B06_Bubble_Small.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B07_Ice_Surface_Left.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B08_Ice_Surface_Right.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B09_Ice_Wall_Left.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B10_Ice_Wall_Right.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B11_Mountains_Background.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B12_Clouds_Overcast.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B13_Weather_Pole.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B14_Anemometer.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B15_Windsock.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B16_Lantern.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B17_Barrel_Snow.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B18_Wooden_Stand.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A09_Background_LargeFish.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A10_Background_Shoal.png",
+      "unchanged": true
+    }
+  ]
+}

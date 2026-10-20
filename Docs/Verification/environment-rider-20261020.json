@@ -1,0 +1,114 @@
+[
+  {
+    "command": "get_file_problems --filePath Assets/_Game/Scripts/Game/CameraRig.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/CameraRig.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "command": "get_file_problems --filePath Assets/_Game/Scripts/Game/HookMotor.cs",
+    "response": {
+      "id": 3,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/HookMotor.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "command": "get_file_problems --filePath Assets/_Game/Scripts/Game/GameBootstrap.cs",
+    "response": {
+      "id": 4,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/GameBootstrap.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "command": "get_file_problems --filePath Assets/_Game/Scripts/Game/FishingSceneView.cs",
+    "response": {
+      "id": 5,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/FishingSceneView.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "command": "get_file_problems --filePath Assets/_Game/Scripts/Editor/FishingCoreArtImporter.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Editor/FishingCoreArtImporter.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "command": "get_file_problems --filePath Assets/_Game/Scripts/Editor/FishingEnvironmentBuilder.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Editor/FishingEnvironmentBuilder.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "command": "get_file_problems --filePath Assets/_Game/Tests/PlayMode/EnvironmentIntegrationTests.cs",
+    "response": {
+      "id": 3,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/EnvironmentIntegrationTests.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  }
+]

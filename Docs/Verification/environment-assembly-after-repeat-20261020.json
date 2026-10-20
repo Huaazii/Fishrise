@@ -1,0 +1,10 @@
+[
+  {
+    "scene": "Main",
+    "instances": 1
+  },
+  {
+    "scene": "Menu",
+    "instances": 1
+  }
+]
