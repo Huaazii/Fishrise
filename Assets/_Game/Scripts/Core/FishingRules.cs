@@ -23,7 +23,7 @@ namespace Fishing.Core
         public float BottomHoldSeconds { get; }
         /// <summary>Countdown duration.</summary>
         public float CountdownSeconds { get; }
-        /// <summary>Placeholder surfacing duration.</summary>
+        /// <summary>Presentation timeout; capture records remain unchanged during this phase.</summary>
         public float SurfacingSeconds { get; }
         /// <summary>Main hook capacity, excluding branches.</summary>
         public int MainCapacity { get; }

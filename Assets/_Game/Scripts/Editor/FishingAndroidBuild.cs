@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace Fishing.Editor
 {
-    /// <summary>Reproducible first Android build, with a disk result readable while the Editor is busy.</summary>
+    /// <summary>Reproducible current Android build, with a disk result readable while the Editor is busy.</summary>
     public static class FishingAndroidBuild
     {
-        private const string ReportPath = "Docs/Verification/android-build-20261020.json";
-        private const string OutputPath = "Builds/Android/CasualFishing-0.1.0-arm64.apk";
+        private const string ReportPath = "Docs/Verification/android-build-20261021.json";
+        private const string OutputPath = "Builds/Android/CasualFishing-0.2.0-arm64.apk";
         [Serializable]
         private sealed class Result
         {
@@ -31,9 +31,12 @@ namespace Fishing.Editor
             Save(result);
             try
             {
+                var settings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/ProjectSettings.asset")[0]);
+                if (settings.FindProperty("activeInputHandler").intValue != 0)
+                    throw new InvalidOperationException("Use Legacy Input Manager (0) and restart the Editor before building Android.");
                 PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.huaziii.casualfishing");
-                PlayerSettings.productName = "Casual Fishing"; PlayerSettings.bundleVersion = "0.1.0";
-                PlayerSettings.Android.bundleVersionCode = 1;
+                PlayerSettings.productName = "Casual Fishing"; PlayerSettings.bundleVersion = "0.2.0";
+                PlayerSettings.Android.bundleVersionCode = 2;
                 PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
                 PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
                 PlayerSettings.Android.minSdkVersion = (AndroidSdkVersions)23;

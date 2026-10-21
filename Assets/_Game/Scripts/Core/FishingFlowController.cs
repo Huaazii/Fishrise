@@ -11,10 +11,15 @@ namespace Fishing.Core
         private readonly HashSet<ContactKey> _contacts = new HashSet<ContactKey>();
         private readonly Dictionary<ContactKey, ContactCandidate> _unique = new Dictionary<ContactKey, ContactCandidate>();
         private readonly List<ContactCandidate> _ordered = new List<ContactCandidate>();
+        private readonly List<ContactCandidate> _allocated = new List<ContactCandidate>();
+        private readonly HashSet<int> _assigned = new HashSet<int>();
+        private readonly Dictionary<int, int> _reserved = new Dictionary<int, int>();
         private long _resolvedStep;
         private int _phaseVersion;
         /// <summary>Authoritative run.</summary>
         public RunModel Run { get; }
+        /// <summary>Two per-run ability slots coordinated with this controller's game clock.</summary>
+        public AbilityController Abilities { get; }
         /// <summary>Current fixed-step sequence.</summary>
         public long StepSequence { get; private set; }
         /// <summary>Time within this state, for countdown presentation.</summary>
@@ -28,10 +33,11 @@ namespace Fishing.Core
         /// <summary>Result is ready, once on entering Result.</summary>
         public event Action<RunModel> OnRunFinished;
         /// <summary>Creates a controller with copied species lookup and independent state instances.</summary>
-        public FishingFlowController(FishingRules rules, IEnumerable<FishRules> fish)
+        public FishingFlowController(FishingRules rules, IEnumerable<FishRules> fish, SonarRules sonar = null, BranchHookRules branches = null)
         {
             Run = new RunModel(rules);
             foreach (var f in fish) _fish.Add(f.Id, f);
+            Abilities = new AbilityController(Run, _fish.Values, sonar ?? new SonarRules(), branches ?? new BranchHookRules());
             _states = new Dictionary<RunState, IFlowState>
             {
                 { RunState.Menu, new MenuState(this) }, { RunState.Countdown, new CountdownState(this) },
@@ -55,7 +61,7 @@ namespace Fishing.Core
             if (Run.IsPaused) return StepSequence;
             if (dt < 0 || float.IsNaN(dt) || float.IsInfinity(dt)) throw new ArgumentOutOfRangeException(nameof(dt));
             StepSequence++; Run.GameTime += dt; StateElapsed += dt;
-            _states[Run.State].Tick(dt); return StepSequence;
+            _states[Run.State].Tick(dt); Abilities.Tick(dt); return StepSequence;
         }
         /// <summary>Resolves a complete batch once, then applies deferred boundary transitions.</summary>
         public void ResolveContacts(ContactBatch batch)
@@ -66,10 +72,10 @@ namespace Fishing.Core
             _unique.Clear(); _ordered.Clear();
             foreach (var candidate in batch.Candidates)
             {
-                // Branch allocation will be inserted before this main-only stage in milestone 03.
-                if (candidate.HookId != 0 || Run.HasCaptured(candidate.FishId) ||
+                if (candidate.HookId < 0 || (candidate.HookId > 0 && !Abilities.Branches.Model.IsActive(candidate.HookId)) ||
+                    Run.HasCaptured(candidate.FishId) || Abilities.Sonar.IsScared(candidate.FishId) ||
                     !_fish.TryGetValue(candidate.SpeciesId, out var fish) || !fish.IsCatchable ||
-                    float.IsNaN(candidate.DistanceSquared) || candidate.DistanceSquared < 0) continue;
+                    !AbilityRules.Finite(candidate.DistanceSquared) || candidate.DistanceSquared < 0) continue;
                 var key = new ContactKey(candidate.HookId, candidate.FishId);
                 if (!_unique.TryGetValue(key, out var previous) || candidate.DistanceSquared < previous.DistanceSquared)
                     _unique[key] = candidate;
@@ -80,6 +86,7 @@ namespace Fishing.Core
             {
                 foreach (var candidate in _ordered)
                 {
+                    if (candidate.HookId != 0) continue;
                     if (_contacts.Contains(new ContactKey(candidate.HookId, candidate.FishId))) continue;
                     if (Run.GameTime < Run.InvulnerableUntil) break;
                     if (Run.Protection > 0) Run.UseProtection();
@@ -90,21 +97,46 @@ namespace Fishing.Core
             }
             else if (Run.State == RunState.Diving || Run.State == RunState.BottomHold || Run.State == RunState.Ascending)
             {
-                foreach (var candidate in _ordered)
-                { if (Run.IsFull) break; Capture(candidate); }
+                AllocateAndCommit();
             }
             _contacts.Clear();
             // Phase changes deliberately re-admit still-overlapping fish on the following step.
             if (phase == _phaseVersion)
-                foreach (var contact in batch.EndContacts) _contacts.Add(contact);
+                foreach (var contact in batch.EndContacts)
+                    if (!Abilities.Sonar.IsScared(contact.FishId) && !Run.HasCaptured(contact.FishId)) _contacts.Add(contact);
             if (PendingBottom && Run.State == RunState.Diving) ChangeState(RunState.BottomHold);
             if (PendingSurface && Run.State == RunState.Ascending) ChangeState(RunState.Surfacing);
             PendingBottom = false; PendingSurface = false;
         }
+        private void AllocateAndCommit()
+        {
+            _allocated.Clear(); _assigned.Clear(); _reserved.Clear();
+            if (Run.State == RunState.Ascending)
+            {
+                foreach (var candidate in _ordered)
+                    if (candidate.HookId > 0 && !_fish[candidate.SpeciesId].IsSmall) Abilities.Branches.LargeContact(candidate.HookId);
+                foreach (var candidate in _ordered)
+                {
+                    if (candidate.HookId == 0 || _assigned.Contains(candidate.FishId) ||
+                        !Abilities.Branches.CanReceive(candidate.HookId, _fish[candidate.SpeciesId])) continue;
+                    _reserved.TryGetValue(candidate.HookId, out int used);
+                    if (used >= Abilities.Branches.RemainingCapacity(candidate.HookId)) continue;
+                    _reserved[candidate.HookId] = used + 1; _assigned.Add(candidate.FishId); _allocated.Add(candidate);
+                }
+            }
+            int mainUsed = Run.MainCaptureCount;
+            foreach (var candidate in _ordered)
+            {
+                if (candidate.HookId != 0 || mainUsed >= Run.Rules.MainCapacity || !_assigned.Add(candidate.FishId)) continue;
+                mainUsed++; _allocated.Add(candidate);
+            }
+            // Reserve all capacities before adapter events can change presentation or collider state.
+            foreach (var candidate in _allocated) Capture(candidate);
+        }
         private void Capture(ContactCandidate candidate)
         {
             var record = new CaptureRecord(_fish[candidate.SpeciesId], candidate.FishId,
-                CaptureSource.Main, candidate.HookId, Run.Depth, Run.GameTime);
+                candidate.HookId == 0 ? CaptureSource.Main : CaptureSource.Branch, candidate.HookId, Run.Depth, Run.GameTime);
             if (!Run.AddCapture(record)) return;
             OnFishCaptured?.Invoke(record);
             Run.PublishFullIfNeeded();
@@ -115,6 +147,12 @@ namespace Fishing.Core
             if (distance != 0) return distance;
             int fish = a.FishId.CompareTo(b.FishId);
             return fish != 0 ? fish : a.HookId.CompareTo(b.HookId);
+        }
+        /// <summary>Ends only the presentation phase; captured records and rewards are already final.</summary>
+        public bool SkipSurfacing()
+        {
+            if (Run.State != RunState.Surfacing) return false;
+            ChangeState(RunState.Result); return true;
         }
         internal void MoveDepth(float depth)
         {
@@ -128,6 +166,7 @@ namespace Fishing.Core
         {
             _states[Run.State].Exit(); Run.State = state; _states[state].Enter();
             if (state == RunState.Ascending) ResetContactPhase();
+            if (state == RunState.Surfacing || state == RunState.Result) Abilities.Cancel();
             OnStateChanged?.Invoke(state);
             if (state == RunState.Result) OnRunFinished?.Invoke(Run);
         }

@@ -1,0 +1,17 @@
+{
+  "method": "Native window mouse injection through @oai/sky, not a physical human-input acceptance",
+  "restartRunId": "137429d9-bd37-4a38-859d-cf19057c5da4",
+  "state": "Diving",
+  "time": 19.359999567270279,
+  "hookXBefore": 0.0,
+  "sound": true,
+  "haptics": true,
+  "hookXAfter": 0.0,
+  "stateAfterDrag": "Ascending",
+  "timeAfterDrag": 36.919999174773693,
+  "pauseClicked": true,
+  "settingsVisible": true,
+  "nativeSoundToggleOff": true,
+  "dragMoved": false,
+  "dragResultNote": "One injected drag produced no hook movement; do not count as a pass. Needs a slower sustained drag/human input check."
+}

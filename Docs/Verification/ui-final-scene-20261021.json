@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-21T02:53:58.0566293Z",
+  "scene": "Assets/_Game/Scenes/Menu.unity",
+  "dirty": false,
+  "playing": false,
+  "compiling": false,
+  "hasBindings": true,
+  "font": "Assets/_Game/Art/Fonts/NotoSansSC-Regular.otf",
+  "fontDynamic": true,
+  "uiAsset": "Assets/_Game/Configs/GameUiAssets.asset",
+  "hookReused": "Assets/_Game/Art/Hook/B04_Hook_Main.png",
+  "width": 450,
+  "height": 800,
+  "tutorialSeen": false
+}

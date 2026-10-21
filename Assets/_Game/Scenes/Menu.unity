@@ -501,11 +501,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47560d2f43367ff4182e73c5b752dffc, type: 2}
   - {fileID: 11400000, guid: c899188f348edfe4ab98b35e29546d0f, type: 2}
   - {fileID: 11400000, guid: 833622f8e4a7d3549af517f2ab154b9e, type: 2}
+  - {fileID: 11400000, guid: 9e6757bda52d20a468ed39075a9b0708, type: 2}
+  - {fileID: 11400000, guid: 8e6463307cf7a584a989c109fdb213a1, type: 2}
+  - {fileID: 11400000, guid: f9a4bdf1cf1bd5d4eb7e99bf66923e88, type: 2}
   fishPrefab: {fileID: 995758404677539068, guid: 2755923e9e69f7e4a900fdbfc0d24057, type: 3}
   hookPrefab: {fileID: 1564330818729205795, guid: feaa40272b0b79b40be7b668883ae50e, type: 3}
   gameCamera: {fileID: 403783242}
   startInMenu: 1
   sceneView: {fileID: 1693260631}
+  uiAssets: {fileID: 11400000, guid: 8ca7c1dbc18fe02469d63568cc32d7c3, type: 2}
+  sonarConfig: {fileID: 11400000, guid: 80e0b7a492fb7904196f85c5d152cf29, type: 2}
+  branchConfig: {fileID: 11400000, guid: b52d65c883f04ba4ba8c788c035049c9, type: 2}
 --- !u!4 &1369852052
 Transform:
   m_ObjectHideFlags: 0

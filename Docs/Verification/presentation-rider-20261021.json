@@ -1,0 +1,66 @@
+[
+  {
+    "filePath": "Assets/_Game/Scripts/Core/FishingFlowController.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Core/FishingRules.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/FishingConfig.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/FishActor.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/FishSpawner.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/ResultView.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/GameFeedback.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/FeedbackSettingsView.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/GameplayFeedbackView.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Editor/FishingAndroidPermissions.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Tests/EditMode/SurfaceRulesTests.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/GameBootstrap.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Tests/PlayMode/PresentationIntegrationTests.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Editor/FishingAndroidBuild.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/SurfacePresentation.cs",
+    "errors": []
+  },
+  {
+    "filePath": "Assets/_Game/Scripts/Game/GameUi.cs",
+    "errors": []
+  }
+]

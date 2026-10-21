@@ -1,0 +1,402 @@
+[
+  {
+    "path": "Assets/_Game/Scripts/Core/AbilityRules.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Core/AbilityRules.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Core/AbilityController.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Core/AbilityController.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Core/SonarAbility.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Core/SonarAbility.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Core/BranchHookController.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Core/BranchHookController.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Core/FishingFlowController.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Core/FishingFlowController.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Core/RunModel.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Core/RunModel.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/AbilityDefinition.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/AbilityDefinition.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/SonarConfig.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/SonarConfig.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/BranchHookConfig.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/BranchHookConfig.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/AbilityRig.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/AbilityRig.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/AbilityHud.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/AbilityHud.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/BranchHookView.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/BranchHookView.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/FishActor.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/FishActor.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/FishSpawner.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/FishSpawner.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/ContactDetector.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/ContactDetector.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/HookMotor.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/HookMotor.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/GameBootstrap.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/GameBootstrap.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/GameUi.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/GameUi.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Game/UiText.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/UiText.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Scripts/Editor/FishingAbilityBuilder.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Scripts/Editor/FishingAbilityBuilder.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Tests/EditMode/AbilityRulesTests.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Tests/EditMode/AbilityRulesTests.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Tests/PlayMode/AbilityTestScene.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/AbilityTestScene.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Tests/PlayMode/SonarIntegrationTests.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/SonarIntegrationTests.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Tests/PlayMode/BranchIntegrationTests.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/BranchIntegrationTests.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  },
+  {
+    "path": "Assets/_Game/Tests/PlayMode/SeededBranchIntegrationTests.cs",
+    "response": {
+      "id": 2,
+      "result": {
+        "content": [
+          {
+            "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/SeededBranchIntegrationTests.cs\",\"errors\":[]}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      },
+      "jsonrpc": "2.0"
+    }
+  }
+]

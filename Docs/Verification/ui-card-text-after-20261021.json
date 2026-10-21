@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Fish name",
+    "text": "鳗鱼",
+    "height": 48.0,
+    "preferred": 38.4,
+    "size": 26,
+    "visible": 2,
+    "characters": 3,
+    "culled": false
+  },
+  {
+    "name": "Quantity",
+    "text": "×1",
+    "height": 48.0,
+    "preferred": 40.0,
+    "size": 28,
+    "visible": 2,
+    "characters": 3,
+    "culled": false
+  },
+  {
+    "name": "Unit gold",
+    "text": "80",
+    "height": 28.0,
+    "preferred": 27.2,
+    "size": 20,
+    "visible": 2,
+    "characters": 3,
+    "culled": false
+  },
+  {
+    "name": "Unit shells",
+    "text": "50",
+    "height": 28.0,
+    "preferred": 27.2,
+    "size": 20,
+    "visible": 2,
+    "characters": 3,
+    "culled": false
+  },
+  {
+    "name": "Capture sources",
+    "text": "主钩 ×1 / 分支 ×0",
+    "height": 28.0,
+    "preferred": 24.0,
+    "size": 17,
+    "visible": 13,
+    "characters": 14,
+    "culled": false
+  }
+]

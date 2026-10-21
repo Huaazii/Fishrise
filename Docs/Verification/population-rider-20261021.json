@@ -1,0 +1,119 @@
+[
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/FishDefinition.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/FishingConfig.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/FishActor.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/FishSpawner.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/GameBootstrap.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Editor/FishingCoreArtImporter.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Editor/FishingPopulationBuilder.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/GameIntegrationTests.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/PopulationIntegrationTests.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  }
+]

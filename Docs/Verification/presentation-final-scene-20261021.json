@@ -1,0 +1,14 @@
+{
+  "scene": "Menu",
+  "dirty": false,
+  "playing": false,
+  "pid": 195972,
+  "bindings": true,
+  "input": 0,
+  "hadTutorial": false,
+  "tutorial": 0,
+  "hadSound": false,
+  "sound": 1,
+  "hadHaptics": false,
+  "haptics": 1
+}

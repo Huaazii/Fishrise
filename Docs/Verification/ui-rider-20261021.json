@@ -1,0 +1,145 @@
+[
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/GameUi.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/GameUiAssets.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/UiText.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/UiWidgets.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/TutorialView.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/ResultView.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Game/GameBootstrap.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Editor/FishingUiBuilder.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Scripts/Editor/FishingPreview.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/GameIntegrationTests.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  },
+  {
+    "id": 2,
+    "result": {
+      "content": [
+        {
+          "text": "{\"filePath\":\"Assets/_Game/Tests/PlayMode/UiIntegrationTests.cs\",\"errors\":[]}",
+          "type": "text"
+        }
+      ],
+      "isError": false
+    },
+    "jsonrpc": "2.0"
+  }
+]

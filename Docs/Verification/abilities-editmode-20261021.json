@@ -1,0 +1,375 @@
+{
+  "generatedAt": "2026-10-21T03:25:26.4879087Z",
+  "runStartedAt": "2026-10-21T03:25:25.0695519Z",
+  "durationSeconds": 0.6542334,
+  "testMode": "EditMode",
+  "totalTests": 40,
+  "passed": 40,
+  "failed": 0,
+  "skipped": 0,
+  "inconclusive": 0,
+  "status": "passed",
+  "failures": [],
+  "tests": [
+    {
+      "name": "AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(0)",
+      "fullName": "Fishing.Tests.AbilityRulesTests.AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(0)",
+      "status": "Passed",
+      "duration": 0.0427131,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(0)\r\n"
+    },
+    {
+      "name": "AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(1)",
+      "fullName": "Fishing.Tests.AbilityRulesTests.AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(1)",
+      "status": "Passed",
+      "duration": 0.0011594,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(1)\r\n"
+    },
+    {
+      "name": "AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(2)",
+      "fullName": "Fishing.Tests.AbilityRulesTests.AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(2)",
+      "status": "Passed",
+      "duration": 0.0021934,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.AllocationPrioritizesBranchesAndIsIndependentOfReportOrder(2)\r\n"
+    },
+    {
+      "name": "BranchesOnlyDeployOnUnpausedAscentAndOnlyConsumeOneUse",
+      "fullName": "Fishing.Tests.AbilityRulesTests.BranchesOnlyDeployOnUnpausedAscentAndOnlyConsumeOneUse",
+      "status": "Passed",
+      "duration": 0.0015122,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.BranchesOnlyDeployOnUnpausedAscentAndOnlyConsumeOneUse\r\n"
+    },
+    {
+      "name": "CancelAndFreshRunResetSlotsAndIgnoreOldRunBranchReports",
+      "fullName": "Fishing.Tests.AbilityRulesTests.CancelAndFreshRunResetSlotsAndIgnoreOldRunBranchReports",
+      "status": "Passed",
+      "duration": 0.0064776,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.CancelAndFreshRunResetSlotsAndIgnoreOldRunBranchReports\r\n"
+    },
+    {
+      "name": "FullFirstBranchFallsBackToSecondThenFullBranchesFallBackToMain",
+      "fullName": "Fishing.Tests.AbilityRulesTests.FullFirstBranchFallsBackToSecondThenFullBranchesFallBackToMain",
+      "status": "Passed",
+      "duration": 0.0029994,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.FullFirstBranchFallsBackToSecondThenFullBranchesFallBackToMain\r\n"
+    },
+    {
+      "name": "FullMainStillAllowsSixBranchFishWithoutOverfillingOrDuplicateCapture",
+      "fullName": "Fishing.Tests.AbilityRulesTests.FullMainStillAllowsSixBranchFishWithoutOverfillingOrDuplicateCapture",
+      "status": "Passed",
+      "duration": 0.0123251,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.FullMainStillAllowsSixBranchFishWithoutOverfillingOrDuplicateCapture\r\n"
+    },
+    {
+      "name": "LargeFishStillTriggersProtectionDuringSonarAndUncoveredSmallFishStillTriggersEarlyAscent",
+      "fullName": "Fishing.Tests.AbilityRulesTests.LargeFishStillTriggersProtectionDuringSonarAndUncoveredSmallFishStillTriggersEarlyAscent",
+      "status": "Passed",
+      "duration": 0.0013356,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.LargeFishStillTriggersProtectionDuringSonarAndUncoveredSmallFishStillTriggersEarlyAscent\r\n"
+    },
+    {
+      "name": "MixedSourcesMergeIntoOneCardWithCorrectCountsAndBothRewards",
+      "fullName": "Fishing.Tests.AbilityRulesTests.MixedSourcesMergeIntoOneCardWithCorrectCountsAndBothRewards",
+      "status": "Passed",
+      "duration": 0.0071773,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.MixedSourcesMergeIntoOneCardWithCorrectCountsAndBothRewards\r\n"
+    },
+    {
+      "name": "OptionalLargeFishRiskPreservesAlreadyCaughtFishAndDefaultsToPassingThrough(False)",
+      "fullName": "Fishing.Tests.AbilityRulesTests.OptionalLargeFishRiskPreservesAlreadyCaughtFishAndDefaultsToPassingThrough(False)",
+      "status": "Passed",
+      "duration": 0.0011234,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.OptionalLargeFishRiskPreservesAlreadyCaughtFishAndDefaultsToPassingThrough(False)\r\n"
+    },
+    {
+      "name": "OptionalLargeFishRiskPreservesAlreadyCaughtFishAndDefaultsToPassingThrough(True)",
+      "fullName": "Fishing.Tests.AbilityRulesTests.OptionalLargeFishRiskPreservesAlreadyCaughtFishAndDefaultsToPassingThrough(True)",
+      "status": "Passed",
+      "duration": 0.0006721,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.OptionalLargeFishRiskPreservesAlreadyCaughtFishAndDefaultsToPassingThrough(True)\r\n"
+    },
+    {
+      "name": "ScaredContactsDoNotSpendProtectionOrCaptureThenRecoveryReadmitsOverlap(0)",
+      "fullName": "Fishing.Tests.AbilityRulesTests.ScaredContactsDoNotSpendProtectionOrCaptureThenRecoveryReadmitsOverlap(0)",
+      "status": "Passed",
+      "duration": 0.0009748,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.ScaredContactsDoNotSpendProtectionOrCaptureThenRecoveryReadmitsOverlap(0)\r\n"
+    },
+    {
+      "name": "ScaredContactsDoNotSpendProtectionOrCaptureThenRecoveryReadmitsOverlap(2)",
+      "fullName": "Fishing.Tests.AbilityRulesTests.ScaredContactsDoNotSpendProtectionOrCaptureThenRecoveryReadmitsOverlap(2)",
+      "status": "Passed",
+      "duration": 0.0003083,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.ScaredContactsDoNotSpendProtectionOrCaptureThenRecoveryReadmitsOverlap(2)\r\n"
+    },
+    {
+      "name": "SonarIsUnavailableDuringCountdownBottomZoneHoldAscentAndAfterCancellation",
+      "fullName": "Fishing.Tests.AbilityRulesTests.SonarIsUnavailableDuringCountdownBottomZoneHoldAscentAndAfterCancellation",
+      "status": "Passed",
+      "duration": 0.0020255,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.SonarIsUnavailableDuringCountdownBottomZoneHoldAscentAndAfterCancellation\r\n"
+    },
+    {
+      "name": "SonarOnlyAcceptsOneQueryWithSmallCatchableInRangeAndUniqueIds",
+      "fullName": "Fishing.Tests.AbilityRulesTests.SonarOnlyAcceptsOneQueryWithSmallCatchableInRangeAndUniqueIds",
+      "status": "Passed",
+      "duration": 0.0037131,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.SonarOnlyAcceptsOneQueryWithSmallCatchableInRangeAndUniqueIds\r\n"
+    },
+    {
+      "name": "SonarUsesCooldownPauseAndRepeatedInputShareTheGameClock",
+      "fullName": "Fishing.Tests.AbilityRulesTests.SonarUsesCooldownPauseAndRepeatedInputShareTheGameClock",
+      "status": "Passed",
+      "duration": 0.0017624,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.SonarUsesCooldownPauseAndRepeatedInputShareTheGameClock\r\n"
+    },
+    {
+      "name": "ZeroCooldownStillDebouncesCommandsAndRejectsOtherRuns",
+      "fullName": "Fishing.Tests.AbilityRulesTests.ZeroCooldownStillDebouncesCommandsAndRejectsOtherRuns",
+      "status": "Passed",
+      "duration": 0.0006879,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.AbilityRulesTests.ZeroCooldownStillDebouncesCommandsAndRejectsOtherRuns\r\n"
+    },
+    {
+      "name": "BottomBoundaryClearsInvulnerabilityAndReadmitsOverlappingFish",
+      "fullName": "Fishing.Tests.CoreRulesTests.BottomBoundaryClearsInvulnerabilityAndReadmitsOverlappingFish",
+      "status": "Passed",
+      "duration": 0.0039354,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.BottomBoundaryClearsInvulnerabilityAndReadmitsOverlappingFish\r\n"
+    },
+    {
+      "name": "BottomFullDoesNotSkipHoldOrAccelerateDescent",
+      "fullName": "Fishing.Tests.CoreRulesTests.BottomFullDoesNotSkipHoldOrAccelerateDescent",
+      "status": "Passed",
+      "duration": 0.0011795,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.BottomFullDoesNotSkipHoldOrAccelerateDescent\r\n"
+    },
+    {
+      "name": "ContactBeginningDuringInvulnerabilityIsNotReplayedLater",
+      "fullName": "Fishing.Tests.CoreRulesTests.ContactBeginningDuringInvulnerabilityIsNotReplayedLater",
+      "status": "Passed",
+      "duration": 0.0006228,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.ContactBeginningDuringInvulnerabilityIsNotReplayedLater\r\n"
+    },
+    {
+      "name": "CoreAssemblyHasNoUnityOrGameReference",
+      "fullName": "Fishing.Tests.CoreRulesTests.CoreAssemblyHasNoUnityOrGameReference",
+      "status": "Passed",
+      "duration": 0.0010969,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.CoreAssemblyHasNoUnityOrGameReference\r\n"
+    },
+    {
+      "name": "DecorativeUnknownAndNotYetEnabledBranchCandidatesAreIgnored",
+      "fullName": "Fishing.Tests.CoreRulesTests.DecorativeUnknownAndNotYetEnabledBranchCandidatesAreIgnored",
+      "status": "Passed",
+      "duration": 0.0005597,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.DecorativeUnknownAndNotYetEnabledBranchCandidatesAreIgnored\r\n"
+    },
+    {
+      "name": "DefaultDescentSlowdownStillReachesBottomInFiniteTime",
+      "fullName": "Fishing.Tests.CoreRulesTests.DefaultDescentSlowdownStillReachesBottomInFiniteTime",
+      "status": "Passed",
+      "duration": 0.0037376,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.DefaultDescentSlowdownStillReachesBottomInFiniteTime\r\n"
+    },
+    {
+      "name": "DepthLimitContactIsResolvedAsBottomBeforeEnteringHold",
+      "fullName": "Fishing.Tests.CoreRulesTests.DepthLimitContactIsResolvedAsBottomBeforeEnteringHold",
+      "status": "Passed",
+      "duration": 0.0005153,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.DepthLimitContactIsResolvedAsBottomBeforeEnteringHold\r\n"
+    },
+    {
+      "name": "DuplicateReportsAndHookReportsCommitOnlyOneRecord",
+      "fullName": "Fishing.Tests.CoreRulesTests.DuplicateReportsAndHookReportsCommitOnlyOneRecord",
+      "status": "Passed",
+      "duration": 0.0008794,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.DuplicateReportsAndHookReportsCommitOnlyOneRecord\r\n"
+    },
+    {
+      "name": "EarlyReturnUsesActualReachedDepthAndCaptureTimeAndSource",
+      "fullName": "Fishing.Tests.CoreRulesTests.EarlyReturnUsesActualReachedDepthAndCaptureTimeAndSource",
+      "status": "Passed",
+      "duration": 0.0008716,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.EarlyReturnUsesActualReachedDepthAndCaptureTimeAndSource\r\n"
+    },
+    {
+      "name": "FinalAscentSweepCapturesBeforeSurfacingAndFinishPublishesOnce",
+      "fullName": "Fishing.Tests.CoreRulesTests.FinalAscentSweepCapturesBeforeSurfacingAndFinishPublishesOnce",
+      "status": "Passed",
+      "duration": 0.0014142,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.FinalAscentSweepCapturesBeforeSurfacingAndFinishPublishesOnce\r\n"
+    },
+    {
+      "name": "FreshRunsNeverReuseCaptureDeduplicationOrRunIdentity",
+      "fullName": "Fishing.Tests.CoreRulesTests.FreshRunsNeverReuseCaptureDeduplicationOrRunIdentity",
+      "status": "Passed",
+      "duration": 0.0026545,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.FreshRunsNeverReuseCaptureDeduplicationOrRunIdentity\r\n"
+    },
+    {
+      "name": "GuardedDiveSpendsOnlyOneChargeForAnEntireBatch",
+      "fullName": "Fishing.Tests.CoreRulesTests.GuardedDiveSpendsOnlyOneChargeForAnEntireBatch",
+      "status": "Passed",
+      "duration": 0.000458,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.GuardedDiveSpendsOnlyOneChargeForAnEntireBatch\r\n"
+    },
+    {
+      "name": "MainCapacityAndFullEventAreBoundedAndOrdered",
+      "fullName": "Fishing.Tests.CoreRulesTests.MainCapacityAndFullEventAreBoundedAndOrdered",
+      "status": "Passed",
+      "duration": 0.0017134,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.MainCapacityAndFullEventAreBoundedAndOrdered\r\n"
+    },
+    {
+      "name": "OldRunAndOldOrFutureStepBatchesAreRejected",
+      "fullName": "Fishing.Tests.CoreRulesTests.OldRunAndOldOrFutureStepBatchesAreRejected",
+      "status": "Passed",
+      "duration": 0.000485,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.OldRunAndOldOrFutureStepBatchesAreRejected\r\n"
+    },
+    {
+      "name": "PauseFreezesTimeDepthProtectionAndContacts(Diving)",
+      "fullName": "Fishing.Tests.CoreRulesTests.PauseFreezesTimeDepthProtectionAndContacts(Diving)",
+      "status": "Passed",
+      "duration": 0.0019646,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.PauseFreezesTimeDepthProtectionAndContacts(Diving)\r\n"
+    },
+    {
+      "name": "PauseFreezesTimeDepthProtectionAndContacts(BottomHold)",
+      "fullName": "Fishing.Tests.CoreRulesTests.PauseFreezesTimeDepthProtectionAndContacts(BottomHold)",
+      "status": "Passed",
+      "duration": 0.0002083,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.PauseFreezesTimeDepthProtectionAndContacts(BottomHold)\r\n"
+    },
+    {
+      "name": "PauseFreezesTimeDepthProtectionAndContacts(Ascending)",
+      "fullName": "Fishing.Tests.CoreRulesTests.PauseFreezesTimeDepthProtectionAndContacts(Ascending)",
+      "status": "Passed",
+      "duration": 0.0002688,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.PauseFreezesTimeDepthProtectionAndContacts(Ascending)\r\n"
+    },
+    {
+      "name": "PersistentOverlapDoesNotSpendAgainAfterInvulnerabilityExpires",
+      "fullName": "Fishing.Tests.CoreRulesTests.PersistentOverlapDoesNotSpendAgainAfterInvulnerabilityExpires",
+      "status": "Passed",
+      "duration": 0.0008236,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.PersistentOverlapDoesNotSpendAgainAfterInvulnerabilityExpires\r\n"
+    },
+    {
+      "name": "ReportPermutationsProduceIdenticalStableCaptureOrder",
+      "fullName": "Fishing.Tests.CoreRulesTests.ReportPermutationsProduceIdenticalStableCaptureOrder",
+      "status": "Passed",
+      "duration": 0.0014308,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.ReportPermutationsProduceIdenticalStableCaptureOrder\r\n"
+    },
+    {
+      "name": "SmallFishUseNormalProtectionRulesBeforeAbilitiesExist",
+      "fullName": "Fishing.Tests.CoreRulesTests.SmallFishUseNormalProtectionRulesBeforeAbilitiesExist",
+      "status": "Passed",
+      "duration": 0.0004604,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.SmallFishUseNormalProtectionRulesBeforeAbilitiesExist\r\n"
+    },
+    {
+      "name": "SourceAggregationMergesRowsAndIncludesBothCurrencies",
+      "fullName": "Fishing.Tests.CoreRulesTests.SourceAggregationMergesRowsAndIncludesBothCurrencies",
+      "status": "Passed",
+      "duration": 0.0014962,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.SourceAggregationMergesRowsAndIncludesBothCurrencies\r\n"
+    },
+    {
+      "name": "SweptShortContactNeedsNoEndOverlapToSpendProtection",
+      "fullName": "Fishing.Tests.CoreRulesTests.SweptShortContactNeedsNoEndOverlapToSpendProtection",
+      "status": "Passed",
+      "duration": 0.0005028,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.SweptShortContactNeedsNoEndOverlapToSpendProtection\r\n"
+    },
+    {
+      "name": "UnprotectedDiveCapturesOnlyNearestFishThenReevaluatesOverlapNextStep",
+      "fullName": "Fishing.Tests.CoreRulesTests.UnprotectedDiveCapturesOnlyNearestFishThenReevaluatesOverlapNextStep",
+      "status": "Passed",
+      "duration": 0.0007228,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.CoreRulesTests.UnprotectedDiveCapturesOnlyNearestFishThenReevaluatesOverlapNextStep\r\n"
+    }
+  ]
+}

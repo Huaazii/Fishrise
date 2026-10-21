@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-10-21T03:33:02.8801475Z",
+  "runStartedAt": "2026-10-21T03:32:34.2859930Z",
+  "durationSeconds": 28.3848816,
+  "testMode": "PlayMode",
+  "totalTests": 31,
+  "passed": 31,
+  "failed": 0,
+  "skipped": 0,
+  "inconclusive": 0,
+  "status": "passed",
+  "failures": [],
+  "tests": [
+    {
+      "name": "BranchesFanOutFollowAndStayInsideTheWaterAtTheHorizontalBoundary",
+      "fullName": "Fishing.Tests.BranchIntegrationTests.BranchesFanOutFollowAndStayInsideTheWaterAtTheHorizontalBoundary",
+      "status": "Passed",
+      "duration": 1.8767692,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.BranchIntegrationTests.BranchesFanOutFollowAndStayInsideTheWaterAtTheHorizontalBoundary\r\n"
+    },
+    {
+      "name": "FullMainSweepsSixSmallFishIntoBranchesAndBuildsRealMixedSourceCards",
+      "fullName": "Fishing.Tests.BranchIntegrationTests.FullMainSweepsSixSmallFishIntoBranchesAndBuildsRealMixedSourceCards",
+      "status": "Passed",
+      "duration": 1.0150974,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.BranchIntegrationTests.FullMainSweepsSixSmallFishIntoBranchesAndBuildsRealMixedSourceCards\r\n"
+    },
+    {
+      "name": "OptionalLargeFishRiskRetractsOnlyThatBranchAndKeepsItsCapturedFish",
+      "fullName": "Fishing.Tests.BranchIntegrationTests.OptionalLargeFishRiskRetractsOnlyThatBranchAndKeepsItsCapturedFish",
+      "status": "Passed",
+      "duration": 0.9862149,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.BranchIntegrationTests.OptionalLargeFishRiskRetractsOnlyThatBranchAndKeepsItsCapturedFish\r\n"
+    },
+    {
+      "name": "SimultaneousMainAndBranchHeadContactGoesToBranchAndLargeFishPassesThrough",
+      "fullName": "Fishing.Tests.BranchIntegrationTests.SimultaneousMainAndBranchHeadContactGoesToBranchAndLargeFishPassesThrough",
+      "status": "Passed",
+      "duration": 0.9084948,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.BranchIntegrationTests.SimultaneousMainAndBranchHeadContactGoesToBranchAndLargeFishPassesThrough\r\n"
+    },
+    {
+      "name": "ThreePortraitRatiosKeepAbilityButtonsInSafeAreaAndOutOfTheCentralDragLane",
+      "fullName": "Fishing.Tests.BranchIntegrationTests.ThreePortraitRatiosKeepAbilityButtonsInSafeAreaAndOutOfTheCentralDragLane",
+      "status": "Passed",
+      "duration": 0.9673065,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.BranchIntegrationTests.ThreePortraitRatiosKeepAbilityButtonsInSafeAreaAndOutOfTheCentralDragLane\r\n"
+    },
+    {
+      "name": "TwentyRestartsReuseTwoBranchViewsAndPauseFreezesHangingFishAndTethers",
+      "fullName": "Fishing.Tests.BranchIntegrationTests.TwentyRestartsReuseTwoBranchViewsAndPauseFreezesHangingFishAndTethers",
+      "status": "Passed",
+      "duration": 1.3762906,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.BranchIntegrationTests.TwentyRestartsReuseTwoBranchViewsAndPauseFreezesHangingFishAndTethers\r\n"
+    },
+    {
+      "name": "CameraMatchesThreePortraitWidthsBlendsDirectionAndReturnsWithoutASurfaceJump",
+      "fullName": "Fishing.Tests.EnvironmentIntegrationTests.CameraMatchesThreePortraitWidthsBlendsDirectionAndReturnsWithoutASurfaceJump",
+      "status": "Passed",
+      "duration": 0.7896481,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.EnvironmentIntegrationTests.CameraMatchesThreePortraitWidthsBlendsDirectionAndReturnsWithoutASurfaceJump\r\n"
+    },
+    {
+      "name": "SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole",
+      "fullName": "Fishing.Tests.EnvironmentIntegrationTests.SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole",
+      "status": "Passed",
+      "duration": 0.7316121,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.EnvironmentIntegrationTests.SavedEnvironmentHasContinuousWallsAlignedPosesAndRopeThroughTheHole\r\n"
+    },
+    {
+      "name": "ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent",
+      "fullName": "Fishing.Tests.GameIntegrationTests.ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent",
+      "status": "Passed",
+      "duration": 0.669457,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.ActualMainHookFullStopsCaptureAndAcceleratesOnlyOnAscent\r\n"
+    },
+    {
+      "name": "CoreArtMixedCatchHangsAtMouthReachesResultAndResetsPooledRotation",
+      "fullName": "Fishing.Tests.GameIntegrationTests.CoreArtMixedCatchHangsAtMouthReachesResultAndResetsPooledRotation",
+      "status": "Passed",
+      "duration": 0.6899504,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.CoreArtMixedCatchHangsAtMouthReachesResultAndResetsPooledRotation\r\n"
+    },
+    {
+      "name": "ImportedBubbleTrailMovesOnGameplayTimeAndFreezesDuringPause",
+      "fullName": "Fishing.Tests.GameIntegrationTests.ImportedBubbleTrailMovesOnGameplayTimeAndFreezesDuringPause",
+      "status": "Passed",
+      "duration": 0.6565708,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.ImportedBubbleTrailMovesOnGameplayTimeAndFreezesDuringPause\r\n"
+    },
+    {
+      "name": "ImportedFishOnlyContactAtTheirHeadsAndMirrorWithFacing",
+      "fullName": "Fishing.Tests.GameIntegrationTests.ImportedFishOnlyContactAtTheirHeadsAndMirrorWithFacing",
+      "status": "Passed",
+      "duration": 0.6986226,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.ImportedFishOnlyContactAtTheirHeadsAndMirrorWithFacing\r\n"
+    },
+    {
+      "name": "MenuStartAndResultExitButtonsLoadTheSavedScenes",
+      "fullName": "Fishing.Tests.GameIntegrationTests.MenuStartAndResultExitButtonsLoadTheSavedScenes",
+      "status": "Passed",
+      "duration": 1.6944557,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.MenuStartAndResultExitButtonsLoadTheSavedScenes\r\n"
+    },
+    {
+      "name": "NormalBottomPathReachesResultAndRestartCreatesFreshState",
+      "fullName": "Fishing.Tests.GameIntegrationTests.NormalBottomPathReachesResultAndRestartCreatesFreshState",
+      "status": "Passed",
+      "duration": 0.6845434,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.NormalBottomPathReachesResultAndRestartCreatesFreshState\r\n"
+    },
+    {
+      "name": "PauseFreezesActualFishAndHookInAllThreePlayableStates",
+      "fullName": "Fishing.Tests.GameIntegrationTests.PauseFreezesActualFishAndHookInAllThreePlayableStates",
+      "status": "Passed",
+      "duration": 0.7132095,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.PauseFreezesActualFishAndHookInAllThreePlayableStates\r\n"
+    },
+    {
+      "name": "RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes",
+      "fullName": "Fishing.Tests.GameIntegrationTests.RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes",
+      "status": "Passed",
+      "duration": 0.7020566,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.RealContinuousOverlapDoesNotRepeatProtectionThenReentryDoes\r\n"
+    },
+    {
+      "name": "SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent",
+      "fullName": "Fishing.Tests.GameIntegrationTests.SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent",
+      "status": "Passed",
+      "duration": 0.7017449,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.SweptFishBetweenEndpointsTriggersUnprotectedEarlyAscent\r\n"
+    },
+    {
+      "name": "TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions",
+      "fullName": "Fishing.Tests.GameIntegrationTests.TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions",
+      "status": "Passed",
+      "duration": 1.3738046,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.GameIntegrationTests.TwentySceneRestartsReuseViewsAndDoNotDuplicateCaptureSubscriptions\r\n"
+    },
+    {
+      "name": "FixedSeedRestartsRepeatSchoolsAndSwimmingNeverClosesPassages",
+      "fullName": "Fishing.Tests.PopulationIntegrationTests.FixedSeedRestartsRepeatSchoolsAndSwimmingNeverClosesPassages",
+      "status": "Passed",
+      "duration": 0.8045512,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.PopulationIntegrationTests.FixedSeedRestartsRepeatSchoolsAndSwimmingNeverClosesPassages\r\n"
+    },
+    {
+      "name": "SavedPopulationHasAPlayableRouteToFullDepthWithoutSpendingProtection",
+      "fullName": "Fishing.Tests.PopulationIntegrationTests.SavedPopulationHasAPlayableRouteToFullDepthWithoutSpendingProtection",
+      "status": "Passed",
+      "duration": 0.8136861,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.PopulationIntegrationTests.SavedPopulationHasAPlayableRouteToFullDepthWithoutSpendingProtection\r\n"
+    },
+    {
+      "name": "SevenSpeciesMatchValuesDepthLimitsAndExactBandCounts",
+      "fullName": "Fishing.Tests.PopulationIntegrationTests.SevenSpeciesMatchValuesDepthLimitsAndExactBandCounts",
+      "status": "Passed",
+      "duration": 0.6083539,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.PopulationIntegrationTests.SevenSpeciesMatchValuesDepthLimitsAndExactBandCounts\r\n"
+    },
+    {
+      "name": "PausingFreezesCooldownEscapeAndWaveAndRejectsActivation",
+      "fullName": "Fishing.Tests.SonarIntegrationTests.PausingFreezesCooldownEscapeAndWaveAndRejectsActivation",
+      "status": "Passed",
+      "duration": 0.7393128,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.SonarIntegrationTests.PausingFreezesCooldownEscapeAndWaveAndRejectsActivation\r\n"
+    },
+    {
+      "name": "RecoveryKeepsDisplacedPositionRestoresHeadAndAllowsAscentCapture",
+      "fullName": "Fishing.Tests.SonarIntegrationTests.RecoveryKeepsDisplacedPositionRestoresHeadAndAllowsAscentCapture",
+      "status": "Passed",
+      "duration": 0.6262988,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.SonarIntegrationTests.RecoveryKeepsDisplacedPositionRestoresHeadAndAllowsAscentCapture\r\n"
+    },
+    {
+      "name": "SonarScaresOnlyInRangeSmallHeadsWhileLargeFishStillSpendsProtection",
+      "fullName": "Fishing.Tests.SonarIntegrationTests.SonarScaresOnlyInRangeSmallHeadsWhileLargeFishStillSpendsProtection",
+      "status": "Passed",
+      "duration": 0.6156344,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.SonarIntegrationTests.SonarScaresOnlyInRangeSmallHeadsWhileLargeFishStillSpendsProtection\r\n"
+    },
+    {
+      "name": "SonarUsesResetWithPooledFishAndButtonLocksAtTheBottomAndOnAscent",
+      "fullName": "Fishing.Tests.SonarIntegrationTests.SonarUsesResetWithPooledFishAndButtonLocksAtTheBottomAndOnAscent",
+      "status": "Passed",
+      "duration": 0.6600553,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.SonarIntegrationTests.SonarUsesResetWithPooledFishAndButtonLocksAtTheBottomAndOnAscent\r\n"
+    },
+    {
+      "name": "ChineseHudTracksProtectionPauseFreezesItsPulseAndRestartResetsTheRun",
+      "fullName": "Fishing.Tests.UiIntegrationTests.ChineseHudTracksProtectionPauseFreezesItsPulseAndRestartResetsTheRun",
+      "status": "Passed",
+      "duration": 0.626865,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.UiIntegrationTests.ChineseHudTracksProtectionPauseFreezesItsPulseAndRestartResetsTheRun\r\n"
+    },
+    {
+      "name": "ClosingFirstTutorialWithCloseButtonStartsTheCountdown",
+      "fullName": "Fishing.Tests.UiIntegrationTests.ClosingFirstTutorialWithCloseButtonStartsTheCountdown",
+      "status": "Passed",
+      "duration": 1.4226321,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.UiIntegrationTests.ClosingFirstTutorialWithCloseButtonStartsTheCountdown\r\n"
+    },
+    {
+      "name": "FirstStartDefersRunUntilTutorialClosesAndManualTeachingReturnsToMenu",
+      "fullName": "Fishing.Tests.UiIntegrationTests.FirstStartDefersRunUntilTutorialClosesAndManualTeachingReturnsToMenu",
+      "status": "Passed",
+      "duration": 1.82134,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.UiIntegrationTests.FirstStartDefersRunUntilTutorialClosesAndManualTeachingReturnsToMenu\r\n"
+    },
+    {
+      "name": "SettlementMergesSourcesUsesSnapshotValuesScrollsSevenSpeciesAndClearsEmptyResults",
+      "fullName": "Fishing.Tests.UiIntegrationTests.SettlementMergesSourcesUsesSnapshotValuesScrollsSevenSpeciesAndClearsEmptyResults",
+      "status": "Passed",
+      "duration": 0.6516243,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.UiIntegrationTests.SettlementMergesSourcesUsesSnapshotValuesScrollsSevenSpeciesAndClearsEmptyResults\r\n"
+    },
+    {
+      "name": "ThreePortraitRatiosPreserveProtectionFullLoadPauseAndRestart",
+      "fullName": "Fishing.Tests.UiIntegrationTests.ThreePortraitRatiosPreserveProtectionFullLoadPauseAndRestart",
+      "status": "Passed",
+      "duration": 0.7338922,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.UiIntegrationTests.ThreePortraitRatiosPreserveProtectionFullLoadPauseAndRestart\r\n"
+    },
+    {
+      "name": "ThreeRealPortraitRatiosAndInsetSafeAreasKeepControlsAndChineseTextVisible",
+      "fullName": "Fishing.Tests.UiIntegrationTests.ThreeRealPortraitRatiosAndInsetSafeAreasKeepControlsAndChineseTextVisible",
+      "status": "Passed",
+      "duration": 0.8629773,
+      "message": null,
+      "stackTrace": null,
+      "output": "[unity-cli-bridge][TestExecutionHandler] Test started: Fishing.Tests.UiIntegrationTests.ThreeRealPortraitRatiosAndInsetSafeAreasKeepControlsAndChineseTextVisible\r\n"
+    }
+  ]
+}

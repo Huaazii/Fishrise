@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-21T02:33:24.1381090Z",
+  "runId": "45d9fb5a-b3ac-4ef3-a067-dcf2f85b47bb",
+  "frame": 52361,
+  "state": "Diving",
+  "paused": true,
+  "time": 3.0190051533281803,
+  "depth": 0.0,
+  "hookX": 0.0,
+  "hookY": 0.0,
+  "fishX": -2.49762249,
+  "fishY": -21.0,
+  "tutorialSeen": 1
+}

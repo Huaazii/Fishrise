@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645ce6e049e183b4ba287886d294ff7c, type: 3}
+  m_Name: Fish_silver
+  m_EditorClassIdentifier: 
+  speciesId: silver
+  displayName: Little silverfish
+  gold: 3
+  shells: 3
+  rarity: 1
+  minDepth: 0
+  maxDepth: 100
+  isSmall: 1
+  isCatchable: 1
+  size: 0.4
+  swimSpeed: 1.2
+  swimSpeedMax: 1.4
+  color: {r: 0, g: 1, b: 1, a: 1}
+  sprite: {fileID: 21300000, guid: 24adc3d296711964d839dfbe7ec3d6e8, type: 3}
+  headPosition: {x: 0.53, y: -0.015}
+  headRadius: 0.12
+  mouthPosition: {x: 0.61, y: -0.02}

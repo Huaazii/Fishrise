@@ -1,0 +1,59 @@
+{
+  "method": "Controlled UI-only fixture: 7 main records plus 1 blue-fish branch record. Branch-hook gameplay is not implemented in this checkpoint.",
+  "realBackendBefore": 10,
+  "realBackendAfter": 10,
+  "fixtureCount": 8,
+  "fixtureGold": 173,
+  "fixtureShells": 128,
+  "rows": [
+    {
+      "species": "eel",
+      "total": 1,
+      "main": 1,
+      "branch": 0,
+      "badge": false
+    },
+    {
+      "species": "yellow",
+      "total": 1,
+      "main": 1,
+      "branch": 0,
+      "badge": false
+    },
+    {
+      "species": "red",
+      "total": 1,
+      "main": 1,
+      "branch": 0,
+      "badge": false
+    },
+    {
+      "species": "blue",
+      "total": 2,
+      "main": 1,
+      "branch": 1,
+      "badge": true
+    },
+    {
+      "species": "puffer",
+      "total": 1,
+      "main": 1,
+      "branch": 0,
+      "badge": false
+    },
+    {
+      "species": "small",
+      "total": 1,
+      "main": 1,
+      "branch": 0,
+      "badge": false
+    },
+    {
+      "species": "silver",
+      "total": 1,
+      "main": 1,
+      "branch": 0,
+      "badge": false
+    }
+  ]
+}

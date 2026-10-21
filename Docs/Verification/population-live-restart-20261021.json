@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-20T18:23:50.1535843Z",
+  "previousRunId": "4fe87e55-64bc-4b83-8886-3e13988f4b68",
+  "runId": "8661a855-b887-477c-9c8f-5a0f51d1fd4a",
+  "state": "Countdown",
+  "protection": 2,
+  "depth": 0.0,
+  "captures": 0,
+  "activeFish": 54,
+  "speciesCounts": {
+    "red": 6,
+    "puffer": 14,
+    "blue": 10,
+    "small": 6,
+    "silver": 15,
+    "yellow": 2,
+    "eel": 1
+  },
+  "hangingFish": 0,
+  "environments": 1
+}

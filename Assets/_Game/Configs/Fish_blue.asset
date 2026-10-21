@@ -16,10 +16,14 @@ MonoBehaviour:
   displayName: Bluefish
   gold: 10
   shells: 10
+  rarity: 1
+  minDepth: 0
+  maxDepth: 100
   isSmall: 0
   isCatchable: 1
   size: 1
   swimSpeed: 0.45
+  swimSpeedMax: 0.55
   color: {r: 0.2, g: 0.8, b: 1, a: 1}
   sprite: {fileID: 21300000, guid: 565304969abe94544814a920c15c2207, type: 3}
   headPosition: {x: 0.52, y: -0.025}

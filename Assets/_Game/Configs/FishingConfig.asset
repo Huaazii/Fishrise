@@ -20,7 +20,7 @@ MonoBehaviour:
   fullMultiplier: 5
   bottomHoldSeconds: 1.2
   countdownSeconds: 3
-  surfacingSeconds: 0.6
+  surfacingSeconds: 2.3
   mainCapacity: 10
   protectionCharges: 2
   invulnerabilitySeconds: 1
@@ -29,4 +29,90 @@ MonoBehaviour:
   horizontalSpeed: 13.5
   followTouchPoint: 0
   randomSeed: 2718
-  fishCount: 54
+  passageWidthMultiplier: 2.5
+  depthBands:
+  - minDepth: 0
+    maxDepth: 25
+    rows: 5
+    population:
+    - fish: {fileID: 11400000, guid: 833622f8e4a7d3549af517f2ab154b9e, type: 2}
+      count: 4
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 105794526e8ebdd4a8a190fc0939a1d4, type: 2}
+      count: 2
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 47560d2f43367ff4182e73c5b752dffc, type: 2}
+      count: 1
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: c899188f348edfe4ab98b35e29546d0f, type: 2}
+      count: 1
+      schoolSize: 3
+    - fish: {fileID: 11400000, guid: f9a4bdf1cf1bd5d4eb7e99bf66923e88, type: 2}
+      count: 4
+      schoolSize: 3
+  - minDepth: 25
+    maxDepth: 50
+    rows: 6
+    population:
+    - fish: {fileID: 11400000, guid: 833622f8e4a7d3549af517f2ab154b9e, type: 2}
+      count: 4
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 105794526e8ebdd4a8a190fc0939a1d4, type: 2}
+      count: 3
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 47560d2f43367ff4182e73c5b752dffc, type: 2}
+      count: 2
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: c899188f348edfe4ab98b35e29546d0f, type: 2}
+      count: 1
+      schoolSize: 3
+    - fish: {fileID: 11400000, guid: f9a4bdf1cf1bd5d4eb7e99bf66923e88, type: 2}
+      count: 3
+      schoolSize: 3
+  - minDepth: 50
+    maxDepth: 75
+    rows: 6
+    population:
+    - fish: {fileID: 11400000, guid: 833622f8e4a7d3549af517f2ab154b9e, type: 2}
+      count: 3
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 105794526e8ebdd4a8a190fc0939a1d4, type: 2}
+      count: 3
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 47560d2f43367ff4182e73c5b752dffc, type: 2}
+      count: 2
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: c899188f348edfe4ab98b35e29546d0f, type: 2}
+      count: 2
+      schoolSize: 3
+    - fish: {fileID: 11400000, guid: f9a4bdf1cf1bd5d4eb7e99bf66923e88, type: 2}
+      count: 3
+      schoolSize: 3
+    - fish: {fileID: 11400000, guid: 9e6757bda52d20a468ed39075a9b0708, type: 2}
+      count: 1
+      schoolSize: 1
+  - minDepth: 75
+    maxDepth: 100
+    rows: 6
+    population:
+    - fish: {fileID: 11400000, guid: 833622f8e4a7d3549af517f2ab154b9e, type: 2}
+      count: 3
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 105794526e8ebdd4a8a190fc0939a1d4, type: 2}
+      count: 2
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 47560d2f43367ff4182e73c5b752dffc, type: 2}
+      count: 1
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: c899188f348edfe4ab98b35e29546d0f, type: 2}
+      count: 2
+      schoolSize: 3
+    - fish: {fileID: 11400000, guid: f9a4bdf1cf1bd5d4eb7e99bf66923e88, type: 2}
+      count: 5
+      schoolSize: 3
+    - fish: {fileID: 11400000, guid: 9e6757bda52d20a468ed39075a9b0708, type: 2}
+      count: 1
+      schoolSize: 1
+    - fish: {fileID: 11400000, guid: 8e6463307cf7a584a989c109fdb213a1, type: 2}
+      count: 1
+      schoolSize: 1

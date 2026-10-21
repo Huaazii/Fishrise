@@ -16,9 +16,13 @@ namespace Fishing.Tests
         private GameBootstrap _game;
         private FishDefinition _species;
         private readonly List<FishDefinition> _definitions = new List<FishDefinition>();
+        private bool _hadTutorialPreference;
+        private int _tutorialPreference;
         [UnitySetUp]
         public IEnumerator LoadSavedMainScene()
         {
+            _hadTutorialPreference = PlayerPrefs.HasKey(GameUi.TutorialPreferenceKey);
+            _tutorialPreference = PlayerPrefs.GetInt(GameUi.TutorialPreferenceKey);
             SceneManager.LoadScene("Main"); yield return null; yield return null;
             _game = Object.FindObjectOfType<GameBootstrap>();
             Assert.That(_game, Is.Not.Null); Assert.That(_game.HasBindings, Is.True);
@@ -32,6 +36,9 @@ namespace Fishing.Tests
         public IEnumerator LeaveScene()
         {
             SceneManager.LoadScene("Menu"); yield return null; yield return null;
+            if (_hadTutorialPreference) PlayerPrefs.SetInt(GameUi.TutorialPreferenceKey, _tutorialPreference);
+            else PlayerPrefs.DeleteKey(GameUi.TutorialPreferenceKey);
+            PlayerPrefs.Save();
             LogAssert.NoUnexpectedReceived();
         }
         private void Until(RunState state)
@@ -152,6 +159,9 @@ namespace Fishing.Tests
             SceneManager.LoadScene("Menu"); yield return null; yield return null;
             Assert.That(Object.FindObjectOfType<GameBootstrap>().Run, Is.Null);
             GameObject.Find("Start dive").GetComponent<Button>().onClick.Invoke(); yield return null; yield return null;
+            var menu = Object.FindObjectOfType<GameBootstrap>();
+            if (menu.Ui.IsTutorialOpen)
+            { GameObject.Find("Tutorial close").GetComponent<Button>().onClick.Invoke(); yield return null; yield return null; }
             var main = Object.FindObjectOfType<GameBootstrap>(); Assert.That(main.Run.State, Is.EqualTo(RunState.Countdown));
             main.enabled = false; main.Spawner.Clear(); _game = main; Until(RunState.Result);
             GameObject.Find("Back to menu").GetComponent<Button>().onClick.Invoke(); yield return null; yield return null;
@@ -161,13 +171,13 @@ namespace Fishing.Tests
         [UnityTest]
         public IEnumerator ImportedFishOnlyContactAtTheirHeadsAndMirrorWithFacing()
         {
-            Assert.That(_definitions.Count, Is.EqualTo(4));
+            Assert.That(_definitions.Count, Is.EqualTo(7));
             foreach (var definition in _definitions) foreach (float direction in new[] { -1f, 1f })
             {
                 _game.BeginRun(); _game.Spawner.Clear(); Until(RunState.Diving);
                 var fish = _game.Spawner.SpawnOne(definition, Vector2.zero, direction, 4.5f);
                 var body = fish.transform.Find("Body").GetComponent<SpriteRenderer>();
-                Assert.That(body.sprite.name, Does.StartWith("A0"));
+                Assert.That(body.sprite, Is.SameAs(definition.sprite));
                 Assert.That(body.sprite.bounds.size.x, Is.EqualTo(1.25f).Within(.001));
                 Assert.That(fish.transform.Find("Tail").GetComponent<SpriteRenderer>().enabled, Is.False);
                 Assert.That(fish.Head.transform.position.x - fish.transform.position.x,
@@ -195,12 +205,12 @@ namespace Fishing.Tests
                 AlignHead(fish, _game.Hook.transform.position);
             }
             _game.AdvanceGameplay(.02f);
-            Assert.That(_game.Run.MainCaptureCount, Is.EqualTo(4));
+            Assert.That(_game.Run.MainCaptureCount, Is.EqualTo(7));
             var lamp = _game.Hook.transform.Find("Lamp").GetComponent<SpriteRenderer>();
             Assert.That(lamp.color.g, Is.GreaterThan(lamp.color.r));
             Assert.That(_game.Hook.transform.Find("Protection").GetComponent<SpriteRenderer>().enabled, Is.False);
             var caught = _game.Hook.GetComponentsInChildren<FishActor>();
-            Assert.That(caught.Length, Is.EqualTo(4));
+            Assert.That(caught.Length, Is.EqualTo(7));
             foreach (var fish in caught)
             {
                 Assert.That(fish.Head.enabled, Is.False);
@@ -213,8 +223,9 @@ namespace Fishing.Tests
             Until(RunState.Ascending);
             Assert.That(lamp.color.r, Is.GreaterThan(.9f)); Assert.That(lamp.color.g, Is.GreaterThan(.7f));
             Until(RunState.Result);
-            Assert.That(_game.Run.MainCaptureCount, Is.EqualTo(4));
-            Assert.That(_game.Run.Gold, Is.EqualTo(40));
+            Assert.That(_game.Run.MainCaptureCount, Is.EqualTo(7));
+            Assert.That(_game.Run.Gold, Is.EqualTo(163));
+            Assert.That(_game.Run.Shells, Is.EqualTo(118));
             _game.BeginRun();
             Assert.That(_game.Hook.GetComponentsInChildren<FishActor>().Length, Is.Zero);
             foreach (var fish in _game.Spawner.Spawned)

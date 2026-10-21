@@ -16,10 +16,14 @@ MonoBehaviour:
   displayName: Redfish
   gold: 15
   shells: 10
+  rarity: 2
+  minDepth: 20
+  maxDepth: 100
   isSmall: 0
   isCatchable: 1
   size: 0.85
   swimSpeed: 0.75
+  swimSpeedMax: 0.9
   color: {r: 1, g: 0.4, b: 0.3, a: 1}
   sprite: {fileID: 21300000, guid: 3a78f86ae2513ea469888969ea809d25, type: 3}
   headPosition: {x: 0.55, y: 0.015}

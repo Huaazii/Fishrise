@@ -1,0 +1,14 @@
+{
+  "method": "Normal runtime frames, paused through the actual pause button callback while sonar and scared fish were active.",
+  "frozen": true,
+  "frameBefore": 2508,
+  "frameAfter": 2906,
+  "timeBefore": 6.0791574418544769,
+  "timeAfter": 6.0791574418544769,
+  "cooldownBefore": 3.8,
+  "cooldownAfter": 3.8,
+  "trackedFish": 2,
+  "waveActive": true,
+  "scaredFish": 2,
+  "realPauseSeconds": 1.2524101000017254
+}

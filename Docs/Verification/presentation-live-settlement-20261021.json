@@ -1,0 +1,247 @@
+{
+  "runId": "70195509-e036-4cc3-bf9a-37901350f2ff",
+  "records": [
+    {
+      "SpeciesId": "silver",
+      "FishInstanceId": 104,
+      "Source": 1,
+      "HookId": 2,
+      "Depth": 96.36008,
+      "GameTime": 22.781129322946072,
+      "Gold": 3,
+      "Shells": 3
+    },
+    {
+      "SpeciesId": "silver",
+      "FishInstanceId": 106,
+      "Source": 1,
+      "HookId": 2,
+      "Depth": 92.98015,
+      "GameTime": 23.301129311323166,
+      "Gold": 3,
+      "Shells": 3
+    },
+    {
+      "SpeciesId": "eel",
+      "FishInstanceId": 94,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 86.4802856,
+      "GameTime": 24.301129288971424,
+      "Gold": 80,
+      "Shells": 50
+    },
+    {
+      "SpeciesId": "small",
+      "FishInstanceId": 101,
+      "Source": 1,
+      "HookId": 1,
+      "Depth": 83.10036,
+      "GameTime": 24.821129277348518,
+      "Gold": 5,
+      "Shells": 5
+    },
+    {
+      "SpeciesId": "yellow",
+      "FishInstanceId": 108,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 79.59043,
+      "GameTime": 25.361129265278578,
+      "Gold": 40,
+      "Shells": 30
+    },
+    {
+      "SpeciesId": "silver",
+      "FishInstanceId": 92,
+      "Source": 1,
+      "HookId": 2,
+      "Depth": 71.4006042,
+      "GameTime": 26.621129237115383,
+      "Gold": 3,
+      "Shells": 3
+    },
+    {
+      "SpeciesId": "small",
+      "FishInstanceId": 89,
+      "Source": 1,
+      "HookId": 1,
+      "Depth": 68.0206757,
+      "GameTime": 27.141129225492477,
+      "Gold": 5,
+      "Shells": 5
+    },
+    {
+      "SpeciesId": "small",
+      "FishInstanceId": 90,
+      "Source": 1,
+      "HookId": 1,
+      "Depth": 68.0206757,
+      "GameTime": 27.141129225492477,
+      "Gold": 5,
+      "Shells": 5
+    },
+    {
+      "SpeciesId": "yellow",
+      "FishInstanceId": 80,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 61.6507378,
+      "GameTime": 28.12112920358777,
+      "Gold": 40,
+      "Shells": 30
+    },
+    {
+      "SpeciesId": "blue",
+      "FishInstanceId": 84,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 58.27071,
+      "GameTime": 28.641129191964865,
+      "Gold": 10,
+      "Shells": 10
+    },
+    {
+      "SpeciesId": "red",
+      "FishInstanceId": 88,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 54.8906822,
+      "GameTime": 29.161129180341959,
+      "Gold": 15,
+      "Shells": 10
+    },
+    {
+      "SpeciesId": "blue",
+      "FishInstanceId": 72,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 46.7006149,
+      "GameTime": 30.421129152178764,
+      "Gold": 10,
+      "Shells": 10
+    },
+    {
+      "SpeciesId": "red",
+      "FishInstanceId": 74,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 43.1905861,
+      "GameTime": 30.961129140108824,
+      "Gold": 15,
+      "Shells": 10
+    },
+    {
+      "SpeciesId": "puffer",
+      "FishInstanceId": 70,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 39.94056,
+      "GameTime": 31.461129128932953,
+      "Gold": 10,
+      "Shells": 10
+    },
+    {
+      "SpeciesId": "silver",
+      "FishInstanceId": 78,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 36.56053,
+      "GameTime": 31.981129117310047,
+      "Gold": 3,
+      "Shells": 3
+    },
+    {
+      "SpeciesId": "silver",
+      "FishInstanceId": 77,
+      "Source": 0,
+      "HookId": 0,
+      "Depth": 36.30053,
+      "GameTime": 32.021129116415977,
+      "Gold": 3,
+      "Shells": 3
+    }
+  ],
+  "rows": [
+    {
+      "SpeciesId": "eel",
+      "MainCount": 1,
+      "BranchCount": 0,
+      "TotalCount": 1,
+      "Gold": 80,
+      "Shells": 50,
+      "HasBranch": false
+    },
+    {
+      "SpeciesId": "yellow",
+      "MainCount": 2,
+      "BranchCount": 0,
+      "TotalCount": 2,
+      "Gold": 80,
+      "Shells": 60,
+      "HasBranch": false
+    },
+    {
+      "SpeciesId": "red",
+      "MainCount": 2,
+      "BranchCount": 0,
+      "TotalCount": 2,
+      "Gold": 30,
+      "Shells": 20,
+      "HasBranch": false
+    },
+    {
+      "SpeciesId": "blue",
+      "MainCount": 2,
+      "BranchCount": 0,
+      "TotalCount": 2,
+      "Gold": 20,
+      "Shells": 20,
+      "HasBranch": false
+    },
+    {
+      "SpeciesId": "puffer",
+      "MainCount": 1,
+      "BranchCount": 0,
+      "TotalCount": 1,
+      "Gold": 10,
+      "Shells": 10,
+      "HasBranch": false
+    },
+    {
+      "SpeciesId": "small",
+      "MainCount": 0,
+      "BranchCount": 3,
+      "TotalCount": 3,
+      "Gold": 15,
+      "Shells": 15,
+      "HasBranch": true
+    },
+    {
+      "SpeciesId": "silver",
+      "MainCount": 2,
+      "BranchCount": 3,
+      "TotalCount": 5,
+      "Gold": 15,
+      "Shells": 15,
+      "HasBranch": true
+    }
+  ],
+  "total": 16,
+  "gold": 250,
+  "shells": 190,
+  "planned": 16,
+  "launched": 16,
+  "elapsed": 2.3199985,
+  "active": 0,
+  "cues": {
+    "Dive": 1,
+    "Protection": 0,
+    "Capture": 16,
+    "Full": 1,
+    "Surface": 1,
+    "Result": 1,
+    "Sonar": 2,
+    "Branches": 1
+  }
+}

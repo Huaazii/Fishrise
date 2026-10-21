@@ -11,10 +11,14 @@ namespace Fishing.Game
         public string displayName = "Bluefish";
         [Min(0)] public int gold = 10;
         [Min(0)] public int shells = 10;
+        [Range(1, 5)] public int rarity = 1;
+        [Min(0)] public float minDepth;
+        [Min(0)] public float maxDepth = 100;
         public bool isSmall;
         public bool isCatchable = true;
         [Min(.1f)] public float size = 1;
         [Min(0)] public float swimSpeed = .5f;
+        [Min(0)] public float swimSpeedMax = .5f;
         public Color color = Color.cyan;
         public Sprite sprite;
         public Vector2 headPosition = new Vector2(.38f, 0);

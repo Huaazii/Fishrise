@@ -9,7 +9,9 @@ namespace Fishing.Editor
     {
         /// <summary>Selects a true 450x800 Game View so screenshots do not stretch a landscape render.</summary>
         [MenuItem("Fishing/Portrait Game View")]
-        public static string Portrait()
+        public static string Portrait() => Resolution(450, 800);
+        /// <summary>Selects an actual fixed-resolution Game View for portrait layout acceptance.</summary>
+        public static string Resolution(int targetWidth, int targetHeight)
         {
             const BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static;
             var assembly = typeof(EditorWindow).Assembly;
@@ -27,20 +29,20 @@ namespace Fishing.Editor
                 var size = groupClass.GetMethod("GetGameViewSize", flags).Invoke(group, new object[] { i });
                 int width = (int)sizeClass.GetProperty("width", flags).GetValue(size);
                 int height = (int)sizeClass.GetProperty("height", flags).GetValue(size);
-                if (width == 450 && height == 800) { selected = i; break; }
+                if (width == targetWidth && height == targetHeight) { selected = i; break; }
             }
             if (selected < 0)
             {
                 var kind = assembly.GetType("UnityEditor.GameViewSizeType");
                 var constructor = sizeClass.GetConstructor(flags, null, new[] { kind, typeof(int), typeof(int), typeof(string) }, null);
-                var size = constructor.Invoke(new[] { Enum.Parse(kind, "FixedResolution"), (object)450, 800, "Fishing 450x800" });
+                var size = constructor.Invoke(new[] { Enum.Parse(kind, "FixedResolution"), (object)targetWidth, targetHeight, "Fishing " + targetWidth + "x" + targetHeight });
                 groupClass.GetMethod("AddCustomSize", flags).Invoke(group, new[] { size }); selected = count;
             }
             var viewType = assembly.GetType("UnityEditor.GameView");
             var view = EditorWindow.GetWindow(viewType);
             viewType.GetProperty("selectedSizeIndex", flags).SetValue(view, selected);
             view.Focus(); view.Repaint();
-            return "Game View: 450x800, group " + groupType;
+            return "Game View: " + targetWidth + "x" + targetHeight + ", group " + groupType;
         }
     }
 }

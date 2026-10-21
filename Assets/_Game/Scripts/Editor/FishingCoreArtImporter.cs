@@ -80,7 +80,16 @@ namespace Fishing.Editor
                 importer.maxTextureSize = 2048; importer.wrapMode = TextureWrapMode.Clamp; importer.filterMode = FilterMode.Bilinear;
                 importer.textureCompression = TextureImporterCompression.Uncompressed; importer.isReadable = false;
                 importer.SaveAndReimport();
-                return AssetDatabase.LoadAssetAtPath<Sprite>(path);
+                var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+                float importedSize = fitHeight ? sprite.bounds.size.y : sprite.bounds.size.x;
+                // Platform downscaling can round width and height differently; use the resulting sprite size.
+                if (Mathf.Abs(importedSize - worldSize) > .0001f)
+                {
+                    importer.spritePixelsPerUnit *= importedSize / worldSize;
+                    importer.SaveAndReimport();
+                    sprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+                }
+                return sprite;
             }
             finally
             { UnityEngine.Object.DestroyImmediate(input); if (cropped != null) UnityEngine.Object.DestroyImmediate(cropped); }

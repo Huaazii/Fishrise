@@ -1,0 +1,7 @@
+{
+  "message": "Bound sonar/branch snapshots, small-fish and branch layers, and both existing scenes.",
+  "smallLayer": 8,
+  "branchLayer": 9,
+  "branchMask": 256,
+  "expectedMask": 256
+}

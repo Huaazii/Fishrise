@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-21",
+  "project": "FishingCasualGame",
+  "editorPid": 180676,
+  "endpoint": "127.0.0.1:6400",
+  "observedFailure": "After script compilation, the bridge could not replace its per-Editor discovery file. Editor.log reported Failed to write Editor lockfile; subsequent CLI requests returned UNAUTHORIZED.",
+  "recovery": "Archived only this Editor PID's stale discovery file in the local discovery directory, then invoked Tools/Unity CLI/Restart Bridge in the verified FishingCasualGame Unity window.",
+  "scope": "No package code, authentication setting or Windows permission change.",
+  "verifiedAfterRecovery": {
+    "projectConfirmed": true,
+    "unityVersion": "2022.3.52f1",
+    "finalPlayModePassed": 21,
+    "finalPlayModeFailed": 0,
+    "normalFrameRunCompleted": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "files": 15,
+  "allUnchanged": true,
+  "hashes": [
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\BranchHookConfig.asset",
+      "before": "074556ECF225D7BF106BA7800B68BD15F0DE8E5AD6ABB01A520478A5B1756668",
+      "after": "074556ECF225D7BF106BA7800B68BD15F0DE8E5AD6ABB01A520478A5B1756668",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\Fish_blue.asset",
+      "before": "46144080F34572D8530FE1413D1F44531C78A7027BD72CB4CC2172E6EF41A8F8",
+      "after": "46144080F34572D8530FE1413D1F44531C78A7027BD72CB4CC2172E6EF41A8F8",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\Fish_eel.asset",
+      "before": "9F27D97466F20EA3F47DEF5B5178022001680959E528B6771F9D6CFED947E30B",
+      "after": "9F27D97466F20EA3F47DEF5B5178022001680959E528B6771F9D6CFED947E30B",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\Fish_puffer.asset",
+      "before": "AD57D3DE2F8854A43B2FE8F2A1C46F68C6A1E07CE710A77EDDD6BF5153C9F4B3",
+      "after": "AD57D3DE2F8854A43B2FE8F2A1C46F68C6A1E07CE710A77EDDD6BF5153C9F4B3",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\Fish_red.asset",
+      "before": "E18542098D22B0DEB0DFCC1F7E7CF513085C5E5187DD74D8877CF3CF9ECF06F6",
+      "after": "E18542098D22B0DEB0DFCC1F7E7CF513085C5E5187DD74D8877CF3CF9ECF06F6",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\Fish_silver.asset",
+      "before": "DDCC91F8F8CD8592532F88F3B2D873A86165654ED8681D5DB7BDA48D87F63FCA",
+      "after": "DDCC91F8F8CD8592532F88F3B2D873A86165654ED8681D5DB7BDA48D87F63FCA",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\Fish_small.asset",
+      "before": "589E9C828E956070C0F2EC0CCB7DA977498945661488DAFBCBD82208300B2403",
+      "after": "589E9C828E956070C0F2EC0CCB7DA977498945661488DAFBCBD82208300B2403",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\Fish_yellow.asset",
+      "before": "96595E80D1176E413F773FC6CABF6E48A54B48C449771FF5E4CB5FA3F807F135",
+      "after": "96595E80D1176E413F773FC6CABF6E48A54B48C449771FF5E4CB5FA3F807F135",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\FishingConfig.asset",
+      "before": "4513275CB2DF26BC6E68BDED6144E76CFCA9A0FFDAB755F0C2D5C6214EE43D73",
+      "after": "4513275CB2DF26BC6E68BDED6144E76CFCA9A0FFDAB755F0C2D5C6214EE43D73",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\GameUiAssets.asset",
+      "before": "A6F9216E2C89DCDE647A0536EE5A1F390FAC09A4E7EFBE99DB191995FA4F2351",
+      "after": "A6F9216E2C89DCDE647A0536EE5A1F390FAC09A4E7EFBE99DB191995FA4F2351",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\SonarConfig.asset",
+      "before": "69103D22DBF1EC188EC254AB99D39DD4104F516C2FD6D2B9252B295D5875F529",
+      "after": "69103D22DBF1EC188EC254AB99D39DD4104F516C2FD6D2B9252B295D5875F529",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Scenes\\Main.unity",
+      "before": "CB4F44E1BD11AE5F67D2D3DAF1B1120947C08BF359011D52EE5FB59A4962DCB6",
+      "after": "CB4F44E1BD11AE5F67D2D3DAF1B1120947C08BF359011D52EE5FB59A4962DCB6",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Scenes\\Menu.unity",
+      "before": "2DE91A0F08B05DF958E66547F0D9BD10696BB6D14090A11179E4760E19DCC41B",
+      "after": "2DE91A0F08B05DF958E66547F0D9BD10696BB6D14090A11179E4760E19DCC41B",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\ProjectSettings\\TagManager.asset",
+      "before": "4291DD15C1CE2FD05D629EB9DB298B858C63FEBAAE342339F87943EE8A85F2B8",
+      "after": "4291DD15C1CE2FD05D629EB9DB298B858C63FEBAAE342339F87943EE8A85F2B8",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\ProjectSettings\\Physics2DSettings.asset",
+      "before": "0BCD0A613983A4CC3001498EA7F95C590B1C788C3B15F60A5C8763A150B1449E",
+      "after": "0BCD0A613983A4CC3001498EA7F95C590B1C788C3B15F60A5C8763A150B1449E",
+      "unchanged": true
+    }
+  ]
+}

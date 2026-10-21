@@ -58,6 +58,9 @@ namespace Fishing.Core
         public bool HasCaptured(int id) => _capturedIds.Contains(id);
         private int Count(CaptureSource source)
         { int count = 0; foreach (var r in _captures) if (r.Source == source) count++; return count; }
+        /// <summary>Counts records assigned to one concrete hook, without a second capacity counter.</summary>
+        public int CountForHook(int hookId)
+        { int count = 0; foreach (var r in _captures) if (r.HookId == hookId) count++; return count; }
         internal void SetDepth(float depth)
         {
             if (Depth == depth) return;

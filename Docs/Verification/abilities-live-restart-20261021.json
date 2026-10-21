@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-21T03:46:29.6805719Z",
+  "oldRun": "e5bd8fe3-4f5e-41c9-a24c-7e177cffabf8",
+  "oldCaptures": 16,
+  "newRun": "6b265499-4f2b-4e4d-a5dd-cfb9e75093f9",
+  "state": "Countdown",
+  "protection": 2,
+  "depth": 0.0,
+  "captures": 0,
+  "fish": 54,
+  "sonarUses": 2,
+  "sonarCooldown": 0.0,
+  "branchUses": 1,
+  "branchesDeployed": false,
+  "activeBranchViews": 0,
+  "pooledBranchViews": 2,
+  "hangingBranchFish": 0,
+  "scaredFish": 0,
+  "waveActive": false
+}

@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-21T02:51:10.0656464Z",
+  "oldRun": "9c73eb11-3f9c-4d09-b77a-91726a3d20c2",
+  "oldCaptures": 10,
+  "newRun": "f1895053-233e-4256-a9de-a96bbbd2d487",
+  "state": "Countdown",
+  "protection": 2,
+  "captures": 0,
+  "depth": 0.0,
+  "hanging": 0,
+  "activeFish": 54,
+  "species": 7,
+  "environments": 1,
+  "uiCanvases": 1
+}

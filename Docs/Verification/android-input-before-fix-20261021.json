@@ -1,0 +1,9 @@
+{
+  "result": "Succeeded",
+  "errors": 0,
+  "warnings": 1,
+  "messages": [
+    "PlayerSettings->Active Input Handling is set to Both, this is unsupported on Android and might cause issues with input and application performance. Please choose only one active input handling."
+  ],
+  "activeInputHandler": 2
+}

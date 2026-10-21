@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-21T07:33:00.1132341Z",
+  "command": "adb devices -l",
+  "output": "List of devices attached\n",
+  "connectedDevices": 0,
+  "installation": "not attempted",
+  "devicePerformance": "not measured"
+}

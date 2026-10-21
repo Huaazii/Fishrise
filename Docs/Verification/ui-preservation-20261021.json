@@ -1,0 +1,188 @@
+{
+  "sourceCount": 45,
+  "allSourceHashesUnchanged": true,
+  "trackedMetaChanges": [],
+  "preexistingCameraBlockPreserved": true,
+  "sources": [
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A01_Fish_Puffer.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A02_Fish_Striped.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A03_Fish_Red.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A04_Fish_SmallSilver.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A05_Fish_Yellow.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A06_Fish_RibbonEel.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A07_Creature_DeepRed.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A08_Starfish.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A09_Background_LargeFish.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\A10_Background_Shoal.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B01_Fisherman_Idle.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B02_Fisherman_Pull.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B03_FishingRod.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B04_Hook_Main.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B05_Bubble_Shield.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B06_Bubble_Small.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B07_Ice_Surface_Left.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B08_Ice_Surface_Right.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B09_Ice_Wall_Left.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B10_Ice_Wall_Right.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B11_Mountains_Background.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B12_Clouds_Overcast.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B13_Weather_Pole.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B14_Anemometer.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B15_Windsock.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B16_Lantern.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B17_Barrel_Snow.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\B18_Wooden_Stand.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C01_Icon_Coin.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C02_Icon_Shell.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C03_Icon_Star.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C04_Icon_Protection.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C05_Icon_Catch.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C06_Icon_Depth.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C07_Result_Rod.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C08_Tutorial_Frame.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C09_Tutorial_Coral.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C10_Tutorial_Fish_Blue.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C11_Tutorial_Fish_Purple.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C12_Tutorial_Fish_Silver.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C13_Tutorial_Fish_Spotted.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C14_Tutorial_Conch_Orange.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C15_Tutorial_Conch_Grey.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C16_Tutorial_Rocks.png",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\Arts\\C17_Tutorial_Barrel.png",
+      "unchanged": true
+    }
+  ]
+}

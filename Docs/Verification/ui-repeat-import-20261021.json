@@ -1,0 +1,258 @@
+{
+  "count": 42,
+  "allUnchanged": true,
+  "files": [
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C01_Icon_Coin.png",
+      "before": "3A53F39A87532904CC7AA0F95929F625F65C0B76136422CFD474D2E52E69062C",
+      "after": "3A53F39A87532904CC7AA0F95929F625F65C0B76136422CFD474D2E52E69062C",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C01_Icon_Coin.png.meta",
+      "before": "AFDB3727661D14D030FB5184BDADFF9CF82BA9B2AFA12A436B264F0538D32466",
+      "after": "AFDB3727661D14D030FB5184BDADFF9CF82BA9B2AFA12A436B264F0538D32466",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C02_Icon_Shell.png",
+      "before": "A0F5567BB863C06C4E2D08BDF680BB012E273CA191FFB86B09809DCDCF544D7A",
+      "after": "A0F5567BB863C06C4E2D08BDF680BB012E273CA191FFB86B09809DCDCF544D7A",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C02_Icon_Shell.png.meta",
+      "before": "11AB6C5BFD00182B463E80AB418B96F38164436C2D5FCE92DDDD6F8D08C65D5B",
+      "after": "11AB6C5BFD00182B463E80AB418B96F38164436C2D5FCE92DDDD6F8D08C65D5B",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C03_Icon_Star.png",
+      "before": "C3F767002DEC1667565AEF0B391F99CC5828F8A750537458CB83CA7A5CB8D526",
+      "after": "C3F767002DEC1667565AEF0B391F99CC5828F8A750537458CB83CA7A5CB8D526",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C03_Icon_Star.png.meta",
+      "before": "0BB93F38C847FF986ADAB318A9B327AD173F56D55F3C7DF1D51CECEEF91174E6",
+      "after": "0BB93F38C847FF986ADAB318A9B327AD173F56D55F3C7DF1D51CECEEF91174E6",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C04_Icon_Protection.png",
+      "before": "DA47E0D5273474C5E166526A2A09B1E9E19A6E9C82535864217667176D0CE82C",
+      "after": "DA47E0D5273474C5E166526A2A09B1E9E19A6E9C82535864217667176D0CE82C",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C04_Icon_Protection.png.meta",
+      "before": "9A57D84E40BF551EC407F23395D6F7B601A01744A6935F65272CFDB3C842FE62",
+      "after": "9A57D84E40BF551EC407F23395D6F7B601A01744A6935F65272CFDB3C842FE62",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C06_Icon_Depth.png",
+      "before": "3440907EE53613A05147797888F74FE3DA8B3735C98D22BED261181A89CC3CB8",
+      "after": "3440907EE53613A05147797888F74FE3DA8B3735C98D22BED261181A89CC3CB8",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C06_Icon_Depth.png.meta",
+      "before": "DE575DDD5D673A64D064782BFA5D699DB26BC39D28331FB44CDD1F3A16D3C1AC",
+      "after": "DE575DDD5D673A64D064782BFA5D699DB26BC39D28331FB44CDD1F3A16D3C1AC",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C07_Result_Rod.png",
+      "before": "F1BAFC013C948FE710518F63677A844862CCF5B2F8E6E5E07401AB64E5ADA511",
+      "after": "F1BAFC013C948FE710518F63677A844862CCF5B2F8E6E5E07401AB64E5ADA511",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C07_Result_Rod.png.meta",
+      "before": "053D7E45D1BC92696C7AE79DFBD4F58DC044AC42863E2F9BFD64D1B19FA45A89",
+      "after": "053D7E45D1BC92696C7AE79DFBD4F58DC044AC42863E2F9BFD64D1B19FA45A89",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C08_Tutorial_Frame.png",
+      "before": "248C96BF93ADF1D94E7F7347B6832B93F3C2BDDF1BC5574A136ECCEDF241DE6D",
+      "after": "248C96BF93ADF1D94E7F7347B6832B93F3C2BDDF1BC5574A136ECCEDF241DE6D",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C08_Tutorial_Frame.png.meta",
+      "before": "BE2E9E3EFE008A4FDB174A62449B20B235F38B62155D21B03EDF318588BF64E9",
+      "after": "BE2E9E3EFE008A4FDB174A62449B20B235F38B62155D21B03EDF318588BF64E9",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C09_Tutorial_Coral.png",
+      "before": "86649799347AC4560BBCBDD2C3C90860FBE619D3215B6EBCF6DBF4E0D1DDB86D",
+      "after": "86649799347AC4560BBCBDD2C3C90860FBE619D3215B6EBCF6DBF4E0D1DDB86D",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C09_Tutorial_Coral.png.meta",
+      "before": "8F6456F82308AAFF5DE85E6EF532E3C0413B33BB11FA46546062BC019F59B9CF",
+      "after": "8F6456F82308AAFF5DE85E6EF532E3C0413B33BB11FA46546062BC019F59B9CF",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C10_Tutorial_Fish_Blue.png",
+      "before": "6EF5B73A6129036334214D888C329D04AFE1BD0D5DA3FF32D2391BBACCE43017",
+      "after": "6EF5B73A6129036334214D888C329D04AFE1BD0D5DA3FF32D2391BBACCE43017",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C10_Tutorial_Fish_Blue.png.meta",
+      "before": "B45D3E1294C39497743DF266A94EEF8AC640A3D29986EDE5E80895CF599B4D09",
+      "after": "B45D3E1294C39497743DF266A94EEF8AC640A3D29986EDE5E80895CF599B4D09",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C11_Tutorial_Fish_Purple.png",
+      "before": "B1B146197030E5732795100A79F2875CF4DDA0610CF09D485024BC851F007B82",
+      "after": "B1B146197030E5732795100A79F2875CF4DDA0610CF09D485024BC851F007B82",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C11_Tutorial_Fish_Purple.png.meta",
+      "before": "AF1544B2C294D877F6C24A6E88BDCBF2336D7F26232C2A82EFC27957026A0C3C",
+      "after": "AF1544B2C294D877F6C24A6E88BDCBF2336D7F26232C2A82EFC27957026A0C3C",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C13_Tutorial_Fish_Spotted.png",
+      "before": "AEA863C1E8C991ABD6CC1D0386D0C7F9C4A914FDD7460A8D77717DDA4B072BA7",
+      "after": "AEA863C1E8C991ABD6CC1D0386D0C7F9C4A914FDD7460A8D77717DDA4B072BA7",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C13_Tutorial_Fish_Spotted.png.meta",
+      "before": "4CEB8F0B12A84E4E0F218E5D45E57F65DD8F57CC1F298D096835EB7497D26E3C",
+      "after": "4CEB8F0B12A84E4E0F218E5D45E57F65DD8F57CC1F298D096835EB7497D26E3C",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C14_Tutorial_Conch_Orange.png",
+      "before": "C3873E693EE5344BA6970C85B8B8708C394F41115F6C99521453FAEE969B369F",
+      "after": "C3873E693EE5344BA6970C85B8B8708C394F41115F6C99521453FAEE969B369F",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C14_Tutorial_Conch_Orange.png.meta",
+      "before": "B9119A9E2DE7B32408B7DE659457F9BCC3014BF4F049CB07848F48680B56721A",
+      "after": "B9119A9E2DE7B32408B7DE659457F9BCC3014BF4F049CB07848F48680B56721A",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C15_Tutorial_Conch_Grey.png",
+      "before": "2A98B8AC3EC558C03218E06AE5B9FC8811E74B0BF9BBDF4A7B033CE7FD12AE62",
+      "after": "2A98B8AC3EC558C03218E06AE5B9FC8811E74B0BF9BBDF4A7B033CE7FD12AE62",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C15_Tutorial_Conch_Grey.png.meta",
+      "before": "6115B5F8380826A7B0D93FF4FEAE3C63A689ADA2D2F18770187FD51EEBA31365",
+      "after": "6115B5F8380826A7B0D93FF4FEAE3C63A689ADA2D2F18770187FD51EEBA31365",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C16_Tutorial_Rocks.png",
+      "before": "038A37131D5570477E9DA1AE03644CF817E6D5F86B111CA4B67CE36612385E45",
+      "after": "038A37131D5570477E9DA1AE03644CF817E6D5F86B111CA4B67CE36612385E45",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C16_Tutorial_Rocks.png.meta",
+      "before": "905C24A094D871E8374ADC33D7F9DDE4AF9D25BA27D2C110EC98D20A94A0B760",
+      "after": "905C24A094D871E8374ADC33D7F9DDE4AF9D25BA27D2C110EC98D20A94A0B760",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C17_Tutorial_Barrel.png",
+      "before": "EF388B67A6DFCBA047F27CD422130C0E796FAB420E5553D53064D0531DA49AFB",
+      "after": "EF388B67A6DFCBA047F27CD422130C0E796FAB420E5553D53064D0531DA49AFB",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\UI\\C17_Tutorial_Barrel.png.meta",
+      "before": "EF093C6DC8F9B857F66D2A9F129ED57B0B4201E8D89FCF4ACFF3DF9DA81D4126",
+      "after": "EF093C6DC8F9B857F66D2A9F129ED57B0B4201E8D89FCF4ACFF3DF9DA81D4126",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\Fonts\\NotoSansSC-Regular.otf",
+      "before": "FAA6C9DF652116DDE789D351359F3D7E5D2285A2B2A1F04A2D7244DF706D5EA9",
+      "after": "FAA6C9DF652116DDE789D351359F3D7E5D2285A2B2A1F04A2D7244DF706D5EA9",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\Fonts\\NotoSansSC-Regular.otf.meta",
+      "before": "8FD90353365503322DEDCEC583031A1CD12E07A1B835D162DA1493DC674AA00D",
+      "after": "8FD90353365503322DEDCEC583031A1CD12E07A1B835D162DA1493DC674AA00D",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\Fonts\\OFL.txt",
+      "before": "6A73F9541C2DE74158C0E7CF6B0A58EF774F5A780BF191F2D7EC9CC53EFE2BF2",
+      "after": "6A73F9541C2DE74158C0E7CF6B0A58EF774F5A780BF191F2D7EC9CC53EFE2BF2",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\Fonts\\OFL.txt.meta",
+      "before": "36369EC645676D9212F8A172DB97A5BDBAB6E584B61E94EE833EDFBBC92E6E1A",
+      "after": "36369EC645676D9212F8A172DB97A5BDBAB6E584B61E94EE833EDFBBC92E6E1A",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\Fonts\\README.md",
+      "before": "9ABF73D4B4167ECA7A528476EC86FF9705C2793A59ADC6413E8762B9D0F3F4FF",
+      "after": "9ABF73D4B4167ECA7A528476EC86FF9705C2793A59ADC6413E8762B9D0F3F4FF",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Art\\Fonts\\README.md.meta",
+      "before": "6B92340E87639E93B80931F1CC7E1E9B92490E25D0F6C443DCEC02F1D6014BDD",
+      "after": "6B92340E87639E93B80931F1CC7E1E9B92490E25D0F6C443DCEC02F1D6014BDD",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\GameUiAssets.asset",
+      "before": "A6F9216E2C89DCDE647A0536EE5A1F390FAC09A4E7EFBE99DB191995FA4F2351",
+      "after": "A6F9216E2C89DCDE647A0536EE5A1F390FAC09A4E7EFBE99DB191995FA4F2351",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Configs\\GameUiAssets.asset.meta",
+      "before": "9B0864E493E30C469A2A84E545192BF28D6876B583F2C0C66B0608C30DA6B439",
+      "after": "9B0864E493E30C469A2A84E545192BF28D6876B583F2C0C66B0608C30DA6B439",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Scenes\\Main.unity",
+      "before": "7B215A40A0C9B938637AA07593FF3BA3FB79BD0D6C856D34513A0A6984EC1D04",
+      "after": "7B215A40A0C9B938637AA07593FF3BA3FB79BD0D6C856D34513A0A6984EC1D04",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Scenes\\Menu.unity",
+      "before": "CA7FFF6B4234F84E3BE1982368D3A87BBB2CF96BA476B8D838BBB4C8E367E5E3",
+      "after": "CA7FFF6B4234F84E3BE1982368D3A87BBB2CF96BA476B8D838BBB4C8E367E5E3",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Scenes\\Main.unity.meta",
+      "before": "EFED4F0864A812280F24684D81FCE82CA0F6544AE5A282A2D6480F7426BCACC2",
+      "after": "EFED4F0864A812280F24684D81FCE82CA0F6544AE5A282A2D6480F7426BCACC2",
+      "unchanged": true
+    },
+    {
+      "path": "G:\\Unity Project\\Casual Game\\Casual Fishing\\FishingCasualGame\\Assets\\_Game\\Scenes\\Menu.unity.meta",
+      "before": "C67025DC13EA6F9BE7B9CF5175CC253D1C3825D2950B1B6F7465DC3ABFB6C05F",
+      "after": "C67025DC13EA6F9BE7B9CF5175CC253D1C3825D2950B1B6F7465DC3ABFB6C05F",
+      "unchanged": true
+    }
+  ]
+}

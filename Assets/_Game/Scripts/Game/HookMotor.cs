@@ -17,6 +17,10 @@ namespace Fishing.Game
         private ContactDetector _detector;
         /// <summary>Hook detection radius in world units.</summary>
         public float Radius => head.radius;
+        /// <summary>Shape reused by the common single-hook detector.</summary>
+        public CircleCollider2D Head => head;
+        /// <summary>Shared existing line material for branch tethers and the sonar ring.</summary>
+        public Material LineMaterial => rope.sharedMaterial;
         /// <summary>Sets prefab art/detection bindings.</summary>
         public void Bind(SpriteRenderer lampRenderer, SpriteRenderer shieldRenderer, CircleCollider2D collider, LineRenderer line = null)
         { lamp = lampRenderer; shield = shieldRenderer; head = collider; rope = line; }
