@@ -14,9 +14,9 @@
 - [作品集首页](../README.md)
 - [架构图谱](Portfolio/Architecture.md)：依赖、模块、固定步时序、单局状态机和取舍
 - [运行与构建](Portfolio/Running.md)
-- [演示素材与数值取证](Portfolio/Demo.md)
-- [最新验证报告、失败项与边界](Portfolio/Verification.md)
-- [素材来源与公开前需核对的分发范围](Portfolio/Sources.md)
+- [演示素材与数值取证](Development/Portfolio-20261026/Demo.md)
+- [最新验证报告、失败项与边界](Development/Portfolio-20261026/Verification.md)
+- [素材来源与公开前需核对的分发范围](Development/Portfolio-20261026/Sources.md)
 
 ## 后续验收
 
@@ -25,3 +25,7 @@
 3. 在设备测量帧率、内存、GC、GPU 与输入体验，再依据数据决定优化。
 
 仓库本次更新保持 private，公开由作者检查后决定。
+
+## 作品集阅读结构调整
+
+2026-10-26：参考 GitHub README 与游戏媒体模板，按 humanizer 自检后重写首页。演示前置，正文介绍玩法、技术特点与源码入口，开发记录归档至 Development/Portfolio-20261026。品牌标题使用 Fishrise 飞鱼，仓库 URL 使用 Fishrise。页面文案改用空格与斜线分隔。

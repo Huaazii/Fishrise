@@ -1,20 +1,17 @@
-# Fishrise 架构图谱
+# Fishrise 飞鱼 技术架构
 
-[返回项目首页](../../README.md) · [运行与构建](Running.md) · [验证与限制](Verification.md)
+[项目首页](../../README.md) / [玩法与画面](Demo.md) / [源码入口](Running.md)
 
-本文按 2026-10-26 源工程整理。图中的类名均对应当前实现；数据流箭头和程序集依赖分别说明。
+游戏从下潜、收线推进到出水结算。Core 管理这段流程中的规则与鱼获，Game 连接输入、物理和场景表现。
 
 ## 1. 程序集边界
 
 ```mermaid
 flowchart LR
-    Editor["Fishing.Editor<br/>场景装配 · 资源导入 · Android 构建"] --> Game
+    Editor["Fishing.Editor<br/>场景装配 / 资源导入 / Android 构建"] --> Game
     Editor --> Core
-    Game["Fishing.Game<br/>Unity 输入 · Physics2D · 场景与表现"] --> Core
-    Core["Fishing.Core<br/>纯 C# 规则 · 本局模型 · 状态机"]
-    CT["Fishing.Core.Tests"] -.-> Core
-    GT["Fishing.Game.Tests"] -.-> Game
-    GT -.-> Core
+    Game["Fishing.Game<br/>Unity 输入 / Physics2D / 场景与表现"] --> Core
+    Core["Fishing.Core<br/>纯 C# 规则 / 本局模型 / 状态机"]
 ```
 
 - `Fishing.Core.asmdef` 设置 `noEngineReferences: true`。Core 不读取 `Time`、`Input`、`Physics2D`、GameObject 或 ScriptableObject。
@@ -29,16 +26,16 @@ flowchart LR
 flowchart TB
     SO["ScriptableObject 配置<br/>FishingConfig / FishDefinition / 能力配置"] -->|每局规则快照| Flow
     Input["DragInput / FishingTouchRouter / TiltSteering<br/>横移目标与收线意图"] --> Boot
-    Boot["GameBootstrap<br/>场景组合根 · 固定步调度"] -->|显式 dt / 输入意图| Flow
-    Boot --> World["HookMotor / FishSpawner / AbilityRig<br/>主钩 · 鱼群 · 分钩"]
+    Boot["GameBootstrap<br/>场景组合根 / 固定步调度"] -->|显式 dt / 输入意图| Flow
+    Boot --> World["HookMotor / FishSpawner / AbilityRig<br/>主钩 / 鱼群 / 分钩"]
     World --> Physics["Physics2D<br/>显式模拟"]
     Physics --> Contacts["ContactDetector<br/>回调 + 圆形扫掠 + 末端重叠"]
-    Contacts -->|统一 ContactBatch| Flow["FishingFlowController<br/>去重 · 排序 · 分配 · 提交"]
+    Contacts -->|统一 ContactBatch| Flow["FishingFlowController<br/>去重 / 排序 / 分配 / 提交"]
     Flow --> Model["RunModel / CaptureRecord<br/>本局状态与留存鱼获"]
-    Flow --> Reel["ReelingModel<br/>惯性控条 · 稳固值 · 逃鱼请求"]
+    Flow --> Reel["ReelingModel<br/>惯性控条 / 稳固值 / 逃鱼请求"]
     Flow --> Skills["AbilityController<br/>SonarAbility / BranchHookController"]
-    Flow -->|提交后事件| Views["GameUi / CameraRig / GameFeedback<br/>HUD · 镜头 · 音效 · 出水演出"]
-    Model --> Settlement["Settlement / FishSummary<br/>按鱼种汇总 · 保留主钩与分钩来源"]
+    Flow -->|提交后事件| Views["GameUi / CameraRig / GameFeedback<br/>HUD / 镜头 / 音效 / 出水演出"]
+    Model --> Settlement["Settlement / FishSummary<br/>按鱼种汇总 / 保留主钩与分钩来源"]
     Settlement --> Result["ResultView<br/>鱼种卡片与本局收益"]
 ```
 
@@ -90,7 +87,7 @@ stateDiagram-v2
     Result --> Menu: 退出
 ```
 
-暂停使用独立标志冻结游戏时钟，不额外增加一个替代玩法阶段的状态，也不修改全局 `Time.timeScale`。规则、能力、镜头和相关表现使用一致的暂停边界；UI 按钮仍能交互。重开创建新的 controller / RunModel，回收视图并清理检测缓存和事件订阅。
+暂停通过独立标志冻结游戏时钟。规则、能力、镜头和相关表现随同暂停，UI 按钮继续响应。重开创建新的 controller / RunModel，回收视图并清理检测缓存和事件订阅。
 
 源码：[FlowStates](../../Assets/_Game/Scripts/Core/FlowStates.cs) / [GameClock](../../Assets/_Game/Scripts/Game/Bootstrap/GameClock.cs)。
 
@@ -105,19 +102,13 @@ stateDiagram-v2
 | 分散鱼钩 | 上收拾取宝物后展开两侧小钩，各 3 个容量，只接一星鱼；来源和容量仍由统一记录维护 | [BranchHookController](../../Assets/_Game/Scripts/Core/BranchHookController.cs) / [BranchHookView](../../Assets/_Game/Scripts/Game/Abilities/BranchHookView.cs) |
 | 宝物布置 | 从本局种子派生独立随机流，结合鱼群、真实主钩半径、路径与声呐三跳间距布置；首次入镜允许一次受约束校正 | [SkillTreasureRig](../../Assets/_Game/Scripts/Game/Abilities/SkillTreasureRig.cs) |
 
-本局金币、贝壳用于结算展示，不是跨局累积的经济系统。图鉴是只读的七鱼种参考。
+结算按鱼种汇总本局金币和贝壳，同时保留主钩、分钩的捕获来源。图鉴提供七鱼种的星级、图标和单价参考。
 
 ## 6. 鱼群、配置和资源
 
 - **配置快照**：SO 保留 Sprite、Prefab 和编辑器数值；开始一局时转换为 Core 的只读规则。规则不持有 Unity 资源。
 - **分鱼种对象池**：七份 `FishDefinition` 各自引用独立 Prefab，`Dictionary<FishDefinition, Queue<FishActor>>` 隔离复用；重置鱼实例 ID、受惊和捕获状态。
-- **有限随机鱼群**：四段深度有固定预算，总计 54 条；每局种子改变聚簇、泳道和通道。支持固定种子复现，当前实现没有完整 Boids。
+- **有限随机鱼群**：四段深度有固定预算，总计 54 条；每局种子改变聚簇、泳道和通道。固定种子可以重现同一布局。
 - **表现所有权**：Menu/Main 保存配置和环境绑定；鱼、主钩、分钩及反馈由场景所有者管理，退出场景统一销毁。
 
 代码入口：[FishingConfig](../../Assets/_Game/Scripts/Game/Configuration/FishingConfig.cs) / [FishDefinition](../../Assets/_Game/Scripts/Game/Configuration/FishDefinition.cs) / [FishSpawner](../../Assets/_Game/Scripts/Game/Fish/FishSpawner.cs)。
-
-## 7. 当前取舍
-
-显式固定步让规则和物理接触顺序可核对，但 `ContactBatch` 当前会复制快照，尚未给出 GC 或手机性能的测量结论。`Application.targetFrameRate = 120` 是目标设置；直接写 Transform 的当前路径没有证据表明已获得 120 Hz 动作平滑或更低触控延迟。
-
-测试、设备边界与具体失败项集中记录在 [验证说明](Verification.md)。

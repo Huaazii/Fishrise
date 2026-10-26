@@ -1,6 +1,6 @@
 # 验证结果与已知限制
 
-[返回项目首页](../../README.md) · [架构图谱](Architecture.md) · [演示取证](Demo.md)
+[返回项目首页](../../../README.md) · [架构图谱](../../Portfolio/Architecture.md) · [演示取证](Demo.md)
 
 检查日期：2026-10-26，Asia/Kuala_Lumpur。目标工程 Unity 2022.3.52f1 / URP 2D。以下重新执行的游戏测试与历史记录分开统计，不包含 bridge 等第三方包自带测试。
 
@@ -8,12 +8,12 @@
 
 | 类型 | 检查 | 结果与证据 |
 | --- | --- | --- |
-| 静态 | Core / Game 程序集方向 | `Fishing.Core` 禁用 Unity 引用；`Fishing.Game` 单向引用 Core；[架构图谱](Architecture.md) |
+| 静态 | Core / Game 程序集方向 | `Fishing.Core` 禁用 Unity 引用；`Fishing.Game` 单向引用 Core；[架构图谱](../../Portfolio/Architecture.md) |
 | 静态 | 源工程保留与发布快照 | 取证前后 Assets / Packages / ProjectSettings 共 668 个文件 SHA256 一致；发布副本逐文件核对，不重写场景、Prefab、配置或 GUID |
 | 编译状态 | 当前 Editor 已编译脚本状态 | 0 错误 / 0 警告，非编译、非导入状态；[状态 JSON](Evidence/compilation-state.json)。本次没有改 C#，没有触发新的脚本编译 |
 | 规则测试 | Core EditMode | **100/100**，失败 / 跳过均 0，约 1.38 秒；[完整报告](Evidence/core-editmode.json) |
 | 场景测试 | Game PlayMode | **173/177**，4 失败，0 跳过，约 146.97 秒；[完整报告](Evidence/game-playmode.json) |
-| 实际运行 | 从菜单开始到结算 | 正常 Editor 游戏帧中完成 100 米下潜、三跳声呐、分钩、满载、出水与结算；[完整视频](Media/full-run.mp4) / [逐帧记录](recording.json) |
+| 实际运行 | 从菜单开始到结算 | 正常 Editor 游戏帧中完成 100 米下潜、三跳声呐、分钩、满载、出水与结算；[完整视频](../../Portfolio/Media/full-run.mp4) / [逐帧记录](recording.json) |
 
 录屏脚本只提供横移目标与按住/松开收线意图，没有生成额外鱼、写入鱼获或收益、修改深度与放宽规则。该局留存 15 条鱼，主钩 10 / 分钩 5，结算 110 金币 / 105 贝壳。
 
