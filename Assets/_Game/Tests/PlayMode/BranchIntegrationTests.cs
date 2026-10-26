@@ -18,7 +18,7 @@ namespace Fishing.Tests
         [UnityTest]
         public IEnumerator BranchesFanOutFollowAndStayInsideTheWaterAtTheHorizontalBoundary()
         {
-            Until(RunState.Ascending); Click("Branch button"); Steps(30);
+            Until(RunState.Ascending); Game.DeployBranches(); Steps(30);
             var views = Game.AbilityView.Branches;
             Assert.That(views.Count, Is.EqualTo(2)); Assert.That(views.All(v => v.gameObject.activeSelf), Is.True);
             Assert.That(views[0].transform.position.x, Is.EqualTo(-2.16f).Within(.02));
@@ -27,18 +27,18 @@ namespace Fishing.Tests
             input.Reset(4.3f); Steps(50);
             foreach (var view in views) Assert.That(Mathf.Abs(view.transform.position.x) + view.Radius, Is.LessThanOrEqualTo(4.501f));
             int branch = LayerMask.NameToLayer("FishingBranchHook"), small = LayerMask.NameToLayer(FishActor.SmallFishLayer);
-            Assert.That(Physics2D.GetLayerCollisionMask(branch), Is.EqualTo(1 << small)); yield return null;
+            Assert.That(Physics2D.GetLayerCollisionMask(branch), Is.EqualTo((1 << small) | 1)); yield return null;
         }
         [UnityTest]
-        public IEnumerator SimultaneousMainAndBranchHeadContactGoesToBranchAndLargeFishPassesThrough()
+        public IEnumerator SimultaneousMainAndBranchHeadContactGoesToBranchAndHigherStarFishPassesThrough()
         {
-            Until(RunState.Ascending); Click("Branch button");
+            Until(RunState.Ascending); Game.DeployBranches();
             var fish = AtHead(Small, Game.Hook.transform.position + Vector3.up * .02f); Steps(1);
             Assert.That(fish.IsCaptured, Is.True); Assert.That(Game.Run.MainCaptureCount, Is.Zero);
             Assert.That(Game.Run.Captures.Single().Source, Is.EqualTo(CaptureSource.Branch));
             Assert.That(fish.transform.parent.GetComponent<BranchHookView>(), Is.Not.Null);
             Steps(30); var branch = Game.AbilityView.Branches[0];
-            var large = AtHead(Blue, branch.transform.position + Vector3.up * .13f); Steps(1);
+            var large = AtHead(Red, branch.transform.position + Vector3.up * .13f); Steps(1);
             Assert.That(large.IsCaptured, Is.False); Assert.That(Game.Abilities.Branches.Model.IsActive(1), Is.True);
             Assert.That(Game.Run.TotalCaptureCount, Is.EqualTo(1)); yield return null;
         }
@@ -49,13 +49,13 @@ namespace Fishing.Tests
             AtHead(Small, Game.Hook.transform.position + Vector3.up * .13f);
             for (int i = 0; i < 9; i++) AtHead(Blue, Game.Hook.transform.position + Vector3.up * .13f);
             Steps(1); Assert.That(Game.Run.MainCaptureCount, Is.EqualTo(10)); Assert.That(Game.Run.IsFull, Is.True);
-            Click("Branch button"); Steps(20);
+            Game.DeployBranches(); Steps(20);
             var left = Game.AbilityView.Branches[0]; var right = Game.AbilityView.Branches[1];
             var before = left.transform.position;
             var swept = AtHead(Small, before + Vector3.up * .325f);
             for (int i = 0; i < 4; i++) AtHead(Small, before + Vector3.up * .325f);
             for (int i = 0; i < 5; i++) AtHead(Silver, right.transform.position + Vector3.up * .325f);
-            var centre = swept.Head.transform.position; float combinedRadius = left.Radius + Small.headRadius * Small.size;
+            var centre = HeadCentre(swept); float combinedRadius = left.Radius + HeadRadius(swept);
             Assert.That(Vector3.Distance(before, centre), Is.GreaterThan(combinedRadius));
             float oldDepth = Game.Run.Depth; Steps(1);
             Assert.That(oldDepth - Game.Run.Depth, Is.EqualTo(.65f).Within(.001));
@@ -84,7 +84,7 @@ namespace Fishing.Tests
             for (int run = 0; run < 20; run++)
             {
                 if (run > 0) { Game.BeginRun(); Game.Spawner.Clear(); }
-                Until(RunState.Ascending); Click("Branch button");
+                Until(RunState.Ascending); Game.DeployBranches();
                 AtHead(Small, Game.Hook.transform.position + Vector3.up * .02f); Steps(1);
                 Assert.That(Game.Run.BranchCaptureCount, Is.EqualTo(1)); Assert.That(Game.AppliedCaptureEvents, Is.EqualTo(1));
                 if (run == 0)
@@ -108,9 +108,9 @@ namespace Fishing.Tests
             try
             {
                 config.breakOnLarge = true; Game.BeginRun(); Game.Spawner.Clear(); Until(RunState.Ascending);
-                Click("Branch button"); AtHead(Small, Game.Hook.transform.position + Vector3.up * .02f); Steps(1);
+                Game.DeployBranches(); AtHead(Small, Game.Hook.transform.position + Vector3.up * .02f); Steps(1);
                 var record = Game.Run.Captures.Single(); var branch = Game.AbilityView.ForHook(record.HookId); Steps(30);
-                AtHead(Blue, branch.transform.position + Vector3.up * .13f); Steps(1);
+                AtHead(Red, branch.transform.position + Vector3.up * .13f); Steps(1);
                 Assert.That(Game.Abilities.Branches.Model.IsActive(branch.HookId), Is.False); Assert.That(Game.Run.BranchCaptureCount, Is.EqualTo(1));
                 Steps(30); Assert.That(Mathf.Abs(branch.transform.position.x - Game.Hook.transform.position.x), Is.LessThan(.05f));
                 Assert.That(branch.GetComponentsInChildren<FishActor>().Length, Is.EqualTo(1));
@@ -119,7 +119,7 @@ namespace Fishing.Tests
             yield return null;
         }
         [UnityTest]
-        public IEnumerator ThreePortraitRatiosKeepAbilityButtonsInSafeAreaAndOutOfTheCentralDragLane()
+        public IEnumerator ThreePortraitRatiosKeepStatsAndPauseInSafeAreaWithNoSkillButtons()
         {
             foreach (int height in new[] { 800, 975, 1050 })
             {
@@ -129,7 +129,7 @@ namespace Fishing.Tests
                 Assert.That(Screen.width, Is.EqualTo(450)); Assert.That(Screen.height, Is.EqualTo(height));
                 var corners = new Vector3[4]; Game.Ui.SafeArea.GetWorldCorners(corners);
                 var safe = Rect.MinMaxRect(corners[0].x, corners[0].y, corners[2].x, corners[2].y);
-                foreach (string name in new[] { "Sonar button", "Branch button", "Stats" })
+                foreach (string name in new[] { "Pause button", "Stats" })
                 {
                     var rect = GameObject.Find(name).GetComponent<RectTransform>(); rect.GetWorldCorners(corners);
                     Assert.That(corners[0].x, Is.GreaterThanOrEqualTo(safe.xMin)); Assert.That(corners[2].x, Is.LessThanOrEqualTo(safe.xMax));
@@ -144,10 +144,11 @@ namespace Fishing.Tests
                 { Assert.That(text.preferredHeight, Is.LessThanOrEqualTo(text.rectTransform.rect.height + .1f), text.name + ": " + text.text);
                     if (text.text.Length > 0) Assert.That(text.cachedTextGenerator.characterCountVisible, Is.GreaterThan(0), text.name); }
                 var hits = new System.Collections.Generic.List<RaycastResult>();
-                var pointer = new PointerEventData(EventSystem.current) { position = GameObject.Find("Sonar button").transform.position };
-                EventSystem.current.RaycastAll(pointer, hits); Assert.That(hits.Any(h => h.gameObject.name == "Sonar button"), Is.True);
-                Click("Sonar button"); Assert.That(Game.Abilities.Sonar.RemainingUses, Is.EqualTo(1));
-                Until(RunState.Ascending); Click("Branch button"); Steps(20); Assert.That(Game.Abilities.Branches.Model.Deployed, Is.True);
+                var pointer = new PointerEventData(EventSystem.current) { position = GameObject.Find("Pause button").transform.position };
+                EventSystem.current.RaycastAll(pointer, hits); Assert.That(hits.Any(h => h.gameObject.name == "Pause button"), Is.True);
+                Assert.That(Game.Ui.Canvas.GetComponentsInChildren<Button>(true).Any(b => b.name == "Sonar button" || b.name == "Branch button"), Is.False);
+                Game.FireSonar(); Assert.That(Game.Abilities.Sonar.RemainingUses, Is.EqualTo(1));
+                Until(RunState.Ascending); Game.DeployBranches(); Steps(20); Assert.That(Game.Abilities.Branches.Model.Deployed, Is.True);
             }
         }
     }

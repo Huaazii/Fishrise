@@ -117,3 +117,8 @@ InitTestScene*.unity*
 /.codex/
 /.idea/
 /.unity/
+
+# Local Unity Version Control state and portfolio preview output
+/.plastic/
+/output/
+/.playwright-cli/

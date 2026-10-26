@@ -173,6 +173,8 @@ MonoBehaviour:
   shield: {fileID: 7724016923561009168}
   head: {fileID: 4828601642205175335}
   rope: {fileID: 66283653105983314}
+  effectLineMaterial: {fileID: 2100000, guid: 589f16473d62cd84f83d685ddba0e50a, type: 2}
+  branchMetalMaterial: {fileID: 2100000, guid: 2ae0e54d5f6b8eb42ab5013297c704ad, type: 2}
   ropeAnchor: {fileID: 7674593226103140792}
   hangPoints:
   - {fileID: 3052740434592979965}
@@ -212,7 +214,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -248,9 +250,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.02}
   serializedVersion: 2
-  m_Radius: 0.22
+  m_Radius: 0.3
 --- !u!1 &1045202431739798162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1080,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 589f16473d62cd84f83d685ddba0e50a, type: 2}
+  - {fileID: 2100000, guid: 53c6e5c0e70ffa640a6f473f06f12b59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1131,8 +1133,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8, g: 0.8, b: 0.6, a: 1}
-      key1: {r: 0.8, g: 0.8, b: 0.6, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1159,13 +1161,13 @@ LineRenderer:
       m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 2
+    numCapVertices: 2
     alignment: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
-    generateLightingData: 0
+    generateLightingData: 1
   m_MaskInteraction: 0
   m_UseWorldSpace: 1
   m_Loop: 0

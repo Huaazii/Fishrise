@@ -20,16 +20,19 @@ namespace Fishing.Tests
         private GameBootstrap _game;
         private bool _hadPreference;
         private int _preference;
+        private ReelingComparisonScope _comparison;
         [UnitySetUp]
         public IEnumerator Load()
         {
             _hadPreference = PlayerPrefs.HasKey(GameUi.TutorialPreferenceKey); _preference = PlayerPrefs.GetInt(GameUi.TutorialPreferenceKey);
             PlayerPrefs.DeleteKey(GameUi.TutorialPreferenceKey); PlayerPrefs.Save();
             Resolution(800); SceneManager.LoadScene("Main"); yield return null; yield return null; Current();
+            _comparison = new ReelingComparisonScope(false); _game.BeginRun();
         }
         [UnityTearDown]
         public IEnumerator Leave()
         {
+            _comparison?.Dispose();
             if (_hadPreference) PlayerPrefs.SetInt(GameUi.TutorialPreferenceKey, _preference); else PlayerPrefs.DeleteKey(GameUi.TutorialPreferenceKey);
             PlayerPrefs.Save(); Resolution(800); SceneManager.LoadScene("Menu"); yield return null; yield return null;
             LogAssert.NoUnexpectedReceived();
@@ -102,6 +105,41 @@ namespace Fishing.Tests
             Assert.That(Label("Gold total").text, Is.EqualTo("0")); Assert.That(Label("Shell total").text, Is.EqualTo("0"));
             Assert.That(scroll.content.GetComponentsInChildren<Text>().Length, Is.Zero);
         }
+        /// <summary>Seven-species settlement and the green-zone tutorial remain readable in all supported portrait previews.</summary>
+        [UnityTest]
+        public IEnumerator SettlementCardsAndControlTeachingRemainReadableInFourPortraits()
+        {
+            var result = SettlementRun();
+            foreach (var size in new[] { new Vector2Int(450, 800), new Vector2Int(450, 975), new Vector2Int(450, 1050), new Vector2Int(1200, 2670) })
+            {
+                Resolution(size.y, size.x); yield return null; yield return null;
+                _game.Ui.ApplySafeArea(); _game.Ui.StateChanged(result); _game.Ui.ShowResult(result); _game.Ui.Tick(1);
+                yield return null; yield return null;
+                Bounds("Result card", "Catch viewport", "Dive again", "Back to menu"); TextFits();
+                foreach (var row in _game.Ui.ResultRows)
+                {
+                    var card = GameObject.Find("Catch card " + row.SpeciesId).transform;
+                    Assert.That(card.Find("Fish plate"), Is.Null);
+                    Assert.That(card.Find("Quantity").GetComponent<Text>().text, Is.EqualTo("×" + row.TotalCount));
+                    Assert.That(card.Find("Unit gold").GetComponent<Text>().text, Is.EqualTo((row.Gold / row.TotalCount).ToString()));
+                }
+                ScreenCapture.CaptureScreenshot($"Docs/Verification/result-polish-{size.x}x{size.y}-20261024.png");
+                yield return null; yield return null;
+                _game.Ui.ShowMenu(); Click("How to play"); Click("Tutorial next"); Click("Tutorial next");
+                StringAssert.Contains("绿区上升", Label("Tutorial body").text);
+                StringAssert.Contains("松开下落", Label("Tutorial body").text);
+                StringAssert.Contains("稳固", Label("Tutorial body").text);
+                StringAssert.DoesNotContain("电脑", Label("Tutorial body").text);
+                StringAssert.DoesNotContain("空格", Label("Tutorial body").text);
+                Assert.That(GameObject.Find("Tutorial green zone"), Is.Not.Null); TextFits();
+                if (size.x == 1200)
+                {
+                    ScreenCapture.CaptureScreenshot("Docs/Verification/tutorial-android-20261025.png");
+                    yield return null; yield return null;
+                }
+                Click("Tutorial close");
+            }
+        }
         [UnityTest]
         public IEnumerator ChineseHudTracksProtectionPauseFreezesItsPulseAndRestartResetsTheRun()
         {
@@ -124,6 +162,54 @@ namespace Fishing.Tests
             Assert.That(GameObject.Find("Pause"), Is.Null); Assert.That(_game.Hook.GetComponentsInChildren<FishActor>().Length, Is.Zero);
             yield return null;
         }
+        /// <summary>Longest HUD values remain readable across safe areas without restarting depth pulses or hiding retained branch fish.</summary>
+        [UnityTest]
+        public IEnumerator UnifiedHudKeepsLongestValuesSeparateAndRetainsBranchCatchesInFourPortraits()
+        {
+            var definition = _game.Spawner.Spawned[0].Definition;
+            var add = typeof(RunModel).GetMethod("AddCapture", BindingFlags.Instance | BindingFlags.NonPublic);
+            foreach (var size in new[] { new Vector2Int(450, 800), new Vector2Int(450, 975), new Vector2Int(450, 1050), new Vector2Int(1200, 2670) })
+            {
+                Resolution(size.y, size.x); yield return null; yield return null;
+                _game.Ui.ResetRun();
+                var run = new RunModel(_game.Run.Rules); State(run, RunState.Diving);
+                typeof(RunModel).GetMethod("SetDepth", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(run, new object[] { 100f });
+                for (int i = 0; i < 16; i++) add.Invoke(run, new object[] {
+                    new CaptureRecord(definition.Snapshot(), i + 1, i < 10 ? CaptureSource.Main : CaptureSource.Branch,
+                        i < 10 ? 0 : 1 + (i - 10) / 3, 90, 20) });
+                _game.Ui.StateChanged(run); _game.Ui.SetAbilities(run, _game.Abilities);
+                float inset = size.x / 450f;
+                _game.Ui.ApplySafeArea(new Rect(12 * inset, 28 * inset, size.x - 24 * inset, size.y - 92 * inset));
+                _game.Ui.Tick(.07f); Canvas.ForceUpdateCanvases();
+                Assert.That(Label("HUD name 1").text, Is.EqualTo("主钩"));
+                Assert.That(Label("HUD value 1").text, Is.EqualTo("10 / 10"));
+                Assert.That(Label("HUD value 3").text, Is.EqualTo("6 / 6"), "Retained catches stay visible even when branches are inactive.");
+                var assets = (GameUiAssets)typeof(GameBootstrap).GetField("uiAssets", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(_game);
+                Assert.That(GameObject.Find("HUD icon 0").GetComponent<Image>().sprite, Is.SameAs(assets.protection));
+                StringAssert.Contains("Bubble", assets.protection.name, "Protection uses a bubble, not the old mask.");
+                Bounds("Stats", "Pause button"); TextFits();
+                var left = new Vector3[4]; var right = new Vector3[4];
+                for (int i = 0; i < 4; i++)
+                {
+                    var label = Label("HUD name " + i); var value = Label("HUD value " + i);
+                    Assert.That(label.fontStyle,Is.EqualTo(FontStyle.Bold)); Assert.That(value.fontStyle,Is.EqualTo(FontStyle.Bold));
+                    label.rectTransform.GetWorldCorners(left); value.rectTransform.GetWorldCorners(right);
+                    Assert.That(right[0].x, Is.GreaterThan(left[2].x), "Columns must remain separate at pulse peaks.");
+                    Assert.That(value.preferredWidth, Is.LessThanOrEqualTo(value.rectTransform.rect.width), value.text);
+                    foreach (var graphic in label.transform.parent.GetComponentsInChildren<Graphic>()) Assert.That(graphic.raycastTarget, Is.False);
+                }
+                typeof(RunModel).GetMethod("SetDepth", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(run, new object[] { 99f });
+                _game.Ui.Refresh(run); _game.Ui.Tick(.04f);
+                Assert.That(Label("HUD value 2").transform.localScale, Is.EqualTo(Vector3.one), "Depth must not bounce every metre.");
+                _game.Ui.Tick(.2f); _game.CameraRig.Follow(run, 0, true); _game.SceneView.FollowCamera(Camera.main);
+                yield return null;
+                ScreenCapture.CaptureScreenshot($"Docs/Verification/hud-restored-{size.x}x{size.y}-20261024.png");
+                yield return null; yield return null;
+                _game.Ui.ResetRun(); _game.Ui.StateChanged(new RunModel(run.Rules));
+                Assert.That(GameObject.Find("HUD chip 3"), Is.Null);
+                Assert.That(GameObject.Find("Stats").GetComponent<RectTransform>().rect.height, Is.EqualTo(140));
+            }
+        }
         [UnityTest]
         public IEnumerator ThreeRealPortraitRatiosAndInsetSafeAreasKeepControlsAndChineseTextVisible()
         {
@@ -139,7 +225,7 @@ namespace Fishing.Tests
                     Click("How to play");
                     for (int page = 0; page < 3; page++)
                     { Bounds("Tutorial card", "Tutorial next", "Tutorial previous", "Tutorial close"); TextFits(); if (page < 2) Click("Tutorial next"); }
-                    Click("Tutorial close"); _game.Ui.StateChanged(_game.Run); Bounds("Stats", "Pause button", "Phase chip"); TextFits();
+                    Click("Tutorial close"); _game.Ui.StateChanged(_game.Run); Bounds("Stats", "Pause button"); TextFits();
                     _game.Ui.Pause(true); Bounds("Pause card", "Resume", "Restart", "Back to menu"); TextFits(); _game.Ui.Pause(false);
                     _game.Ui.StateChanged(result); _game.Ui.ShowResult(result); yield return null;
                     Bounds("Result card", "Catch viewport", "Dive again", "Back to menu", "Reward totals"); TextFits();
@@ -174,6 +260,9 @@ namespace Fishing.Tests
                 Assert.That(Label("HUD value 1").text, Is.EqualTo("10 / 10"));
                 Assert.That(Label("HUD value 1").color.r, Is.GreaterThan(Label("HUD value 1").color.g));
                 float depth = _game.Run.Depth; _game.AdvanceGameplay(.02f);
+                Assert.That(depth - _game.Run.Depth, Is.InRange(.00001f,.1f), "Full-load launch remains smooth at every portrait ratio.");
+                for (int i = 0; i < 20; i++) _game.AdvanceGameplay(.02f);
+                depth = _game.Run.Depth; _game.AdvanceGameplay(.02f);
                 Assert.That(depth - _game.Run.Depth, Is.EqualTo(.65f).Within(.001f));
                 Until(RunState.Result); Assert.That(_game.Ui.ResultRows.Sum(row => row.TotalCount), Is.EqualTo(10));
                 var id = _game.Run.RunId; Click("Dive again");
@@ -186,6 +275,7 @@ namespace Fishing.Tests
         private RunModel SettlementRun()
         {
             var model = new RunModel(_game.Run.Rules); State(model, RunState.Result);
+            typeof(RunModel).GetMethod("SetDepth", BindingFlags.Instance | BindingFlags.NonPublic).Invoke(model, new object[] { model.Rules.MaxDepth });
             var add = typeof(RunModel).GetMethod("AddCapture", BindingFlags.Instance | BindingFlags.NonPublic); int id = 0;
             foreach (var definition in _game.Spawner.Spawned.Select(f => f.Definition).Distinct())
                 add.Invoke(model, new object[] { new CaptureRecord(definition.Snapshot(), ++id, CaptureSource.Main, 0, 90, 20) });
@@ -194,10 +284,10 @@ namespace Fishing.Tests
             return model;
         }
         private static void State(RunModel run, RunState state) { typeof(RunModel).GetProperty("State").SetValue(run, state); }
-        private static void Resolution(int height)
+        private static void Resolution(int height, int width = 450)
         {
             var type = AppDomain.CurrentDomain.GetAssemblies().Select(a => a.GetType("Fishing.Editor.FishingPreview")).FirstOrDefault(t => t != null);
-            Assert.That(type, Is.Not.Null); type.GetMethod("Resolution").Invoke(null, new object[] { 450, height });
+            Assert.That(type, Is.Not.Null); type.GetMethod("Resolution").Invoke(null, new object[] { width, height });
         }
         private void Bounds(params string[] names)
         {

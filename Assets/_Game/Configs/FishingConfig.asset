@@ -18,7 +18,8 @@ MonoBehaviour:
   slowdownDistance: 5
   ascentSpeed: 6.5
   fullMultiplier: 5
-  bottomHoldSeconds: 1.2
+  bottomHoldSeconds: 0.35
+  ascentStartSeconds: 0.35
   countdownSeconds: 3
   surfacingSeconds: 2.3
   mainCapacity: 10
@@ -28,7 +29,35 @@ MonoBehaviour:
   halfWidth: 4.5
   horizontalSpeed: 13.5
   followTouchPoint: 0
+  enableSkillTreasures: 1
+  treasurePickupRadius: 0.42
+  treasureVisualSize: 0.85
+  sonarTreasureDepths: {x: 14, y: 100}
+  branchTreasureDepths: {x: 58, y: 84}
+  enableReeling: 1
+  reelMinSpeed: 3.5
+  reelMaxSpeed: 7
+  reelSpeedResponse: 0.4
+  reelEasyHeight: 0.42
+  reelHardHeight: 0.28
+  reelAcceleration: 3.2
+  reelDamping: 3
+  reelMaxBarSpeed: 0.85
+  reelFishSpeed: 0.24
+  reelDifficultyResponse: 0.6
+  reelStabilityGain: 0.18
+  reelStabilityLoss: 0.1
+  reelRecoveryStability: 0.45
+  reelEscapeGraceSeconds: 0.8
+  reelAbilityGraceSeconds: 0.8
+  cameraSmoothTime: 0.18
+  cameraTurnSmoothTime: 0.4
+  fastAscentShakeAmplitude: 0.035
+  fastAscentShakeFrequency: 17
+  fastAscentHapticMilliseconds: 35
+  fastAscentHapticAmplitude: 80
   randomSeed: 2718
+  useFixedPopulationSeed: 0
   passageWidthMultiplier: 2.5
   depthBands:
   - minDepth: 0

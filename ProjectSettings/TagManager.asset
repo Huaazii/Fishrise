@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Underwater Ice
+    uniqueID: 187410297
+    locked: 0
+  - name: Surface Lit
+    uniqueID: 1735264502
+    locked: 0

@@ -1,56 +1,121 @@
-# FishingCasualGame
+<div align="center">
 
-Android 竖屏休闲钓鱼游戏，使用 **Unity 2022.3.52f1 / URP 2D**。
+# Fishrise · 冰湖垂钓
 
-当前已完成基础玩法、核心美术、冰面水下场景、七类鱼、中文界面、声呐与分散鱼钩，以及第四阶段出水演出和最小反馈的 Unity Editor 检查。设备触摸、听感、震动和性能验收仍待完成。
+**下潜选路，稳住鱼获，把这一钩的收获带回冰面。**
 
-## 已完成功能
+Unity 2022.3.52f1 · C# · URP 2D · Android 竖屏
 
-- **完整单局流程**：菜单进入、3-2-1 倒计时、下潜、触底停留、上收、出水演出、结算、重开及返回菜单。
-- **操作与保护规则**：鼠标/触摸共用相对拖动；横移范围与速度限制、UI 起始触点过滤；两次保护、受击无敌、持续接触去重和分离再进入处理。
-- **捕获与满载规则**：独立鱼头判定；实际物理回调、扫掠与重叠统一裁决；主钩容量 10，满载后停止捕获、切换红灯并以 5 倍速度上收。
-- **鱼群与核心美术**：七类鱼的素材、双向鱼头判定和鱼嘴挂点已接入；四段深度分别生成 12/13/14/15 条，共 54 条，包含深水黄蝴蝶鱼、鳗鱼与小银鱼群；固定种子、配置游速、鱼对象池与持续保留通道的往返游动。主钩有 10 个挂鱼点、独立绿/黄/红灯、保护泡和裁边小气泡。
-- **冰面与水下场景**：共用环境预制体、连续水色、冰面与拼接冰壁；渔夫闲置/拉竿姿态、鱼竿、山云、天气道具及背景鱼影视差。
-- **镜头与鱼线**：统一可视宽度、下潜/上收跟随位置、0.5 秒方向缓动、连续出水构图；鱼线连接竿尖、冰洞与钩顶，并修复宽镜头下局部消失的问题。
-- **中文界面与教学**：保护、主容量、深度 HUD 与数值弹跳；冰面起始页、三页教学、首次开始自动教学与记忆、暂停面板。界面使用工程内中文字体及现有素材。
-- **结算与重开**：按捕获记录合并鱼种，卡片显示图标、星级、快照单价、数量和来源，七鱼种列表可滚动；两种货币统一汇总。暂停冻结玩法、镜头、气泡、能力与 HUD 弹跳，重开清理旧局并复用鱼池和分支钩；真实混合来源的捕获到结算已通过。
-- **下潜声呐**：每局 2 次、冷却 4 秒，仅在非底部区下潜可用；4 米内小鱼受惊，以 3 倍游速逃离 2.5 秒并暂时关闭鱼头判定；大鱼照常触发保护或收钩，暂停冻结声波和冷却。
-- **分散鱼钩**：上收时每局展开 1 次，两侧小钩各容纳 3 条小鱼，不占主容量；同一步分支优先、容量不足回退主钩，主钩满载后仍用扫掠捕获；来源挂鱼/结算、独立 HUD 与钩复用已接入。可选大鱼断钩默认关闭。
-- **出水与反馈**：2.3 秒演出逐条弹出鱼与金币金额，分支序列延后 0.3 秒，可点击跳过，收益完全沿用捕获记录。挂鱼绕鱼嘴摆动、捕获缩放/飘字、保护气泡和满载速度线已接入；结算卡片交错展开。
-- **音效与设置**：8 种程序合成短音对应已提交事件，菜单和暂停都可开关音效/震动；暂停会停止在播声音。Android 捕获和保护破裂请求短震动，手机听感与强弱待验收。
-- **代码与资产结构**：纯 C# 规则层 `Fishing.Core` 与 Unity 适配层 `Fishing.Game` 分离；保存 Menu/Main 场景、配置和预制体，包含装配、素材导入与 Android 构建工具。
+<img src="Docs/Portfolio/Media/menu.png" width="235" alt="Fishrise 冰湖主菜单">
+<img src="Docs/Portfolio/Media/underwater.png" width="235" alt="水下收线控条与分散鱼钩">
+<img src="Docs/Portfolio/Media/result.png" width="235" alt="按鱼种和来源汇总的本局收获">
 
-## 打开与运行
+[架构图谱](Docs/Portfolio/Architecture.md) · [运行与构建](Docs/Portfolio/Running.md) · [完整录屏](Docs/Portfolio/Media/full-run.mp4) · [验证说明](Docs/Portfolio/Verification.md)
 
-1. 安装 Git LFS，克隆后执行 `git lfs pull`，确保 PNG 等资源已下载。
-2. 使用 Unity Hub 以 **2022.3.52f1** 打开仓库根目录，等待依赖与素材导入。
-3. 打开 `Assets/_Game/Scenes/Menu.unity` 并进入 Play；也可打开 `Main.unity` 直接检查单局。
-4. 可用编辑器菜单 `Fishing/Portrait Game View` 设置 450×800 竖屏预览。
+</div>
 
-本游戏使用 Legacy Input Manager。启动时若已安装的 Input System 包提示“启用新输入后端并重启”，选择 **No**，保持 Player / Active Input Handling 为 Input Manager (Old)；Android 构建工具会检查该值。改变输入后端后须先重启 Editor。
+## 项目简介
 
-运行所需的素材副本已包含在 `Assets/_Game/Art/`。原始 45 张素材保留在仓库外、工程上一级的 `Arts/`；仅重新执行第二阶段素材导入/环境装配工具时需要该源目录。源图来源、裁边和挂点说明见 [素材记录](Docs/ArtSources.md)。
+Fishrise 是一款竖屏 2D 休闲钓鱼游戏。玩家在下潜时避让鱼群、拾取声呐宝物，上收时横向选路并控制收线节奏，利用分散鱼钩扩大收获，最后在冰面观看出水演出与本局结算。
 
-## 验证记录
+项目侧重 **Unity/C# Gameplay、规则与表现分离、物理接触裁决、移动端输入及完整单局流程**。七鱼种、中文教学、图鉴、暂停设置、冰湖场景、水下表现和事件音频均已接入。
 
-最近一轮功能验证日期为 **2026-10-21**，结果与限制保存在 [开发状态](Docs/STATUS.md) 和 [验证目录](Docs/Verification/)：
+## 玩法演示
 
-- Core EditMode **45/45**、Game PlayMode **38/38** 通过，最终编译/控制台均为 0 错误、0 警告；此前额外执行的桥接包自带测试有一项手柄释放检查失败，单独记录在开发状态中。
-- 原有单局、保护、满载、七鱼种、场景/镜头、界面和两能力回归继续通过。第四阶段新增 5 项 Core 和 6 项场景检查，覆盖 16 条鱼演出、分支延迟、不同时间跳过、唯一结算事件、暂停冻结、设置静音、出水后台冻结、20 次重开和三比例安全区。
-- 正常游戏帧的固定种子单局到达 100 米，主钩 10 条＋两分支各 3 条，共 16 条、250 金币/190 贝壳，并通过结算按钮重开。脚本仅提供横向目标和实际能力/暂停按钮回调，与显式步进测试分开记录，见 [第三阶段检查点](Docs/Verification/abilities-checkpoint-20261021.md)。该检查不替代实体输入验收。
-- 450×800、450×975、450×1050 的真实 Game View 与模拟安全区检查已完成；实体输入、真机屏幕与性能验收尚未完成。详见 [中文界面检查点](Docs/Verification/ui-checkpoint-20261021.md)。
-- 第四阶段正常游戏帧再次完成 100 米、主钩 10＋分支 6、250 金币/190 贝壳；16 条鱼全部演出，结束后没有活动跳跃视图。出水阶段隐藏玩法 HUD，并用分散的金额牌显示收获；最终回归 38/38。窗口自动点击验证重开、暂停、设置与静音；一次注入拖动没有产生移动，未记为鼠标手感验收。详见 [第四阶段检查点](Docs/Verification/presentation-checkpoint-20261021.md)。
-- 当前 APK：`Builds/Android/CasualFishing-0.2.0-arm64.apk`，Development / IL2CPP / ARM64、API 23/34、竖屏，实际 125,678,847 bytes（约 119.9 MiB）。重启修正输入后端后构建成功，0 错误/0 警告，v1/v2 签名有效；安装和设备运行未验证。首阶段 0.1.0 包不包含后续内容。
+<table>
+  <tr>
+    <th>下潜与声呐</th>
+    <th>收线与分散钩</th>
+    <th>出水与结算</th>
+  </tr>
+  <tr>
+    <td><img src="Docs/Portfolio/Media/dive-sonar.gif" width="235" alt="下潜避让鱼群，拾取声呐并释放连续声波"></td>
+    <td><img src="Docs/Portfolio/Media/reel-branches.gif" width="235" alt="控制收线条，展开分钩并捕获鱼群"></td>
+    <td><img src="Docs/Portfolio/Media/surface-result.gif" width="235" alt="满载返航，播放出水演出并显示结算"></td>
+  </tr>
+</table>
 
-上述结果为已保存的检查记录；首次在其他机器打开时仍需完成导入与本机验证。
+以上来自 **2026-10-26 的实际 Editor 运行**。录制脚本提供横移目标和收线意图，原游戏完成物理、捕获、能力与结算；本局到达 100 米，主钩 10 条、分钩 5 条，结算 110 金币 / 105 贝壳。详见 [演示方式与逐帧记录](Docs/Portfolio/Demo.md)。GIF 无声，不代表真机触控或性能验收。
 
-## 后续内容
+## 已实现内容
 
-接手优化前可先看 [项目框架与优化指南](Docs/项目框架与优化指南.md)，包含 MVP 验证边界、模块职责、单局数据流、配置参数和优化入口。
+| 系统 | 当前行为 |
+| --- | --- |
+| 单局流程 | 菜单 / 首次教学 → 倒计时 → 下潜 → 触底或提前返航 → 上收 → 出水 → 结算；支持暂停、重开和返回菜单 |
+| 双操控模式 | 拖动优先的无分区手势；倾斜校准、死区、灵敏度设置及无传感器回退；电脑保留鼠标 / 空格操作 |
+| 捕获与保护 | 独立鱼头碰撞；回调、扫掠和末端重叠统一处理；两次保护、无敌期、持续接触去重；主钩容量 10，满载加速返航 |
+| 收线挑战 | 惯性控条、鱼获数量带来的难度变化、稳固值与逃鱼；鱼获变化同步到挂点、HUD 和结算 |
+| 拾取能力 | 声呐宝物触发三跳声波，惊走附近小鱼；分散钩宝物在上收时展开左右小钩，各可容纳 3 条一星鱼 |
+| 鱼群 | 七种鱼、四段深度、54 条预算；每局随机种子、聚簇泳道与可复现配置；按鱼种隔离的对象池 |
+| 表现与界面 | 跟随镜头、连续鱼线、冰壁折射与水下氛围、捕获反馈、鱼获出水、按来源汇总的卡片结算、只读图鉴与安全区适配 |
+| 声音与设置 | 场景音乐切换、环境循环、事件音效，音效 / 震动开关及操控偏好保存 |
 
-- 连接 Android 手机，完成安装、持续拖动、完整单局、音效/震动、暂停与后台恢复检查，并测量帧率/内存/GC。Editor 结果不代表设备性能达标。
-- 需求 FR-16 的 Development 调试工具、镜头拉伸、独立鱼尾素材动画和更完整的水下氛围仍未实现；当前满载用红灯＋速度线呈现。
+金币和贝壳用于**本局结算展示**，当前没有跨局经济、养成或在线系统。
 
-需求以 [需求文档 v1.1](Docs/需求文档.md) 为准；设计边界见 [架构说明](Docs/Architecture.md)，逐项进展与已知限制见 [开发状态](Docs/STATUS.md)。
+## 架构概览
 
-仓库提交源工程、已导入素材及验证记录；Unity 缓存、构建产物、IDE 和本机工具配置不纳入版本管理。图片等二进制资源通过 Git LFS 管理。
+```mermaid
+flowchart TB
+    Input["拖动 / 倾斜 / 收线输入"] --> Game
+    Config["ScriptableObject 配置"] --> Game
+    Game["Fishing.Game · GameBootstrap<br/>固定步 · Physics2D<br/>ContactBatch"] -->|显式 dt · 规则快照 · ContactBatch| Core
+    Core["Fishing.Core<br/>状态机 · 接触裁决<br/>能力 · 收线"] --> Model["RunModel / CaptureRecord<br/>鱼获与收益唯一来源"]
+    Core -->|提交后事件| View["HUD · 镜头 · 音频<br/>出水演出"]
+    Model --> Result["Settlement → ResultView<br/>本局结算"]
+```
+
+这是运行数据流。运行时项目程序集依赖方向为 **`Fishing.Game → Fishing.Core`**；Core 设置 `noEngineReferences = true`，不依赖 Unity 对象、输入或物理 API。
+
+三个实现重点：
+
+- **把规则留在 Core**：由 Game 显式传入时间、输入意图和完整物理步批次，规则测试无需加载场景。
+- **接触先收集，再统一裁决**：物理回调不直接计入鱼获；统一处理去重、稳定排序、分钩优先、主钩回退和容量边界。
+- **一份记录贯穿捕获到结算**：HUD、挂鱼、分钩容量、逃鱼和收益读取同一份留存鱼获，表现完成或跳过都不重复发奖。
+
+[完整图谱](Docs/Portfolio/Architecture.md) 包含程序集依赖图、模块图、固定步时序图、单局状态机和当前取舍。
+
+## 代码阅读入口
+
+| 想看什么 | 从哪里开始 |
+| --- | --- |
+| 场景组合与单局生命周期 | [GameBootstrap.cs](Assets/_Game/Scripts/Game/Bootstrap/GameBootstrap.cs) |
+| 状态机与接触裁决 | [FishingFlowController.cs](Assets/_Game/Scripts/Core/FishingFlowController.cs) / [FlowStates.cs](Assets/_Game/Scripts/Core/FlowStates.cs) |
+| 鱼获数据与结算 | [RunModel.cs](Assets/_Game/Scripts/Core/RunModel.cs) |
+| 收线与逃鱼 | [ReelingModel.cs](Assets/_Game/Scripts/Core/ReelingModel.cs) |
+| 鼠标、触摸与倾斜 | [Input/](Assets/_Game/Scripts/Game/Input/) |
+| 物理候选与扫掠 | [ContactDetector.cs](Assets/_Game/Scripts/Game/Fishing/ContactDetector.cs) |
+| 鱼群生成与对象池 | [FishSpawner.cs](Assets/_Game/Scripts/Game/Fish/FishSpawner.cs) |
+| 声呐、分钩与宝物 | [Core 能力](Assets/_Game/Scripts/Core/AbilityController.cs) / [Game 适配](Assets/_Game/Scripts/Game/Abilities/) |
+| 规则和场景回归 | [EditMode 测试](Assets/_Game/Tests/EditMode/) / [PlayMode 测试](Assets/_Game/Tests/PlayMode/) |
+
+```text
+Assets/_Game/
+├── Scripts/
+│   ├── Core/       纯 C# 规则、状态机和本局模型
+│   ├── Game/       按系统划分的 Unity 适配与表现
+│   └── Editor/     装配、导入、预览与构建工具
+├── Configs/        玩法、鱼种、能力、UI 和音频配置
+├── Prefabs/        主钩、七鱼种与共用环境
+├── Scenes/         Menu / Main
+├── Art/            现用图像、材质、Shader 和字体
+├── Audio/          音乐、环境音、事件音效及来源
+└── Tests/          EditMode / PlayMode
+```
+
+## 打开项目
+
+安装 Git LFS，克隆后执行 `git lfs pull`；使用 **Unity 2022.3.52f1** 打开仓库根目录，再打开 `Assets/_Game/Scenes/Menu.unity` 进入 Play。
+
+电脑上按住鼠标左右拖动选路，上收时点按 / 按住空格收线。手机支持拖动或校准后的倾斜操控。完整环境、构建入口和 Both 输入后端说明见 [运行与构建](Docs/Portfolio/Running.md)。
+
+## 验证状态
+
+2026-10-26 本次重新检查：Core EditMode **100/100**；Game PlayMode **173/177，4 项失败**；实际受控单局已从菜单到达结算。失败项涉及鱼头 / Prefab 断言和按钮覆盖计数，具体预期、实测值和原报告见 [验证说明](Docs/Portfolio/Verification.md)。
+
+本次未构建新 APK，也没有测量当前版本的真机 FPS、内存、GC、触控延迟或倾斜手感。目标帧率设置为 120 不代表已实现或测得 120 FPS。
+
+## 素材与开发说明
+
+本仓库展示玩法、架构、Unity 资源接入和验证过程。开发使用 AI 辅助迭代；需求、实现取舍与验收由作者把关。第三方图像、字体和音频分别记录来源，不声明为项目原创素材，也不统一套用代码开源许可。
+
+来源与使用范围见 [素材说明](Docs/Portfolio/Sources.md)、[音频来源](Assets/_Game/Audio/Sources.md) 和 [字体记录](Assets/_Game/Art/Fonts/README.md)。

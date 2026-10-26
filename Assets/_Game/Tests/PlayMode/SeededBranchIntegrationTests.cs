@@ -10,42 +10,59 @@ using UnityEngine.TestTools;
 
 namespace Fishing.Tests
 {
-    /// <summary>Full-speed branch capture against an unchanged school from the saved fixed-seed population.</summary>
+    /// <summary>Full-speed branch capture from untouched one-star fish in the saved fixed-seed population.</summary>
     public sealed class SeededBranchIntegrationTests : AbilityTestScene
     {
         [UnityTest]
-        public IEnumerator FullMainBranchSweepsTheSavedSeedPopulationWithoutMovingItsSmallFish()
+        public IEnumerator FullMainBranchSweepsTheSavedSeedPopulationWithoutMovingItsOneStarFish()
         {
             Game.BeginRun();
             var flags = BindingFlags.Instance | BindingFlags.NonPublic;
             var config = (FishingConfig)typeof(GameBootstrap).GetField("config", flags).GetValue(Game);
             var input = (DragInput)typeof(GameBootstrap).GetField("_input", flags).GetValue(Game);
+            var species = Game.Spawner.Spawned.Select(f => f.Definition).Distinct().ToArray();
+            var fixedConfig = Object.Instantiate(config); fixedConfig.useFixedPopulationSeed = true;
+            Game.Spawner.SpawnRun(fixedConfig, species, Game.Hook.Radius * 2); Object.Destroy(fixedConfig);
             Assert.That(config.randomSeed, Is.Not.Zero); Assert.That(Game.Spawner.ActiveCount, Is.EqualTo(54));
+            Assert.That(Game.Spawner.RunSeed, Is.EqualTo(config.randomSeed));
             var route = Route(config);
             for (int step = 0; step < 6000 && Game.Run.State != RunState.Ascending; step++)
             { input.Reset(RouteX(route, Game.Run.Depth + .12f)); Game.AdvanceGameplay(.02f); }
             Assert.That(Game.Run.State, Is.EqualTo(RunState.Ascending)); Assert.That(Game.Run.TotalCaptureCount, Is.Zero);
-            var target = Game.Spawner.Spawned.Where(f => f.Definition.isSmall && -f.Head.transform.position.y < 65 && -f.Head.transform.position.y > 35)
-                .OrderBy(f => f.Head.transform.position.y).First();
-            var originalRange = target.SwimRange; float originalSpeed = target.SwimSpeed;
-            // Establish a full main hook using existing large fish. The target school stays at its seeded position and speed.
-            foreach (var large in Game.Spawner.Spawned.Where(f => !f.Definition.isSmall).Take(10))
+            var oneStar = Game.Spawner.Spawned.Where(f=>f.Definition.rarity==1)
+                .ToDictionary(f=>f.InstanceId,f=>new { Fish=f, Range=f.SwimRange, Speed=f.SwimSpeed });
+            // Fill only with higher-star fish, leaving every newly eligible one-star fish on its seeded motion.
+            var mainFill = Game.Spawner.Spawned.Where(f=>f.Definition.rarity>1).Take(10).ToArray();
+            Assert.That(mainFill.Length,Is.GreaterThan(0));
+            foreach (var large in mainFill)
             {
                 typeof(FishActor).GetProperty("SwimRange").SetValue(large, new Vector2(-4.3f, 4.3f));
                 typeof(FishActor).GetProperty("SwimSpeed").SetValue(large, 0f);
                 Align(large, Game.Hook.transform.position + Vector3.up * .13f);
             }
-            Steps(1); Assert.That(Game.Run.MainCaptureCount, Is.EqualTo(10)); Click("Branch button"); Steps(20);
-            int hookId = target.Head.transform.position.x < 0 ? 1 : 2; float offset = hookId == 1 ? -2.16f : 2.16f;
-            for (int step = 0; step < 200 && Game.Run.State == RunState.Ascending && !target.IsCaptured; step++)
+            // This population has fewer than ten higher-star fish; extra main-only controls leave seeded one-stars untouched.
+            for(int i=mainFill.Length;i<10;i++) AtHead(mainFill[0].Definition,Game.Hook.transform.position+Vector3.up*.13f);
+            Steps(1); Assert.That(Game.Run.MainCaptureCount, Is.EqualTo(10)); Game.DeployBranches(); Steps(20);
+            for (int step = 0; step < 200 && Game.Run.State == RunState.Ascending && Game.Run.BranchCaptureCount<6; step++)
             {
-                input.Reset(target.Head.transform.position.x - offset);
+                var target=Game.Spawner.Spawned.Where(f=>f.Definition.rarity==1 && !f.IsCaptured && HeadCentre(f).y>Game.Hook.transform.position.y)
+                    .OrderBy(f=>HeadCentre(f).y).FirstOrDefault();
+                if(target!=null)
+                {
+                    int hookId=HeadCentre(target).x<0 ? 1 : 2;
+                    if(Game.Abilities.Branches.RemainingCapacity(hookId)==0) hookId=3-hookId;
+                    input.Reset(HeadCentre(target).x-(hookId==1 ? -2.16f : 2.16f));
+                }
                 float before = Game.Run.Depth; Steps(1);
                 if (Game.Run.State == RunState.Ascending) Assert.That(before - Game.Run.Depth, Is.EqualTo(.65f).Within(.001));
             }
-            Assert.That(target.IsCaptured, Is.True); Assert.That(Game.Run.MainCaptureCount, Is.EqualTo(10));
-            Assert.That(Game.Run.Captures.Single(r => r.FishInstanceId == target.InstanceId).Source, Is.EqualTo(CaptureSource.Branch));
-            Assert.That(target.SwimRange, Is.EqualTo(originalRange)); Assert.That(target.SwimSpeed, Is.EqualTo(originalSpeed));
+            Assert.That(Game.Run.BranchCaptureCount,Is.GreaterThan(0)); Assert.That(Game.Run.MainCaptureCount, Is.EqualTo(10));
+            foreach(var record in Game.Run.Captures.Where(r=>r.Source==CaptureSource.Branch))
+            {
+                Assert.That(oneStar.ContainsKey(record.FishInstanceId),Is.True);
+                var original=oneStar[record.FishInstanceId];
+                Assert.That(original.Fish.SwimRange,Is.EqualTo(original.Range)); Assert.That(original.Fish.SwimSpeed,Is.EqualTo(original.Speed));
+            }
             yield return null;
         }
         private List<Vector2> Route(FishingConfig config)
@@ -55,7 +72,7 @@ namespace Fishing.Tests
             {
                 var intervals = row.Select(f =>
                 {
-                    float half = Mathf.Max(f.Definition.sprite.bounds.extents.x, Mathf.Abs(f.Definition.headPosition.x) + f.Definition.headRadius) * f.Definition.size;
+                    float half = Mathf.Max(f.Definition.sprite.bounds.extents.x * f.Definition.size, f.HeadHorizontalExtent);
                     return new Vector2(f.SwimRange.x - half, f.SwimRange.y + half);
                 }).OrderBy(v => v.x);
                 float end = -config.halfWidth, width = 0; var best = Vector2.zero;

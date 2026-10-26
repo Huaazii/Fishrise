@@ -22,3 +22,4 @@ MonoBehaviour:
   waveSeconds: 0.4
   scareSeconds: 2.5
   speedMultiplier: 3
+  pulseIntervalSeconds: 1

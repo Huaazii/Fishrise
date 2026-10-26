@@ -18,6 +18,7 @@ namespace Fishing.Tests
         private readonly List<FishDefinition> _definitions = new List<FishDefinition>();
         private bool _hadTutorialPreference;
         private int _tutorialPreference;
+        private ReelingComparisonScope _comparison;
         [UnitySetUp]
         public IEnumerator LoadSavedMainScene()
         {
@@ -26,7 +27,8 @@ namespace Fishing.Tests
             SceneManager.LoadScene("Main"); yield return null; yield return null;
             _game = Object.FindObjectOfType<GameBootstrap>();
             Assert.That(_game, Is.Not.Null); Assert.That(_game.HasBindings, Is.True);
-            _game.enabled = false; _species = _game.Spawner.Spawned[0].Definition;
+            _game.enabled = false; _comparison = new ReelingComparisonScope(false); _game.BeginRun();
+            _species = _game.Spawner.Spawned[0].Definition;
             _definitions.Clear();
             foreach (var fish in _game.Spawner.Spawned)
                 if (!_definitions.Contains(fish.Definition)) _definitions.Add(fish.Definition);
@@ -35,6 +37,7 @@ namespace Fishing.Tests
         [UnityTearDown]
         public IEnumerator LeaveScene()
         {
+            _comparison?.Dispose();
             SceneManager.LoadScene("Menu"); yield return null; yield return null;
             if (_hadTutorialPreference) PlayerPrefs.SetInt(GameUi.TutorialPreferenceKey, _tutorialPreference);
             else PlayerPrefs.DeleteKey(GameUi.TutorialPreferenceKey);
@@ -113,6 +116,9 @@ namespace Fishing.Tests
             Assert.That(_game.Run.MainCaptureCount, Is.EqualTo(10));
             Assert.That(_game.AppliedCaptureEvents, Is.EqualTo(10)); Assert.That(_game.Spawner.ActiveCount, Is.EqualTo(2));
             float depth = _game.Run.Depth; _game.AdvanceGameplay(.02f);
+            Assert.That(depth - _game.Run.Depth, Is.InRange(.00001f,.1f), "Full load must still ease away from the bottom.");
+            for (int i = 0; i < 20; i++) _game.AdvanceGameplay(.02f);
+            depth = _game.Run.Depth; _game.AdvanceGameplay(.02f);
             Assert.That(depth - _game.Run.Depth, Is.EqualTo(.65f).Within(.001));
             Assert.That(_game.Run.MainCaptureCount, Is.EqualTo(10)); yield return null;
         }
@@ -179,9 +185,10 @@ namespace Fishing.Tests
                 var body = fish.transform.Find("Body").GetComponent<SpriteRenderer>();
                 Assert.That(body.sprite, Is.SameAs(definition.sprite));
                 Assert.That(body.sprite.bounds.size.x, Is.EqualTo(1.25f).Within(.001));
-                Assert.That(fish.transform.Find("Tail").GetComponent<SpriteRenderer>().enabled, Is.False);
-                Assert.That(fish.Head.transform.position.x - fish.transform.position.x,
-                    Is.EqualTo(definition.headPosition.x * definition.size * direction).Within(.001));
+                Assert.That(fish.GetComponentsInChildren<SpriteRenderer>().Length, Is.EqualTo(1));
+                float authoredX = definition.prefab.Head.transform.TransformPoint(definition.prefab.Head.offset).x - definition.prefab.transform.position.x;
+                Assert.That(fish.Head.transform.TransformPoint(fish.Head.offset).x - fish.transform.position.x,
+                    Is.EqualTo(authoredX * direction).Within(.001));
                 fish.transform.position += NextDiveHead - fish.transform.TransformPoint(new Vector3(-.5f, 0, 0));
                 _game.AdvanceGameplay(.02f);
                 Assert.That(_game.Run.Protection, Is.EqualTo(2), definition.speciesId + " tail triggered contact");

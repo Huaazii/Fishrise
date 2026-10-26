@@ -16,7 +16,9 @@ namespace Fishing.Tests
         private static FishingFlowController Create(int protection = 2, int capacity = 10)
         {
             var flow = new FishingFlowController(new FishingRules(maxDepth: 100, bottomZoneDepth: 96,
-                slowdownDistance: 0, countdownSeconds: 0, protectionCharges: protection, mainCapacity: capacity),
+                // Keep exact-distance rule comparisons explicit; the new default motion has dedicated acceptance below.
+                slowdownDistance: 0, countdownSeconds: 0, protectionCharges: protection, mainCapacity: capacity,
+                bottomHoldSeconds: 1.2f, ascentStartSeconds: 0),
                 new[] { Blue, Small, Decor });
             flow.Start(); Step(flow, .02f); return flow;
         }

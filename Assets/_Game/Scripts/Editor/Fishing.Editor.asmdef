@@ -1,5 +1,5 @@
 {
   "name": "Fishing.Editor",
-  "references": ["Fishing.Game", "Fishing.Core"],
+  "references": ["Fishing.Game", "Fishing.Core", "Unity.RenderPipelines.Universal.Runtime"],
   "includePlatforms": ["Editor"]
 }

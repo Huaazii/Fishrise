@@ -28,8 +28,21 @@ namespace Fishing.Core
         public double GameTime { get; internal set; }
         /// <summary>Read-only per-run rules.</summary>
         public FishingRules Rules { get; }
-        /// <summary>Read-only capture history, ordered by commit.</summary>
+        /// <summary>Interactive retrieval state owned by this run and advanced on the gameplay clock.</summary>
+        public ReelingModel Reeling { get; }
+        /// <summary>Read-only retained catch, ordered by commit; escaped records are removed.</summary>
         public ReadOnlyCollection<CaptureRecord> Captures { get; }
+        /// <summary>Highest gold, then shells; equal-value fish retain their original commit order.</summary>
+        public CaptureRecord EscapeCandidate
+        {
+            get
+            {
+                CaptureRecord best = null;
+                foreach (var record in _captures)
+                    if (best == null || record.Gold > best.Gold || (record.Gold == best.Gold && record.Shells > best.Shells)) best = record;
+                return best;
+            }
+        }
         /// <summary>Main-hook count, derived from records.</summary>
         public int MainCaptureCount => Count(CaptureSource.Main);
         /// <summary>Branch-hook count, derived from records.</summary>
@@ -51,11 +64,18 @@ namespace Fishing.Core
         /// <summary>Creates fresh state and collections.</summary>
         public RunModel(FishingRules rules)
         {
-            Rules = rules; Protection = rules.ProtectionCharges;
+            Rules = rules; Reeling = new ReelingModel(rules.Reeling); Protection = rules.ProtectionCharges;
             Captures = _captures.AsReadOnly(); State = RunState.Menu;
         }
-        /// <summary>Checks global cross-hook capture identity.</summary>
+        /// <summary>Checks ever-captured identity across all hooks, including fish already escaped this run.</summary>
         public bool HasCaptured(int id) => _capturedIds.Contains(id);
+        internal CaptureRecord RemoveMostValuableCapture()
+        {
+            var record = EscapeCandidate;
+            if (record != null) _captures.Remove(record);
+            // Keep the ever-captured ID reserved: delayed contacts cannot catch an escaped fish again.
+            return record;
+        }
         private int Count(CaptureSource source)
         { int count = 0; foreach (var r in _captures) if (r.Source == source) count++; return count; }
         /// <summary>Counts records assigned to one concrete hook, without a second capacity counter.</summary>

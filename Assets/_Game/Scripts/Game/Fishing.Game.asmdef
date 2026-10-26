@@ -1,5 +1,5 @@
 {
   "name": "Fishing.Game",
   "rootNamespace": "Fishing.Game",
-  "references": ["Fishing.Core", "Unity.ugui"]
+  "references": ["Fishing.Core", "Unity.ugui", "Unity.RenderPipelines.Universal.Runtime"]
 }

@@ -17,10 +17,14 @@ namespace Fishing.Core
         public float SlowdownDistance { get; }
         /// <summary>Normal ascent speed.</summary>
         public float AscentSpeed { get; }
+        /// <summary>Optional interactive ascent rules; disabled for explicit legacy comparisons.</summary>
+        public ReelingRules Reeling { get; }
         /// <summary>Ascent multiplier when the main hook is full.</summary>
         public float FullMultiplier { get; }
         /// <summary>Bottom waiting time.</summary>
         public float BottomHoldSeconds { get; }
+        /// <summary>Time to ease from rest into retrieval after reaching maximum depth; early returns keep their speed.</summary>
+        public float AscentStartSeconds { get; }
         /// <summary>Countdown duration.</summary>
         public float CountdownSeconds { get; }
         /// <summary>Presentation timeout; capture records remain unchanged during this phase.</summary>
@@ -34,21 +38,25 @@ namespace Fishing.Core
         /// <summary>Copies a validated numeric snapshot.</summary>
         public FishingRules(float maxDepth = 100, float bottomZoneDepth = 96,
             float diveSpeed = 6, float slowdownDistance = 5, float ascentSpeed = 6.5f,
-            float fullMultiplier = 5, float bottomHoldSeconds = 1.2f,
+            float fullMultiplier = 5, float bottomHoldSeconds = .35f,
             float countdownSeconds = 3, float surfacingSeconds = .6f,
-            int mainCapacity = 10, int protectionCharges = 2, float invulnerabilitySeconds = 1)
+            int mainCapacity = 10, int protectionCharges = 2, float invulnerabilitySeconds = 1, ReelingRules reeling = null,
+            float ascentStartSeconds = .35f)
         {
             if (maxDepth <= 0 || bottomZoneDepth < 0 || bottomZoneDepth > maxDepth ||
                 diveSpeed <= 0 || ascentSpeed <= 0 || fullMultiplier <= 0 || mainCapacity < 1 ||
                 protectionCharges < 0 || bottomHoldSeconds < 0 || countdownSeconds < 0 ||
-                surfacingSeconds < 0 || invulnerabilitySeconds < 0 || slowdownDistance < 0)
+                surfacingSeconds < 0 || invulnerabilitySeconds < 0 || slowdownDistance < 0 ||
+                ascentStartSeconds < 0 || float.IsNaN(ascentStartSeconds) || float.IsInfinity(ascentStartSeconds))
                 throw new ArgumentOutOfRangeException(nameof(maxDepth), "Invalid fishing rule values.");
             MaxDepth = maxDepth; BottomZoneDepth = bottomZoneDepth; DiveSpeed = diveSpeed;
             SlowdownDistance = slowdownDistance; AscentSpeed = ascentSpeed;
             FullMultiplier = fullMultiplier; BottomHoldSeconds = bottomHoldSeconds;
+            AscentStartSeconds = ascentStartSeconds;
             CountdownSeconds = countdownSeconds; SurfacingSeconds = surfacingSeconds;
             MainCapacity = mainCapacity; ProtectionCharges = protectionCharges;
             InvulnerabilitySeconds = invulnerabilitySeconds;
+            Reeling = reeling ?? new ReelingRules();
         }
     }
 
@@ -65,15 +73,17 @@ namespace Fishing.Core
         public int Shells { get; }
         /// <summary>Whether this species is eligible for capture.</summary>
         public bool IsCatchable { get; }
-        /// <summary>Eligibility flag reserved for sonar and branch rules.</summary>
+        /// <summary>Small-fish classification used by sonar, independent of branch star eligibility.</summary>
         public bool IsSmall { get; }
+        /// <summary>Star rating copied at run start; branches accept one-star catchable fish.</summary>
+        public int Rarity { get; }
         /// <summary>Creates a species snapshot.</summary>
-        public FishRules(string id, string name, int gold, int shells, bool isSmall = false, bool isCatchable = true)
+        public FishRules(string id, string name, int gold, int shells, bool isSmall = false, bool isCatchable = true, int rarity = 1)
         {
-            if (string.IsNullOrWhiteSpace(id) || gold < 0 || shells < 0)
+            if (string.IsNullOrWhiteSpace(id) || gold < 0 || shells < 0 || rarity < 1 || rarity > 5)
                 throw new ArgumentException("Invalid fish definition.");
             Id = id; Name = name; Gold = gold; Shells = shells;
-            IsSmall = isSmall; IsCatchable = isCatchable;
+            IsSmall = isSmall; IsCatchable = isCatchable; Rarity = rarity;
         }
     }
 

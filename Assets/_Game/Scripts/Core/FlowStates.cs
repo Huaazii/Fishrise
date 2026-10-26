@@ -32,9 +32,22 @@ namespace Fishing.Core
         public override void Tick(float dt)
         {
             float remaining = Rules.MaxDepth - Run.Depth;
-            // A non-zero minimum prevents asymptotic descent from never reaching the bottom.
-            float ease = Rules.SlowdownDistance > 0 ? Math.Max(.2f, Math.Min(1, remaining / Rules.SlowdownDistance)) : 1;
-            Flow.MoveDepth(Math.Min(Rules.MaxDepth, Run.Depth + Rules.DiveSpeed * ease * dt));
+            if (Rules.SlowdownDistance <= 0)
+                remaining = Math.Max(0, remaining - Rules.DiveSpeed * dt);
+            else
+            {
+                // Integrate cruise and constant braking separately, including steps crossing into the brake zone.
+                // v² = 2ad reaches zero in finite time instead of crawling at a minimum speed then snapping still.
+                float cruise = Math.Min(Math.Max(0, remaining - Rules.SlowdownDistance), Rules.DiveSpeed * dt);
+                remaining -= cruise;
+                float brakingTime = Math.Max(0, dt - cruise / Rules.DiveSpeed);
+                float acceleration = Rules.DiveSpeed * Rules.DiveSpeed / (2 * Rules.SlowdownDistance);
+                float speed = (float)Math.Sqrt(2 * acceleration * remaining);
+                float stopTime = speed / acceleration;
+                if (brakingTime >= stopTime) remaining = 0;
+                else remaining = Math.Max(0, remaining - speed * brakingTime + .5f * acceleration * brakingTime * brakingTime);
+            }
+            Flow.MoveDepth(Rules.MaxDepth - remaining);
             Flow.PendingBottom = Run.Depth >= Rules.MaxDepth;
         }
     }
@@ -46,13 +59,36 @@ namespace Fishing.Core
     }
     internal sealed class AscendingState : FlowState
     {
+        private bool _fromBottom;
         public AscendingState(FishingFlowController f) : base(f) { }
+        public override void Enter()
+        { base.Enter(); _fromBottom = Run.Depth >= Rules.MaxDepth; }
         public override void Tick(float dt)
         {
+            // A full main hook ends the reeling phase: the original five-times sprint takes over,
+            // so the player gets the same "victory lap" beat as the reference instead of steering a bar.
             float speed = Rules.AscentSpeed * (Run.IsFull ? Rules.FullMultiplier : 1);
-            Flow.MoveDepth(Math.Max(0, Run.Depth - speed * dt));
+            if (Rules.Reeling.Enabled && !Run.IsFull)
+            {
+                var branches = Flow.Abilities.Branches.Effect;
+                Run.Reeling.Tick(dt, Run.TotalCaptureCount, Rules.MainCapacity + branches.HookCount * branches.Capacity, Rules.AscentSpeed);
+                Flow.ResolveEscape();
+                speed = Run.TotalCaptureCount == 0 ? Rules.AscentSpeed : Run.Reeling.Speed;
+            }
+            float movingTime = LaunchIntegral(Flow.StateElapsed) - LaunchIntegral(Flow.StateElapsed - dt);
+            Flow.MoveDepth(Math.Max(0, Run.Depth - speed * movingTime));
             // Contacts along the final swept path are resolved before entering Surfacing.
             Flow.PendingSurface = Run.Depth <= 0;
+        }
+        private float LaunchIntegral(float time)
+        {
+            time = Math.Max(0, time);
+            float duration = Rules.AscentStartSeconds;
+            if (!_fromBottom || duration <= 0) return time;
+            if (time >= duration) return time - duration * .5f;
+            float t = time / duration;
+            // Integral of SmoothStep: fixed steps of different lengths cover the same launch distance.
+            return duration * t * t * t * (1 - .5f * t);
         }
     }
     internal sealed class SurfacingState : FlowState

@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373837e1172e897489068464d441b1fb, type: 3}
+  m_Name: GameAudioAssets
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 5ef89011e5b50fa40b18f993c1ac6a1c, type: 3}
+  underwaterMusic: {fileID: 8300000, guid: 4dc9d92272b0cdd4ab408877474a6cb7, type: 3}
+  wind: {fileID: 8300000, guid: 4cf7d0f3986dfe54b95fda4592c84aef, type: 3}
+  underwater: {fileID: 8300000, guid: 2220f5ce646be4640b6d5a4a99467b1a, type: 3}
+  reel: {fileID: 8300000, guid: 9e9019af2f7e3dc48acf222bb2c322c4, type: 3}
+  underwaterMusicVolume: 0.18
+  musicTransitionSeconds: 1.6
+  musicLoopBlendSeconds: 2
+  menuMusicEndPadding: 1
+  musicVolume: 0.24
+  windVolume: 0.12
+  underwaterVolume: 0.11
+  reelVolume: 0.07
+  sounds:
+  - cue: 0
+    clips:
+    - {fileID: 8300000, guid: f696f7cefee0fd5448bd1d3e88fc3cc8, type: 3}
+    volume: 0.4
+    interval: 0.07
+  - cue: 1
+    clips:
+    - {fileID: 8300000, guid: 634913aceb106964a933f2b76346ec41, type: 3}
+    volume: 0.4
+    interval: 0.07
+  - cue: 2
+    clips:
+    - {fileID: 8300000, guid: 95cd39b382e9ece4685af7e093cbf798, type: 3}
+    - {fileID: 8300000, guid: 00661929d4f403c4aa1aba6ae875f8b0, type: 3}
+    volume: 0.3
+    interval: 0.07
+  - cue: 3
+    clips:
+    - {fileID: 8300000, guid: b22366bd7f2e97547bd425a1f2b92f22, type: 3}
+    volume: 0.28
+    interval: 0.07
+  - cue: 4
+    clips:
+    - {fileID: 8300000, guid: c4fff445e6e506c42bb291078872183b, type: 3}
+    volume: 0.44
+    interval: 0.07
+  - cue: 5
+    clips:
+    - {fileID: 8300000, guid: 7809abde8f7616047995e62c57a6e39d, type: 3}
+    volume: 0.3
+    interval: 0.07
+  - cue: 6
+    clips:
+    - {fileID: 8300000, guid: ea67b6507d05b8648b1935a5df2ab9ea, type: 3}
+    volume: 0.3
+    interval: 0.07
+  - cue: 7
+    clips:
+    - {fileID: 8300000, guid: 95a8068e44a04bf47a91e15a09b4ee37, type: 3}
+    volume: 0.24
+    interval: 0.07
+  - cue: 8
+    clips:
+    - {fileID: 8300000, guid: d29e1280ce41f0040ad0b032fd89f072, type: 3}
+    volume: 0.27
+    interval: 0.07
+  - cue: 9
+    clips:
+    - {fileID: 8300000, guid: 281f6303d1c4a484ebe0f221b462bee2, type: 3}
+    volume: 0.2
+    interval: 0.07
+  - cue: 10
+    clips:
+    - {fileID: 8300000, guid: f6cbc8aa31121bd4baf5394e05c2865f, type: 3}
+    volume: 0.25
+    interval: 0.07
+  - cue: 11
+    clips:
+    - {fileID: 8300000, guid: 55cec6c04e8527f489d54499fc689ffa, type: 3}
+    volume: 0.16
+    interval: 0.12
+  - cue: 12
+    clips:
+    - {fileID: 8300000, guid: d09080062f066a141871f6e42e05cf6f, type: 3}
+    - {fileID: 8300000, guid: 351919a762b47a4498bafb02f0bdedd2, type: 3}
+    volume: 0.23
+    interval: 0.12
+  - cue: 13
+    clips:
+    - {fileID: 8300000, guid: 85e974de0ce7eb4448d0231bfb61bdc5, type: 3}
+    volume: 0.13
+    interval: 0.12

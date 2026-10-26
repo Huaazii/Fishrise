@@ -617,7 +617,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e6757bda52d20a468ed39075a9b0708, type: 2}
   - {fileID: 11400000, guid: 8e6463307cf7a584a989c109fdb213a1, type: 2}
   - {fileID: 11400000, guid: f9a4bdf1cf1bd5d4eb7e99bf66923e88, type: 2}
-  fishPrefab: {fileID: 995758404677539068, guid: 2755923e9e69f7e4a900fdbfc0d24057, type: 3}
   hookPrefab: {fileID: 1564330818729205795, guid: feaa40272b0b79b40be7b668883ae50e, type: 3}
   gameCamera: {fileID: 403783242}
   startInMenu: 0

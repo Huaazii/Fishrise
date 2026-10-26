@@ -30,6 +30,8 @@ namespace Fishing.Core
         public event Action<RunState> OnStateChanged;
         /// <summary>Committed record; model has already changed.</summary>
         public event Action<CaptureRecord> OnFishCaptured;
+        /// <summary>Escaped record; retained count, source capacity and rewards have already changed.</summary>
+        public event Action<CaptureRecord> OnFishEscaped;
         /// <summary>Result is ready, once on entering Result.</summary>
         public event Action<RunModel> OnRunFinished;
         /// <summary>Creates a controller with copied species lookup and independent state instances.</summary>
@@ -54,6 +56,16 @@ namespace Fishing.Core
         {
             if (Run.State != RunState.Diving && Run.State != RunState.BottomHold && Run.State != RunState.Ascending) return;
             Run.IsPaused = paused;
+            Run.Reeling.ClearInput();
+        }
+        /// <summary>Receives device-independent held/released intent; pause cannot queue a hidden pull.</summary>
+        public void SetReelingInput(bool held)
+        { if (!Run.IsPaused && !Run.IsFull && Run.State == RunState.Ascending) Run.Reeling.SetHeld(held); }
+        internal void ResolveEscape()
+        {
+            if (!Run.Reeling.ConsumeEscape()) return;
+            var record = Run.RemoveMostValuableCapture();
+            if (record != null) OnFishEscaped?.Invoke(record);
         }
         /// <summary>Moves time/state/depth before the adapter moves bodies and simulates physics.</summary>
         public long BeginStep(float dt)
@@ -114,7 +126,7 @@ namespace Fishing.Core
             if (Run.State == RunState.Ascending)
             {
                 foreach (var candidate in _ordered)
-                    if (candidate.HookId > 0 && !_fish[candidate.SpeciesId].IsSmall) Abilities.Branches.LargeContact(candidate.HookId);
+                    if (candidate.HookId > 0 && _fish[candidate.SpeciesId].Rarity > 1) Abilities.Branches.LargeContact(candidate.HookId);
                 foreach (var candidate in _ordered)
                 {
                     if (candidate.HookId == 0 || _assigned.Contains(candidate.FishId) ||
@@ -164,6 +176,7 @@ namespace Fishing.Core
         { Run.InvulnerableUntil = 0; _contacts.Clear(); _phaseVersion++; }
         internal void ChangeState(RunState state)
         {
+            Run.Reeling.ClearInput();
             _states[Run.State].Exit(); Run.State = state; _states[state].Enter();
             if (state == RunState.Ascending) ResetContactPhase();
             if (state == RunState.Surfacing || state == RunState.Result) Abilities.Cancel();

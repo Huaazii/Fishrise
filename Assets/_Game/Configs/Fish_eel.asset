@@ -21,11 +21,12 @@ MonoBehaviour:
   maxDepth: 100
   isSmall: 0
   isCatchable: 1
-  size: 1.8
+  size: 2
   swimSpeed: 0.22
   swimSpeedMax: 0.3
   color: {r: 0, g: 1, b: 1, a: 1}
   sprite: {fileID: 21300000, guid: e4fb3970d584909488c873d205e0799e, type: 3}
+  prefab: {fileID: 3648257872049566377, guid: 131b8beaaa7a054408df140a901d5bab, type: 3}
   headPosition: {x: 0.56, y: 0.045}
   headRadius: 0.055
   mouthPosition: {x: 0.615, y: 0.05}

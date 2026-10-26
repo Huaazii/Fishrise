@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: GameUiAssets
   m_EditorClassIdentifier: 
   font: {fileID: 12800000, guid: b837660102ee8a847bcbce96a1f4f730, type: 3}
+  titleFont: {fileID: 12800000, guid: 161dd894c31b71049ba97b05368d35e8, type: 3}
+  audio: {fileID: 11400000, guid: 88964c657ecf4fd48b422625a40114ae, type: 2}
   panel: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  buttonFace: {fileID: 21300000, guid: ff1aa18429b8f5f428618449ef3d9e7a, type: 3}
+  buttonRim: {fileID: 21300000, guid: 6e5b32db0bda8964a990fcec33494cd2, type: 3}
   coin: {fileID: 21300000, guid: 94162e88ecf91e743a14b5e5a9cf1aa5, type: 3}
   shell: {fileID: 21300000, guid: c312d131a82276a49a3d08c0cb3700b5, type: 3}
   star: {fileID: 21300000, guid: bbef19ddb3af9824f9b9485e979e094a, type: 3}
-  protection: {fileID: 21300000, guid: 0df13361508709741baef652cad7a96a, type: 3}
+  protection: {fileID: 21300000, guid: 170fae0222ca4ea4eaf43aefc1266c3c, type: 3}
   depth: {fileID: 21300000, guid: 3c5dcabb459a2074384174e720f43a61, type: 3}
   hook: {fileID: 21300000, guid: 70302b75bd264c74c80bf66417b22670, type: 3}
   bubble: {fileID: 21300000, guid: 0a941d5af7ea13b4884a44297dbc6c22, type: 3}

@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 403783244}
   - component: {fileID: 403783242}
   - component: {fileID: 403783243}
+  - component: {fileID: 403783245}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -298,6 +299,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403783245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403783241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &807135669
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +549,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e6757bda52d20a468ed39075a9b0708, type: 2}
   - {fileID: 11400000, guid: 8e6463307cf7a584a989c109fdb213a1, type: 2}
   - {fileID: 11400000, guid: f9a4bdf1cf1bd5d4eb7e99bf66923e88, type: 2}
-  fishPrefab: {fileID: 995758404677539068, guid: 2755923e9e69f7e4a900fdbfc0d24057, type: 3}
   hookPrefab: {fileID: 1564330818729205795, guid: feaa40272b0b79b40be7b668883ae50e, type: 3}
   gameCamera: {fileID: 403783242}
   startInMenu: 1
@@ -619,6 +663,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1341652160590117548, guid: 56741f5aad8e541419286b44c2bd3c5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1706475074617117286, guid: 56741f5aad8e541419286b44c2bd3c5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -662,6 +710,14 @@ PrefabInstance:
     - target: {fileID: 4709620528430735801, guid: 56741f5aad8e541419286b44c2bd3c5f, type: 3}
       propertyPath: m_Name
       value: Fishing Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709620528430735801, guid: 56741f5aad8e541419286b44c2bd3c5f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752641992662091982, guid: 56741f5aad8e541419286b44c2bd3c5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.047
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

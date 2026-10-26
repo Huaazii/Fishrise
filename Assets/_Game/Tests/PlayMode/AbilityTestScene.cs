@@ -16,20 +16,26 @@ namespace Fishing.Tests
     public abstract class AbilityTestScene
     {
         protected GameBootstrap Game;
-        protected FishDefinition Small, Silver, Blue;
+        protected FishDefinition Small, Silver, Blue, Red;
+        private ReelingComparisonScope _comparison;
+        protected virtual bool InteractiveReeling => false;
+        protected virtual bool SkillTreasures => false;
         [UnitySetUp]
         public IEnumerator Load()
         {
             Resolution(800); SceneManager.LoadScene("Main"); yield return null; yield return null;
             Game = Object.FindObjectOfType<GameBootstrap>(); Assert.That(Game.HasBindings, Is.True); Game.enabled = false;
+            _comparison = new ReelingComparisonScope(InteractiveReeling, SkillTreasures); Game.BeginRun();
             Small = Game.Spawner.Spawned.First(f => f.Definition.speciesId == "small").Definition;
             Silver = Game.Spawner.Spawned.First(f => f.Definition.speciesId == "silver").Definition;
             Blue = Game.Spawner.Spawned.First(f => f.Definition.speciesId == "blue").Definition;
+            Red = Game.Spawner.Spawned.First(f => f.Definition.speciesId == "red").Definition;
             Game.Spawner.Clear();
         }
         [UnityTearDown]
         public IEnumerator Leave()
         {
+            _comparison?.Dispose();
             Resolution(800); SceneManager.LoadScene("Menu"); yield return null; yield return null; LogAssert.NoUnexpectedReceived();
         }
         protected void Until(RunState state)
@@ -41,6 +47,9 @@ namespace Fishing.Tests
         }
         protected static void Align(FishActor fish, Vector3 centre)
         { fish.transform.position += centre - fish.Head.transform.TransformPoint(fish.Head.offset); }
+        protected static Vector3 HeadCentre(FishActor fish) => fish.Head.transform.TransformPoint(fish.Head.offset);
+        protected static float HeadRadius(FishActor fish) => fish.Head.radius *
+            Mathf.Max(Mathf.Abs(fish.Head.transform.lossyScale.x), Mathf.Abs(fish.Head.transform.lossyScale.y));
         protected static void Click(string name) { GameObject.Find(name).GetComponent<Button>().onClick.Invoke(); }
         protected static Text Label(string name) => GameObject.Find(name).GetComponent<Text>();
         protected static void Resolution(int height)

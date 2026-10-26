@@ -9,7 +9,7 @@ namespace Fishing.Tests
     public sealed class AbilityRulesTests
     {
         private static readonly FishRules Small = new FishRules("small", "Small", 5, 3, true);
-        private static readonly FishRules Blue = new FishRules("blue", "Blue", 10, 7);
+        private static readonly FishRules Blue = new FishRules("blue", "Higher star control", 10, 7, rarity: 2);
         private static readonly FishRules Decor = new FishRules("decor", "Decor", 0, 0, true, false);
         private static FishingFlowController Create(int protection = 2, int capacity = 10, SonarRules sonar = null, BranchHookRules branches = null)
         {

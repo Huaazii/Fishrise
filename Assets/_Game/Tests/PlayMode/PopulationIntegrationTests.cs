@@ -16,17 +16,21 @@ namespace Fishing.Tests
     {
         private GameBootstrap _game;
         private FishingConfig _config;
+        private FishingConfig _savedConfig;
         [UnitySetUp]
         public IEnumerator LoadScene()
         {
             SceneManager.LoadScene("Main"); yield return null; yield return null;
             _game = Object.FindObjectOfType<GameBootstrap>(); _game.enabled = false;
-            _config = (FishingConfig)typeof(GameBootstrap).GetField("config", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(_game);
+            var field = typeof(GameBootstrap).GetField("config", BindingFlags.Instance | BindingFlags.NonPublic);
+            _savedConfig = (FishingConfig)field.GetValue(_game);
+            _config = Object.Instantiate(_savedConfig); _config.useFixedPopulationSeed = true;
+            field.SetValue(_game, _config);
             _game.BeginRun();
         }
         [UnityTearDown]
         public IEnumerator LeaveScene()
-        { SceneManager.LoadScene("Menu"); yield return null; yield return null; LogAssert.NoUnexpectedReceived(); }
+        { SceneManager.LoadScene("Menu"); yield return null; yield return null; Object.Destroy(_config); LogAssert.NoUnexpectedReceived(); }
 
         [UnityTest]
         public IEnumerator SevenSpeciesMatchValuesDepthLimitsAndExactBandCounts()
@@ -90,6 +94,63 @@ namespace Fishing.Tests
         }
 
         [UnityTest]
+        public IEnumerator NormalRestartsVarySeedsAndLayoutsWithoutGrowingPoolsOrChangingBudgets()
+        {
+            Assert.That(_savedConfig.useFixedPopulationSeed, Is.False, "Normal play must not repeat the debug seed.");
+            _config.useFixedPopulationSeed = false;
+            var seeds = new HashSet<int>(); var layouts = new HashSet<string>();
+            int allocated = _game.Spawner.AllocatedCount;
+            for (int run = 0; run < 20; run++)
+            {
+                _game.BeginRun(); seeds.Add(_game.Spawner.RunSeed);
+                layouts.Add(string.Join(";", _game.Spawner.Spawned.Select(f => f.transform.position.ToString("F3"))));
+                Assert.That(_game.Spawner.ActiveCount, Is.EqualTo(54));
+                Assert.That(_game.Spawner.AllocatedCount, Is.EqualTo(allocated));
+                Assert.That(_game.AppliedCaptureEvents, Is.Zero);
+            }
+            Assert.That(seeds.Count, Is.EqualTo(20)); Assert.That(layouts.Count, Is.EqualTo(20));
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator TwentyReproducibleSeedsKeepHabitatsSpacingAndDifferentSmallSchoolCompositions()
+        {
+            var compositions = new HashSet<string>();
+            for (int seed = 1; seed <= 20; seed++)
+            {
+                _config.randomSeed = seed; _game.BeginRun();
+                Assert.That(_game.Spawner.RunSeed, Is.EqualTo(seed));
+                var fish = _game.Spawner.Spawned;
+                Assert.That(fish.Select(f => f.transform.position.y).Distinct().Count(), Is.GreaterThan(40), "Continuous depths, not shared grid rows.");
+                foreach (var actor in fish)
+                {
+                    float depth = -actor.transform.position.y / _config.unitsPerMetre;
+                    Assert.That(depth, Is.InRange(actor.Definition.minDepth, actor.Definition.maxDepth));
+                    Assert.That(Mathf.Abs(actor.transform.position.x) + Mathf.Max(actor.Definition.sprite.bounds.extents.x * actor.Definition.size,
+                        actor.HeadHorizontalExtent), Is.LessThan(_config.halfWidth));
+                }
+                for (int band = 0; band < 4; band++)
+                    Assert.That(fish.Count(f => -f.transform.position.y / _config.unitsPerMetre >= band * 25 &&
+                        -f.transform.position.y / _config.unitsPerMetre < (band + 1) * 25), Is.EqualTo(12 + band));
+                for (int a = 0; a < fish.Count; a++)
+                    for (int b = a + 1; b < fish.Count; b++)
+                    {
+                        var first = fish[a].Head; var second = fish[b].Head;
+                        float radiusA = first.radius * Mathf.Max(Mathf.Abs(first.transform.lossyScale.x), Mathf.Abs(first.transform.lossyScale.y));
+                        float radiusB = second.radius * Mathf.Max(Mathf.Abs(second.transform.lossyScale.x), Mathf.Abs(second.transform.lossyScale.y));
+                        float distance = Vector2.Distance(first.transform.TransformPoint(first.offset), second.transform.TransformPoint(second.offset));
+                        Assert.That(distance, Is.GreaterThan(radiusA + radiusB), "Overlapping initial head circles for seed " + seed);
+                    }
+                var bottomSilver = fish.Where(f => f.Definition.speciesId == "silver" && -f.transform.position.y / _config.unitsPerMetre >= 75);
+                compositions.Add(string.Join("+", bottomSilver.GroupBy(f => f.SchoolId).Select(g => g.Count()).OrderBy(n => n)));
+                PassageRoute(true);
+                _game.Spawner.Tick(3); PassageRoute(false);
+            }
+            Assert.That(compositions.Count, Is.GreaterThanOrEqualTo(3), "Five small fish must not always split as 3+2.");
+            yield return null;
+        }
+
+        [UnityTest]
         public IEnumerator SavedPopulationHasAPlayableRouteToFullDepthWithoutSpendingProtection()
         {
             var route = PassageRoute(true);
@@ -112,12 +173,19 @@ namespace Fishing.Tests
         {
             var route = new List<Vector2> { Vector2.zero };
             float gap = _game.Hook.Radius * 2 * 2.5f;
-            foreach (var row in _game.Spawner.Spawned.GroupBy(f => f.transform.position.y).OrderByDescending(g => g.Key))
+            // Sample cross-sections including each fish's full vertical extent; groups no longer share exact Y.
+            for (float depth = .25f; depth <= _config.maxDepth; depth += .25f)
             {
-                var intervals = row.Select(f =>
+                float y = -depth * _config.unitsPerMetre;
+                var intervals = _game.Spawner.Spawned.Where(f =>
                 {
-                    float half = Mathf.Max(f.Definition.sprite.bounds.extents.x,
-                        Mathf.Abs(f.Definition.headPosition.x) + f.Definition.headRadius) * f.Definition.size;
+                    float radius = f.Head.radius * Mathf.Max(Mathf.Abs(f.Head.transform.lossyScale.x), Mathf.Abs(f.Head.transform.lossyScale.y));
+                    float halfHeight = Mathf.Max(f.Definition.sprite.bounds.extents.y * f.Definition.size,
+                        Mathf.Abs(f.Head.transform.TransformPoint(f.Head.offset).y - f.transform.position.y) + radius);
+                    return Mathf.Abs(y - f.transform.position.y) <= halfHeight + _game.Hook.Radius + .05f;
+                }).Select(f =>
+                {
+                    float half = Mathf.Max(f.Definition.sprite.bounds.extents.x * f.Definition.size, f.HeadHorizontalExtent);
                     return entireSwimRange ? new Vector2(f.SwimRange.x - half, f.SwimRange.y + half) :
                         new Vector2(f.transform.position.x - half, f.transform.position.x + half);
                 }).OrderBy(v => v.x).ToArray();
@@ -128,9 +196,9 @@ namespace Fishing.Tests
                     end = Mathf.Max(end, interval.y);
                 }
                 if (_config.halfWidth - end > bestWidth) { best = new Vector2(end, _config.halfWidth); bestWidth = _config.halfWidth - end; }
-                Assert.That(bestWidth, Is.GreaterThanOrEqualTo(gap - .001f), "Closed passage at y=" + row.Key);
-                float x = Mathf.Clamp(0, best.x + gap * .5f - .0001f, best.y - gap * .5f + .0001f);
-                route.Add(new Vector2(-row.Key / _config.unitsPerMetre, x));
+                Assert.That(bestWidth, Is.GreaterThanOrEqualTo(gap - .001f), "Closed passage at depth=" + depth);
+                float x = Mathf.Clamp(route[route.Count - 1].y, best.x + gap * .5f - .0001f, best.y - gap * .5f + .0001f);
+                route.Add(new Vector2(depth, x));
             }
             return route;
         }

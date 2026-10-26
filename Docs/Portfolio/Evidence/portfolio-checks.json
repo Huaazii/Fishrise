@@ -1,0 +1,23 @@
+{
+  "checkedOn": "2026-10-26",
+  "sourceFilesCompared": 668,
+  "sourceChangedDuringTask": [],
+  "publicationSourceMismatch": [],
+  "localDocumentationLinksChecked": 97,
+  "missingLocalLinks": [],
+  "mermaidDiagramsRendered": 5,
+  "mermaidSyntaxErrors": 0,
+  "readmeImagesLoaded": 6,
+  "desktopViewportWidth": 1280,
+  "narrowViewportWidth": 390,
+  "narrowDocumentWidth": 390,
+  "decodedMedia": [
+    "dive-sonar.gif",
+    "reel-branches.gif",
+    "surface-result.gif",
+    "full-run.mp4"
+  ],
+  "mediaBytes": 11994177,
+  "stagedCredentialCandidates": [],
+  "repositoryVisibilityBeforePush": "PRIVATE"
+}

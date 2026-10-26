@@ -169,3 +169,6 @@ Packages/packages-lock.json linguist-generated
 
 # Exceptions for .asset files such as lightning pre-baking
 LightingData.asset     binary
+
+# Small portfolio media stays in ordinary Git for README rendering.
+Docs/Portfolio/Media/** -filter -diff -merge -text
