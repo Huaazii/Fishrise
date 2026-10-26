@@ -31,9 +31,17 @@ Unity 2022.3.52f1 / C# / URP 2D / Android
 
 ## 技术特点
 
-### 规则与 Unity 场景分离
+### 分层架构与 MVC 职责划分
 
-`Fishing.Core` 使用纯 C# 管理状态机、捕获、能力和收线，`Fishing.Game` 负责输入、Physics2D、镜头与界面。ScriptableObject 配置在开局时转换为规则快照，Game 通过显式时间步、输入意图和接触批次驱动 Core。
+工程采用 Core / Game 分层，玩法按 MVC 思路划分模型、视图和控制职责。`Fishing.Core` 使用纯 C# 管理规则与本局数据，`Fishing.Game` 连接输入、Physics2D、镜头与界面。
+
+| 职责 | 对应实现 | 作用 |
+| --- | --- | --- |
+| Model | `RunModel` / `CaptureRecord` / `ReelingModel` | 保存单局状态、鱼获和收线数据 |
+| View | `GameUi` / `ResultView` / `ReelingView` | 根据模型数据呈现 HUD、收线控条和结算 |
+| Controller | `FishingFlowController` / `GameBootstrap` | 推进规则与接触裁决，接入输入并协调场景表现 |
+
+`GameBootstrap` 同时承担组合根（Composition Root），在 `Start` 和 `BeginRun` 中装配输入、模型和视图。ScriptableObject 配置在开局时转换为规则快照，Game 通过显式时间步、输入意图和接触批次驱动 Core。
 
 ### 多钩接触统一裁决
 
@@ -69,7 +77,7 @@ flowchart TB
 
 运行时程序集依赖方向为 `Fishing.Game → Fishing.Core`。Core 禁用 Unity 引用，配置、物理和传感器采样留在 Game。
 
-[查看模块关系、固定步时序和单局状态机](Docs/Portfolio/Architecture.md)
+[查看设计模式、模块关系和单局状态机](Docs/Portfolio/Architecture.md)
 
 ## 画面
 

@@ -4,6 +4,28 @@
 
 游戏从下潜、收线推进到出水结算。Core 管理这段流程中的规则与鱼获，Game 连接输入、物理和场景表现。
 
+## MVC 职责划分
+
+整体采用 Core / Game 分层，玩法组织借鉴 MVC 的模型、视图和控制职责。MVC 描述类的分工，Core / Game 则约束程序集的依赖方向。
+
+| 职责 | 对应类 | 负责内容 |
+| --- | --- | --- |
+| Model | [RunModel](../../Assets/_Game/Scripts/Core/RunModel.cs) / [ReelingModel](../../Assets/_Game/Scripts/Core/ReelingModel.cs) | 单局状态、鱼获记录、收益、稳固值和收线运动数据 |
+| View | [GameUi](../../Assets/_Game/Scripts/Game/Ui/GameUi.cs) / [ResultView](../../Assets/_Game/Scripts/Game/Ui/ResultView.cs) / [ReelingView](../../Assets/_Game/Scripts/Game/Fishing/ReelingView.cs) / [SurfacePresentation](../../Assets/_Game/Scripts/Game/Presentation/SurfacePresentation.cs) | HUD、收线控条、出水演出和结算卡片 |
+| Controller | [FishingFlowController](../../Assets/_Game/Scripts/Core/FishingFlowController.cs) / [GameBootstrap](../../Assets/_Game/Scripts/Game/Bootstrap/GameBootstrap.cs) | 前者处理状态推进和接触规则，后者接入玩家意图并协调 Unity 场景 |
+
+界面通过按钮回调和输入意图请求操作。规则提交模型变化后，由事件和模型读取更新表现；HUD 数量、分钩容量和结算均从同一份鱼获记录派生。
+
+## 设计模式
+
+| 设计 | 对应实现 | 在项目中的作用 |
+| --- | --- | --- |
+| 状态模式 State | [IFlowState / FlowState](../../Assets/_Game/Scripts/Core/FlowStates.cs) | 下潜、触底、上收和出水等阶段分别实现 `Enter / Tick / Exit`，由 `FishingFlowController` 切换和推进 |
+| 观察者 Observer | [FishingFlowController](../../Assets/_Game/Scripts/Core/FishingFlowController.cs) / [RunModel](../../Assets/_Game/Scripts/Core/RunModel.cs) 中的 C# `event` | 捕获、逃鱼、保护和阶段变化通过订阅通知场景协调层，再更新界面、挂鱼和反馈 |
+| 模板方法 Template Method | [AbilitySlot](../../Assets/_Game/Scripts/Core/AbilityController.cs) / [SonarAbility](../../Assets/_Game/Scripts/Core/SonarAbility.cs) / [BranchHookController](../../Assets/_Game/Scripts/Core/BranchHookController.cs) | 基类编排 `Activate / TriggerTreasure` 的激活流程与通知，声呐和分钩通过 `OnActivate` 提供具体效果 |
+| 对象池 Object Pool | [FishSpawner](../../Assets/_Game/Scripts/Game/Fish/FishSpawner.cs) | 按鱼种保存 `Queue<FishActor>`，生成时取出，重开时回收并重置实例状态 |
+| 组合根 Composition Root | [GameBootstrap](../../Assets/_Game/Scripts/Game/Bootstrap/GameBootstrap.cs) 的 `Start / BeginRun` | 创建并连接输入适配器、规则控制器、鱼群、UI 和反馈，集中管理事件绑定与本局生命周期 |
+
 ## 1. 程序集边界
 
 ```mermaid

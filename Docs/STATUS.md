@@ -29,3 +29,5 @@
 ## 作品集阅读结构调整
 
 2026-10-26：参考 GitHub README 与游戏媒体模板，按 humanizer 自检后重写首页。演示前置，正文介绍玩法、技术特点与源码入口，开发记录归档至 Development/Portfolio-20261026。品牌标题使用 Fishrise 飞鱼，仓库 URL 使用 Fishrise。页面文案改用空格与斜线分隔。
+
+2026-10-26：按代码补充 MVC 职责划分，以及状态模式、观察者、模板方法、对象池和组合根的类级对应。修改 README 与 Portfolio/Architecture；提交标题使用 Fishrise作品展示。
